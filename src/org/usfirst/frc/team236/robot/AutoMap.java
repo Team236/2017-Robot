@@ -1,5 +1,8 @@
 package org.usfirst.frc.team236.robot;
 
+import ticktank.motionProfile.DriveParameters;
+import ticktank.motionProfile.ProfileParameters;
+
 public final class AutoMap {
 	// Straight gear delivery
 	public static final ProfileParameters straightGear = new ProfileParameters(77.5, 20, 2, 10);

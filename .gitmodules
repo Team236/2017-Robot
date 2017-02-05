@@ -1,0 +1,9 @@
+[submodule "src/ticktank"]
+	path = src/TickTank
+	url = https://github.com/team236/ticktank
+[submodule "src/ticktock"]
+	path = src/ticktock
+	url = https://github.com/team236/TickTock
+[submodule "src/pid"]
+	path = src/pid
+	url = https://github.com/team236/PID

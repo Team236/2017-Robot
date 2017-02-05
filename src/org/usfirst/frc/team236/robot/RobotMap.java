@@ -9,6 +9,11 @@ public class RobotMap {
 		public static final int DIO_RIGHT_ENC_A = 2;
 		public static final int DIO_RIGHT_ENC_B = 3;
 
+		// TODO: tune auto mode
+		public static double kV_left, kV_right;
+		public static double kA;
+		public static double kP;
+
 	}
 
 	public static class Shooter {
