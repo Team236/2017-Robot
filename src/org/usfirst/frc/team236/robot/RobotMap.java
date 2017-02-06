@@ -58,5 +58,7 @@ public class RobotMap {
 
 		// power to send to window motor
 		public static final double GRASP_STRENGTH = 0.5;
+		public static final double RAISE_SPEED = 0.75;
+		public static final double LOWER_SPEED = -0.5;
 	}
 }

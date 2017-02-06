@@ -32,6 +32,26 @@ public class GarageDoor extends Subsystem {
 		grasp(RobotMap.Garage.GRASP_STRENGTH);
 	}
 
+	public void setSpeed(double speed) {
+
+	}
+
+	public void raise() {
+		this.raise(RobotMap.Garage.RAISE_SPEED);
+	}
+
+	public void raise(double speed) {
+
+	}
+
+	public void lower() {
+		this.lower(RobotMap.Garage.LOWER_SPEED);
+	}
+
+	public void lower(double speed) {
+
+	}
+
 	@Override
 	protected void initDefaultCommand() {
 	}
