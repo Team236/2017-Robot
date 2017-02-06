@@ -1,16 +1,32 @@
 
 package org.usfirst.frc.team236.robot;
 
+import org.usfirst.frc.team236.robot.subsystems.Climber;
+import org.usfirst.frc.team236.robot.subsystems.GarageDoor;
+import org.usfirst.frc.team236.robot.subsystems.Intake;
+import org.usfirst.frc.team236.robot.subsystems.Shooter;
+
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import ticktank.ControllerType;
+import ticktank.Settings;
+import ticktank.TickTank;
 
 public class Robot extends IterativeRobot {
 
 	public static OI oi;
+
+	// Subsystems
+	public static TickTank tank;
+	public static Intake intake;
+	public static Climber climber;
+	public static Shooter shooter;
+	public static GarageDoor garageDoor;
 
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
@@ -18,6 +34,28 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void robotInit() {
 		// Configure drive
+		Settings config = new Settings();
+		config.controllerType = ControllerType.VICTORSP;
+		config.hasEncoders = true;
+		config.motorCount = 1;
+		config.leftStick = new Joystick(0);
+		config.rightStick = new Joystick(1);
+		config.hasGears = true;
+		config.hasGyro = true;
+
+		// Encoder ports
+		config.leftEncoderA = RobotMap.Drive.DIO_LEFT_ENC_A;
+		config.leftEncoderB = RobotMap.Drive.DIO_LEFT_ENC_B;
+		config.rightEncoderA = RobotMap.Drive.DIO_RIGHT_ENC_A;
+		config.rightEncoderB = RobotMap.Drive.DIO_RIGHT_ENC_B;
+		config.rightInvEncoder = true;
+		config.rightInv = true;
+		config.dpp = RobotMap.Drive.DISTANCE_PER_PULSE;
+		config.leftParams = AutoMap.leftParams;
+		config.rightParams = AutoMap.rightParams;
+		config.turnParams = RobotMap.Drive.turnParams;
+
+		tank = new TickTank(config);
 
 		oi = new OI();
 		// chooser.addDefault("My Auto", new MyAutoCommand());

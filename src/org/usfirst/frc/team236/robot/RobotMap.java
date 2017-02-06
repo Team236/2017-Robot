@@ -1,5 +1,7 @@
 package org.usfirst.frc.team236.robot;
 
+import pid.PIDParameters;
+
 public class RobotMap {
 	public static class Drive {
 		// Uses PWM 0 and 1: split to two motors
@@ -9,11 +11,15 @@ public class RobotMap {
 		public static final int DIO_RIGHT_ENC_A = 2;
 		public static final int DIO_RIGHT_ENC_B = 3;
 
+		public static double DISTANCE_PER_PULSE;
+
 		// TODO: tune auto mode
 		public static double kV_left, kV_right;
 		public static double kA;
 		public static double kP;
 
+		// TODO: tune turning PID
+		public static PIDParameters turnParams;
 	}
 
 	public static class Shooter {
