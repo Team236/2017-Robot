@@ -54,7 +54,9 @@ public class RobotMap {
 
 	public static class Garage {
 		public static final int PWM_DOOR = 7;
-		public static final int PWM_FRAME = 8; // TODO: rename
+		public static final int PWM_GRASPER = 8;
 
+		// power to send to window motor
+		public static final double GRASP_STRENGTH = 0.5;
 	}
 }
