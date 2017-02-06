@@ -38,6 +38,8 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 
 		controller = new PID(this, this, gains);
 		ticker = new Ticker(controller, gains.interval);
+
+		controller.setSetpoint(RobotMap.Shooter.RPM_INITIAL);
 	}
 
 	@Override
@@ -52,9 +54,7 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 	 *            the desired power, from -1 to 1
 	 */
 	public void setSpeedRaw(double speed) {
-		if (speed < 4000) {
-			motor.set(speed);
-		}
+		motor.set(speed);
 	}
 
 	/**
@@ -81,6 +81,8 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 	 */
 	public double getRPM() {
 		double RPM = 60 / counter.getPeriod();
+
+		// Apply a filter to eliminate false positives
 		if (RPM > 5000) {
 			return controller.getSetpoint();
 		}

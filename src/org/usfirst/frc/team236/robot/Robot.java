@@ -103,6 +103,9 @@ public class Robot extends IterativeRobot {
 			autonomousCommand.cancel();
 	}
 
+	/*
+	 * TODO: Figure out how to use pov for shooter speed adjustment
+	 */
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();

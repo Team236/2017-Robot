@@ -30,6 +30,9 @@ public class RobotMap {
 
 		public static final double kV = 1 / 4600;
 
+		public static final int RPM_INITIAL = 3200;
+		public static final int RPM_INCREMENT = 100;
+
 		public static class PID {
 			public static final double kP = 0.001;
 			public static final double kI = 0.000;
