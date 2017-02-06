@@ -26,7 +26,7 @@ public class RobotMap {
 		public static final int PWM_SHOOTER = 3; // Splits to two motors
 		public static final int PWM_FEEDER = 4;
 
-		public static final int DIO_BANNER = 4;
+		public static final int DIO_COUNTER = 4;
 	}
 
 	public static class Intake {
