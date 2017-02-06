@@ -37,6 +37,9 @@ public class Robot extends IterativeRobot {
 	public static Profile leftGearLeg1;
 	public static Profile leftGearLeg2;
 
+	// Compressor
+	private Compressor compressor;
+
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
 
@@ -67,6 +70,10 @@ public class Robot extends IterativeRobot {
 		tank = new TickTank(config);
 
 		oi = new OI();
+
+		// Start compressor
+		compressor = new Compressor();
+		compressor.start();
 		// chooser.addDefault("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", chooser);
 	}
