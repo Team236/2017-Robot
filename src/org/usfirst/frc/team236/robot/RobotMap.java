@@ -27,6 +27,15 @@ public class RobotMap {
 		public static final int PWM_FEEDER = 4;
 
 		public static final int DIO_COUNTER = 4;
+
+		public static final double kV = 1 / 4600;
+
+		public static class PID {
+			public static final double kP = 0.001;
+			public static final double kI = 0.000;
+			public static final double kD = 0.000;
+			public static final double interval = 1 / 200.0;
+		}
 	}
 
 	public static class Intake {
