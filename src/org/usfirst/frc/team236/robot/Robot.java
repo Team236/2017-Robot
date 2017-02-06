@@ -6,6 +6,9 @@ import org.usfirst.frc.team236.robot.subsystems.GarageDoor;
 import org.usfirst.frc.team236.robot.subsystems.Intake;
 import org.usfirst.frc.team236.robot.subsystems.Shooter;
 
+import edu.wpi.cscore.UsbCamera;
+import edu.wpi.first.wpilibj.CameraServer;
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
@@ -76,6 +79,14 @@ public class Robot extends IterativeRobot {
 		compressor.start();
 		// chooser.addDefault("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", chooser);
+
+		// Send camera to SmartDash
+		try {
+			UsbCamera cam = CameraServer.getInstance().startAutomaticCapture();
+			cam.setResolution(640, 480);
+		} catch (Exception e) {
+			System.out.println("Camera capture failed");
+		}
 	}
 
 	@Override
