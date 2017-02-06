@@ -135,6 +135,10 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void teleopPeriodic() {
+		// SmartDashboard code
+		SmartDashboard.putNumber("RPM", Robot.shooter.getRPM());
+		SmartDashboard.putNumber("Goal RPM", Robot.shooter.controller.getSetpoint());
+
 		Scheduler.getInstance().run();
 	}
 
