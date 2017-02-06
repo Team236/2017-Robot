@@ -71,7 +71,12 @@ public class Robot extends IterativeRobot {
 		config.rightParams = AutoMap.rightParams;
 		config.turnParams = RobotMap.Drive.turnParams;
 
+		// Instantiate subsystems
 		tank = new TickTank(config);
+		shooter = new Shooter();
+		intake = new Intake();
+		garageDoor = new GarageDoor();
+		climber = new Climber();
 
 		// Instantiate OI
 		oi = new OI();
