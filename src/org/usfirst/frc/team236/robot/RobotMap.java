@@ -38,7 +38,6 @@ public class RobotMap {
 
 	public static class Climber {
 		public static final int PWM_CLIMBER = 6; // Splits to two motors 
-
 	}
 
 	public static class Garage {
