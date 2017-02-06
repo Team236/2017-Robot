@@ -16,6 +16,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import ticktank.ControllerType;
 import ticktank.Settings;
 import ticktank.TickTank;
+import ticktank.motionProfile.Profile;
 
 public class Robot extends IterativeRobot {
 
@@ -27,6 +28,14 @@ public class Robot extends IterativeRobot {
 	public static Climber climber;
 	public static Shooter shooter;
 	public static GarageDoor garageDoor;
+
+	// Profiles
+	public static Profile straightGearDelivery;
+	public static Profile rightGearLeg1;
+	public static Profile rightGearLeg2;
+
+	public static Profile leftGearLeg1;
+	public static Profile leftGearLeg2;
 
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
