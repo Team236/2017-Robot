@@ -64,6 +64,7 @@ public class Robot extends IterativeRobot {
 		config.rightEncoderA = RobotMap.Drive.DIO_RIGHT_ENC_A;
 		config.rightEncoderB = RobotMap.Drive.DIO_RIGHT_ENC_B;
 		config.rightInvEncoder = true;
+
 		config.rightInv = true;
 		config.dpp = RobotMap.Drive.DISTANCE_PER_PULSE;
 		config.leftParams = AutoMap.leftParams;
@@ -72,11 +73,14 @@ public class Robot extends IterativeRobot {
 
 		tank = new TickTank(config);
 
+		// Instantiate OI
 		oi = new OI();
 
 		// Start compressor
 		compressor = new Compressor();
 		compressor.start();
+
+		// Select auto
 		// chooser.addDefault("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", chooser);
 
