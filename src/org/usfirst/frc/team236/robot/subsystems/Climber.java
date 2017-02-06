@@ -4,8 +4,9 @@ import org.usfirst.frc.team236.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.SpeedController;
+import edu.wpi.first.wpilibj.command.Subsystem;
 
-public class Climber {
+public class Climber extends Subsystem {
 
 	private SpeedController motor;
 
@@ -17,4 +18,8 @@ public class Climber {
 		motor.set(speed);
 	}
 
+	@Override
+	protected void initDefaultCommand() {
+
+	}
 }
