@@ -1,6 +1,9 @@
 
 package org.usfirst.frc.team236.robot;
 
+import org.usfirst.frc.team236.robot.commands.auto.LeftAuto;
+import org.usfirst.frc.team236.robot.commands.auto.RightAuto;
+import org.usfirst.frc.team236.robot.commands.auto.StraightAuto;
 import org.usfirst.frc.team236.robot.subsystems.Climber;
 import org.usfirst.frc.team236.robot.subsystems.GarageDoor;
 import org.usfirst.frc.team236.robot.subsystems.Intake;
@@ -86,7 +89,9 @@ public class Robot extends IterativeRobot {
 		compressor.start();
 
 		// Select auto
-		// chooser.addDefault("My Auto", new MyAutoCommand());
+		chooser.addDefault("Straight Center", new StraightAuto(tank, straightGearDelivery));
+		chooser.addObject("Left", new LeftAuto());
+		chooser.addObject("Right", new RightAuto());
 		SmartDashboard.putData("Auto mode", chooser);
 
 		// Send camera to SmartDash
