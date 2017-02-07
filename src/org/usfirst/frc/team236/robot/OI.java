@@ -1,6 +1,9 @@
 package org.usfirst.frc.team236.robot;
 
+import org.usfirst.frc.team236.robot.commands.climber.Climb;
+
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -17,5 +20,7 @@ public class OI {
 		controller = new Joystick(ControlMap.PORT_CONTROLLER);
 
 		// Add buttons below
+		JoystickButton climb = new JoystickButton(controller, ControlMap.Controller.CLIMB);
+		climb.whileHeld(new Climb());
 	}
 }
