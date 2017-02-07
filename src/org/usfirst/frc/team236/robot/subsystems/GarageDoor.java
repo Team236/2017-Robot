@@ -22,6 +22,10 @@ public class GarageDoor extends Subsystem {
 		grasper = new Spark(RobotMap.Garage.PWM_GRASPER);
 	}
 
+	public void stop() {
+
+	}
+
 	public void grasp(double speed) {
 		if (speed > 0) {
 			grasper.set(speed);
