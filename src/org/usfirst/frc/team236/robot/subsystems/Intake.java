@@ -27,6 +27,10 @@ public class Intake extends Subsystem {
 		setSpeed(RobotMap.Intake.INTAKE_SPEED);
 	}
 
+	public void stop() {
+		setSpeed(0);
+	}
+
 	public void setDeploySpeed(double speed) {
 		deployMotor.set(speed);
 	}
