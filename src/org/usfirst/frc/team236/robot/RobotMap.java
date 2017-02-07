@@ -23,8 +23,9 @@ public class RobotMap {
 	}
 
 	public static class Shooter {
-		public static final int PWM_SHOOTER = 3; // Splits to two motors
-		public static final int PWM_FEEDER = 4;
+		public static final int PWM_SHOOTER = 2; // Splits to two motors
+		public static final int PWM_FEEDER = 3;
+		public static final int PWM_SERVO = 4;
 
 		public static final int DIO_COUNTER = 4;
 
@@ -42,19 +43,19 @@ public class RobotMap {
 	}
 
 	public static class Intake {
-		public static final int PWM_INTAKE = 4; // Splits to two motors
-		public static final int PWM_DEPLOY = 5;
+		public static final int PWM_INTAKE = 5; // Splits to two motors
+		public static final int PWM_DEPLOY = 6;
 
 		public static final int DIO_LIMIT_BOTTOM = 5;
 	}
 
 	public static class Climber {
-		public static final int PWM_CLIMBER = 6; // Splits to two motors 
+		public static final int PWM_CLIMBER = 7; // Splits to two motors 
 	}
 
 	public static class Garage {
-		public static final int PWM_DOOR = 7;
-		public static final int PWM_GRASPER = 8;
+		public static final int PWM_DOOR = 8;
+		public static final int PWM_GRASPER = 9;
 
 		// power to send to window motor
 		public static final double GRASP_STRENGTH = 0.5;

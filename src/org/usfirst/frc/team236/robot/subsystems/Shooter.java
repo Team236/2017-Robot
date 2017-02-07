@@ -3,6 +3,7 @@ package org.usfirst.frc.team236.robot.subsystems;
 import org.usfirst.frc.team236.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.Counter;
+import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -20,6 +21,7 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 
 	private SpeedController motor;
 	private Counter counter;
+	private Servo servo;
 
 	// PID objects
 	public PID controller;
@@ -31,6 +33,7 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 	public Shooter() {
 		motor = new VictorSP(RobotMap.Shooter.PWM_SHOOTER);
 
+		servo = new Servo(RobotMap.Shooter.PWM_SERVO);
 		counter = new Counter(RobotMap.Shooter.DIO_COUNTER);
 
 		gains = new PIDParameters(RobotMap.Shooter.PID.kP, RobotMap.Shooter.PID.kI, RobotMap.Shooter.PID.kD,
