@@ -1,5 +1,7 @@
 package org.usfirst.frc.team236.robot;
 
+import org.usfirst.frc.team236.robot.subsystems.Shooter.Preset;
+
 import pid.PIDParameters;
 
 public class RobotMap {
@@ -40,6 +42,13 @@ public class RobotMap {
 			public static final double kD = 0.000;
 			public static final double interval = 1 / 200.0;
 		}
+
+		// TODO: find positions
+		public static final Preset POS_KEY = Robot.shooter.new Preset(3200, 24, 0.5);
+		public static final Preset POS_DS = Robot.shooter.new Preset(3500, 80, 0.75);
+
+		public static final Preset[] PRESETS = { POS_KEY, POS_DS };
+		public static final String[] PRESET_NAMES = { "Key", "Driver Station" };
 	}
 
 	public static class Intake {

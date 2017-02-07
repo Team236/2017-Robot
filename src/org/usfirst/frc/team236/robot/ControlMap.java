@@ -19,6 +19,8 @@ public class ControlMap {
 		public static final int CLIMB = LogitechF310.START;
 		public static final int GARAGE_UP = LogitechF310.Y;
 		public static final int GARAGE_DOWN = LogitechF310.A;
+		// POV up: increment preset
+		// POV down: decrement preset
 
 	}
 }

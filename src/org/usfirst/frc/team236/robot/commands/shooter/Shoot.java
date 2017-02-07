@@ -18,6 +18,9 @@ public class Shoot extends Command {
 
 	@Override
 	protected void initialize() {
+		Robot.shooter.controller.setSetpoint(Robot.shooter.getPreset().RPM);
+		Robot.shooter.setAngle(Robot.shooter.getPreset().angle);
+
 		Robot.shooter.ticker.start();
 	}
 

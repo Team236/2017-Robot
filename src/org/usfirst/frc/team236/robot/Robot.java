@@ -148,6 +148,9 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putNumber("RPM", Robot.shooter.getRPM());
 		SmartDashboard.putNumber("Goal RPM", Robot.shooter.controller.getSetpoint());
 
+		// Shooter preset handler
+		shooter.handlePresets();
+
 		Scheduler.getInstance().run();
 	}
 

@@ -1,5 +1,6 @@
 package org.usfirst.frc.team236.robot.subsystems;
 
+import org.usfirst.frc.team236.robot.Robot;
 import org.usfirst.frc.team236.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.Counter;
@@ -19,6 +20,23 @@ import ticktock.Ticker;
  */
 public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 
+	public class Preset {
+		public int RPM, dist;
+		public double angle;
+
+		/**
+		 * Create a shooting preset
+		 * @param _rpm The goal RPM for the shooter rat this point
+		 * @param _dist The distance from the boiler in inches
+		 * @param _angle The angle of the hood from -1 to 1
+		 */
+		public Preset(int _rpm, int _dist, double _angle) {
+			this.RPM = _rpm;
+			this.dist = _dist;
+			this.angle = _angle;
+		}
+	}
+
 	private SpeedController motor;
 	private Counter counter;
 	private Servo servo;
@@ -30,9 +48,11 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 
 	private double kV = RobotMap.Shooter.kV;
 
+	private int presetNum = 0;
+	private boolean rollover = false;
+
 	public Shooter() {
 		motor = new VictorSP(RobotMap.Shooter.PWM_SHOOTER);
-
 		servo = new Servo(RobotMap.Shooter.PWM_SERVO);
 		counter = new Counter(RobotMap.Shooter.DIO_COUNTER);
 
@@ -48,6 +68,53 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 	@Override
 	public void initDefaultCommand() {
 		//setDefaultCommand(new SetShooterSpeed(3200));
+	}
+
+	/**
+	 * Analyzes the POV to change presets if necessary.
+	 */
+	public void handlePresets() {
+		int ang = Robot.oi.controller.getPOV(0);
+
+		// If the button is still pressed, don't register
+		if (rollover == false) {
+			if (ang == 0) {
+				presetNum++;
+				rollover = true;
+			} else if (ang == 180) {
+				presetNum--;
+				rollover = true;
+			}
+		}
+
+		// If the button is not pressed, allow another press to be registered
+		if (ang == -1) {
+			rollover = false;
+		}
+
+		// Keep preset within bounds of list
+		if (presetNum >= RobotMap.Shooter.PRESETS.length - 1) {
+			presetNum = RobotMap.Shooter.PRESETS.length - 1;
+		} else if (presetNum < 0) {
+			presetNum = 0;
+		}
+
+		// Show the current preset on the SD
+		SmartDashboard.putString("Preset",
+				RobotMap.Shooter.PRESET_NAMES[presetNum] + ": " + RobotMap.Shooter.PRESETS[presetNum].RPM);
+	}
+
+	/**
+	 * Set angle of the chute using the servo
+	 * 
+	 * @param angle the angle to go to between 0 and 1
+	 */
+	public void setAngle(double angle) {
+		servo.set(angle);
+	}
+
+	public Preset getPreset() {
+		return RobotMap.Shooter.PRESETS[presetNum];
 	}
 
 	/**
