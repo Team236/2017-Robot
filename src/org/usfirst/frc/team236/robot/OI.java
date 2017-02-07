@@ -1,6 +1,7 @@
 package org.usfirst.frc.team236.robot;
 
 import org.usfirst.frc.team236.robot.commands.climber.Climb;
+import org.usfirst.frc.team236.robot.commands.drive.ReversoDrive;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -22,5 +23,8 @@ public class OI {
 		// Add buttons below
 		JoystickButton climb = new JoystickButton(controller, ControlMap.Controller.CLIMB);
 		climb.whileHeld(new Climb());
+
+		JoystickButton invert = new JoystickButton(left, 1);
+		invert.toggleWhenPressed(new ReversoDrive());
 	}
 }
