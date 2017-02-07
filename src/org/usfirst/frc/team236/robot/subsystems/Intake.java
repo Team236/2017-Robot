@@ -39,6 +39,10 @@ public class Intake extends Subsystem {
 		setDeploySpeed(RobotMap.Intake.DEPLOY_SPEED);
 	}
 
+	public void stopDeploy() {
+		setDeploySpeed(0);
+	}
+
 	public void retract() {
 		setDeploySpeed(RobotMap.Intake.RETRACT_SPEED);
 	}
