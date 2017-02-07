@@ -72,6 +72,7 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 
 	/**
 	 * Analyzes the POV to change presets if necessary.
+	 * TODO: test POV behavior
 	 */
 	public void handlePresets() {
 		int ang = Robot.oi.controller.getPOV(0);
@@ -106,6 +107,7 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 
 	/**
 	 * Set angle of the chute using the servo
+	 * TODO: figure out how this should be implemented
 	 * 
 	 * @param angle the angle to go to between 0 and 1
 	 */

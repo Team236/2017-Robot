@@ -17,7 +17,6 @@ public class Intake extends Subsystem {
 
 	@Override
 	protected void initDefaultCommand() {
-		// TODO
 	}
 
 	private void setSpeed(double speed) {
