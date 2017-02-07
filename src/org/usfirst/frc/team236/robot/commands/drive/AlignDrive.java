@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class AlignDrive extends Command {
 	public static double speedFactor = -0.25;
+	public static double turnFactor = 0.1;
 
 	public AlignDrive() {
 		requires(Robot.tank);
@@ -27,8 +28,8 @@ public class AlignDrive extends Command {
 		double leftSpeed = speedFactor * Robot.oi.controller.getRawAxis(LogitechF310.Axes.LEFT_Y);
 		double rightSpeed = speedFactor * Robot.oi.controller.getRawAxis(LogitechF310.Axes.LEFT_Y);
 
-		leftSpeed += -speedFactor * Robot.oi.controller.getRawAxis(LogitechF310.Axes.LEFT_X);
-		rightSpeed -= -speedFactor * Robot.oi.controller.getRawAxis(LogitechF310.Axes.LEFT_X);
+		leftSpeed += turnFactor * Robot.oi.controller.getRawAxis(LogitechF310.Axes.LEFT_X);
+		rightSpeed -= turnFactor * Robot.oi.controller.getRawAxis(LogitechF310.Axes.LEFT_X);
 
 		Robot.tank.setLeftSpeed(leftSpeed);
 		Robot.tank.setRightSpeed(rightSpeed);
