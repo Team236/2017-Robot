@@ -74,12 +74,10 @@ public class RobotMap {
 		public static final int PWM_DOOR = 8;
 		public static final int PWM_GRASPER = 9;
 
-		// power to send to window motor
-		// TODO determine these speeds
-		public static final double GRASP_STRENGTH = 0.5;
-		public static final double RELEASE_STRENGTH = 0.5;
+		public static final int CHNL_GRASPER_FORWARD = 0;
+		public static final int CHNL_GRASPER_REVERSE = 1;
 
-		public static final double RAISE_SPEED = 0.75;
-		public static final double LOWER_SPEED = -0.5;
+		public static final int CHNL_VERTICAL_FORWARD = 2;
+		public static final int CHNL_VERTICAL_REVERSE = 3;
 	}
 }
