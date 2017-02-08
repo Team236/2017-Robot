@@ -97,8 +97,8 @@ public class Robot extends IterativeRobot {
 		// Send camera to SmartDash
 		try {
 			UsbCamera cam = CameraServer.getInstance().startAutomaticCapture();
-			cam.setResolution(640, 480);
-		} catch (Exception e) {
+			cam.setResolution(640, 480); // TODO what resolution should we used?
+		} catch (Exception e) { // TODO what exception do we use here?
 			System.out.println("Camera capture failed");
 		}
 	}
