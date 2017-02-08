@@ -46,11 +46,10 @@ public class RobotMap {
 		}
 
 		// TODO: find positions
-		public static final Preset POS_KEY = Robot.shooter.new Preset(3200, 24, 0.5);
-		public static final Preset POS_DS = Robot.shooter.new Preset(3500, 80, 0.75);
+		public static final Preset POS_KEY = Robot.shooter.new Preset("Key", 3200, 24, 0.5);
+		public static final Preset POS_DS = Robot.shooter.new Preset("Driver Station", 3500, 80, 0.75);
 
 		public static final Preset[] PRESETS = { POS_KEY, POS_DS };
-		public static final String[] PRESET_NAMES = { "Key", "Driver Station" };
 	}
 
 	public static class Intake {

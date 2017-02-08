@@ -12,6 +12,7 @@ import org.usfirst.frc.team236.robot.subsystems.Shooter;
 import edu.wpi.cscore.UsbCamera;
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.Compressor;
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
@@ -150,9 +151,16 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void teleopPeriodic() {
 		// SmartDashboard code
-		SmartDashboard.putNumber("RPM", Robot.shooter.getRPM());
-		SmartDashboard.putNumber("Goal RPM", Robot.shooter.controller.getSetpoint());
+		// General
+		SmartDashboard.putNumber("Match time", DriverStation.getInstance().getMatchTime());
+		SmartDashboard.putNumber("Voltage", DriverStation.getInstance().getBatteryVoltage());
 
+		// Shooter
+		SmartDashboard.putNumber("RPM", Robot.shooter.getRPM());
+		SmartDashboard.putNumber("Angle", Robot.shooter.getAngle());
+		SmartDashboard.putNumber("Goal RPM", Robot.shooter.controller.getSetpoint());
+		SmartDashboard.putString("Preset", Robot.shooter.getPreset().toString());
+		
 		// Shooter preset handler
 		shooter.handlePresets();
 

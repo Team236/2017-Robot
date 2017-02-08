@@ -23,6 +23,7 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 	public class Preset {
 		public int RPM, dist;
 		public double angle;
+		public String name;
 
 		/**
 		 * Create a shooting preset
@@ -30,10 +31,15 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 		 * @param _dist The distance from the boiler in inches
 		 * @param _angle The angle of the hood from -1 to 1
 		 */
-		public Preset(int _rpm, int _dist, double _angle) {
+		public Preset(String _name, int _rpm, int _dist, double _angle) {
 			this.RPM = _rpm;
 			this.dist = _dist;
 			this.angle = _angle;
+			this.name = _name;
+		}
+		
+		public String toString() {
+			return name;
 		}
 	}
 
@@ -99,10 +105,6 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 		} else if (presetNum < 0) {
 			presetNum = 0;
 		}
-
-		// Show the current preset on the SD
-		SmartDashboard.putString("Preset",
-				RobotMap.Shooter.PRESET_NAMES[presetNum] + ": " + RobotMap.Shooter.PRESETS[presetNum].RPM);
 	}
 
 	/**
@@ -113,6 +115,10 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 	 */
 	public void setAngle(double angle) {
 		servo.set(angle);
+	}
+	
+	public double getAngle() {
+		return servo.get();
 	}
 
 	public Preset getPreset() {
