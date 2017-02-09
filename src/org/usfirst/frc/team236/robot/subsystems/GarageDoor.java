@@ -17,8 +17,8 @@ public class GarageDoor extends Subsystem {
 	public DoubleSolenoid grasper, vertical;
 
 	public GarageDoor() {
-		grasper = new DoubleSolenoid(RobotMap.Garage.CHNL_GRASPER_FORWARD, RobotMap.Garage.CHNL_GRASPER_REVERSE);
-		vertical = new DoubleSolenoid(RobotMap.Garage.CHNL_VERTICAL_FORWARD, RobotMap.Garage.CHNL_VERTICAL_REVERSE);
+		grasper = new DoubleSolenoid(RobotMap.Garage.SOL_GRASPER_FORWARD, RobotMap.Garage.SOL_GRASPER_REVERSE);
+		vertical = new DoubleSolenoid(RobotMap.Garage.SOL_VERTICAL_FORWARD, RobotMap.Garage.SOL_VERTICAL_REVERSE);
 	}
 	
 	public void handleHeight() {

@@ -79,10 +79,10 @@ public class RobotMap {
 		public static final int PWM_DOOR = 8;
 		public static final int PWM_GRASPER = 9;
 
-		public static final int CHNL_GRASPER_FORWARD = 2;
-		public static final int CHNL_GRASPER_REVERSE = 3;
+		public static final int SOL_GRASPER_FORWARD = 2;
+		public static final int SOL_GRASPER_REVERSE = 3;
 
-		public static final int CHNL_VERTICAL_FORWARD = 4;
-		public static final int CHNL_VERTICAL_REVERSE = 5;
+		public static final int SOL_VERTICAL_FORWARD = 4;
+		public static final int SOL_VERTICAL_REVERSE = 5;
 	}
 }
