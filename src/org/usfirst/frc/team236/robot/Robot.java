@@ -170,6 +170,13 @@ public class Robot extends IterativeRobot {
 		shooter.handlePresets();
 		garage.handleHeight();
 
+		// Handle shifting
+		if (oi.left.getPOV(0) == 0) {
+			tank.shiftUp();
+		} else if (oi.left.getPOV(0) == 180) {
+			tank.shiftDown();
+		}
+
 		Scheduler.getInstance().run();
 	}
 
