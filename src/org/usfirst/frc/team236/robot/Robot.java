@@ -60,7 +60,7 @@ public class Robot extends IterativeRobot {
 		config.leftStick = new Joystick(0);
 		config.rightStick = new Joystick(1);
 		config.hasGyro = true;
-		
+
 		// Gear config
 		config.hasGears = true;
 		config.solForward = RobotMap.Drive.SOL_FORWARD;
@@ -165,7 +165,7 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putNumber("Angle", Robot.shooter.getAngle());
 		SmartDashboard.putNumber("Goal RPM", Robot.shooter.controller.getSetpoint());
 		SmartDashboard.putString("Preset", Robot.shooter.getPreset().toString());
-		
+
 		// Subsystem control handlers
 		shooter.handlePresets();
 		garage.handleHeight();

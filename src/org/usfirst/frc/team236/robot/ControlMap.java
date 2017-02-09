@@ -7,6 +7,7 @@ public class ControlMap {
 	public static final int PORT_RIGHT = 1;
 	public static final int PORT_CONTROLLER = 2;
 
+	// TODO Find out what side align drive should go on
 	public static class Left {
 
 	}
@@ -16,11 +17,14 @@ public class ControlMap {
 	}
 
 	public static class Controller {
+		// POV left: increment preset
+		// POV right: decrement preset
+		// POV up: garage up
+		// POV down: garage down
+
 		public static final int CLIMB = LogitechF310.START;
 		public static final int GARAGE_UP = LogitechF310.Y;
 		public static final int GARAGE_DOWN = LogitechF310.A;
-		// POV up: increment preset
-		// POV down: decrement preset
 
 		public static final int FEED = LogitechF310.RB;
 		public static final int SHOOT = LogitechF310.LB;
