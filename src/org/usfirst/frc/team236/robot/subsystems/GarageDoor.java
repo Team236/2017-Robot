@@ -1,5 +1,6 @@
 package org.usfirst.frc.team236.robot.subsystems;
 
+import org.usfirst.frc.team236.robot.Robot;
 import org.usfirst.frc.team236.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
@@ -18,6 +19,16 @@ public class GarageDoor extends Subsystem {
 	public GarageDoor() {
 		grasper = new DoubleSolenoid(RobotMap.Garage.CHNL_GRASPER_FORWARD, RobotMap.Garage.CHNL_GRASPER_REVERSE);
 		vertical = new DoubleSolenoid(RobotMap.Garage.CHNL_VERTICAL_FORWARD, RobotMap.Garage.CHNL_VERTICAL_REVERSE);
+	}
+	
+	public void handleHeight() {
+		int ang = Robot.oi.controller.getPOV(0);
+		
+		if (ang == 0) {
+			raise();
+		} else if (ang == 180) {
+			lower();
+		}
 	}
 
 	public void grasp() {
