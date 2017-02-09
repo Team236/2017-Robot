@@ -5,7 +5,7 @@ import org.usfirst.frc.team236.robot.commands.auto.LeftAuto;
 import org.usfirst.frc.team236.robot.commands.auto.RightAuto;
 import org.usfirst.frc.team236.robot.commands.auto.StraightAuto;
 import org.usfirst.frc.team236.robot.subsystems.Climber;
-import org.usfirst.frc.team236.robot.subsystems.GarageDoor;
+import org.usfirst.frc.team236.robot.subsystems.Garage;
 import org.usfirst.frc.team236.robot.subsystems.Intake;
 import org.usfirst.frc.team236.robot.subsystems.Shooter;
 
@@ -34,7 +34,7 @@ public class Robot extends IterativeRobot {
 	public static Intake intake;
 	public static Climber climber;
 	public static Shooter shooter;
-	public static GarageDoor garageDoor;
+	public static Garage garage;
 
 	// Profiles
 	public static Profile straightGearDelivery;
@@ -84,7 +84,7 @@ public class Robot extends IterativeRobot {
 		tank = new TickTank(config);
 		shooter = new Shooter();
 		intake = new Intake();
-		garageDoor = new GarageDoor();
+		garage = new Garage();
 		climber = new Climber();
 
 		// Instantiate OI
@@ -168,7 +168,7 @@ public class Robot extends IterativeRobot {
 		
 		// Subsystem control handlers
 		shooter.handlePresets();
-		garageDoor.handleHeight();
+		garage.handleHeight();
 
 		Scheduler.getInstance().run();
 	}

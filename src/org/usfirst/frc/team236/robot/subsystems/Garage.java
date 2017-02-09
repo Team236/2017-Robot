@@ -11,12 +11,12 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  * 
  * @author samcf
  */
-public class GarageDoor extends Subsystem {
+public class Garage extends Subsystem {
 
 	// TODO come up with a better name for the vertical piston
 	public DoubleSolenoid grasper, vertical;
 
-	public GarageDoor() {
+	public Garage() {
 		grasper = new DoubleSolenoid(RobotMap.Garage.SOL_GRASPER_FORWARD, RobotMap.Garage.SOL_GRASPER_REVERSE);
 		vertical = new DoubleSolenoid(RobotMap.Garage.SOL_VERTICAL_FORWARD, RobotMap.Garage.SOL_VERTICAL_REVERSE);
 	}

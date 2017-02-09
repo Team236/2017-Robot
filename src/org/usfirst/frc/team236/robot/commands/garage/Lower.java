@@ -10,13 +10,13 @@ import edu.wpi.first.wpilibj.command.Command;
 public class Lower extends Command {
 
 	public Lower() {
-		requires(Robot.garageDoor);
+		requires(Robot.garage);
 	}
 
 	// Called just before this Command runs the first time
 	@Override
 	protected void initialize() {
-		Robot.garageDoor.lower();
+		Robot.garage.lower();
 	}
 
 	// Called repeatedly when this Command is scheduled to run
