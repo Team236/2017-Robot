@@ -101,6 +101,26 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putData("Auto mode", chooser);
 
 		// Send camera to SmartDash
+		// TODO try multiple cameras 
+		/*
+		UsbCamera cam0 = new UsbCamera("cam0", 0);
+		UsbCamera cam1 = new UsbCamera("cam1", 1);
+		UsbCamera selectedCam = cam0;
+		CvSink video = CameraServer.getInstance().getVideo(selectedCam);
+		CvSource outputStream = CameraServer.getInstance().putVideo("Stream", 640, 480);
+		Mat image = new Mat();
+		
+		if (controller.getRawButton(button) {
+			if (selectedCam == cam0) {
+				selectedCam = cam1;
+				video.setSource(selectedCam)
+			} else {
+				selectedCam = cam0;
+				video.setSource(selectedCam);
+			}
+		}
+		 */
+
 		try {
 			UsbCamera cam = CameraServer.getInstance().startAutomaticCapture();
 			cam.setResolution(640, 480); // TODO what resolution should we used?
