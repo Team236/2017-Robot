@@ -76,9 +76,6 @@ public class RobotMap {
 	}
 
 	public static class Garage {
-		public static final int PWM_DOOR = 8;
-		public static final int PWM_GRASPER = 9;
-
 		public static final int SOL_GRASPER_FORWARD = 2;
 		public static final int SOL_GRASPER_REVERSE = 3;
 
