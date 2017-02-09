@@ -1,5 +1,6 @@
 package org.usfirst.frc.team236.robot.commands.shooter;
 
+import org.usfirst.frc.team236.robot.ControlMap;
 import org.usfirst.frc.team236.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -10,9 +11,9 @@ import edu.wpi.first.wpilibj.command.Command;
  * @author samcf
  *
  */
-public class Shoot extends Command {
+public class ShootWithVariableFeed extends Command {
 
-	public Shoot() {
+	public ShootWithVariableFeed() {
 		requires(Robot.shooter);
 	}
 
@@ -25,13 +26,17 @@ public class Shoot extends Command {
 	}
 
 	@Override
+	protected void execute() {
+		Robot.shooter.feed(Robot.oi.controller.getRawAxis(ControlMap.Controller.VARIABLE_FEED));
+	}
+
+	@Override
 	protected boolean isFinished() {
 		return false;
 	}
 
 	@Override
 	protected void end() {
-		Robot.shooter.ticker.stop();
 		Robot.shooter.stop();
 	}
 

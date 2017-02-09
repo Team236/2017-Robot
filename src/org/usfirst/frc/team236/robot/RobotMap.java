@@ -32,6 +32,8 @@ public class RobotMap {
 
 		public static final int DIO_COUNTER = 4;
 
+		public static final double DEFAULT_FEED_SPEED = 1.0;
+
 		// TODO improve kV tuning
 		public static final double kV = 1 / 4600;
 

@@ -43,7 +43,7 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 		}
 	}
 
-	private SpeedController motor;
+	private SpeedController motor, feeder;
 	private Counter counter;
 	private Servo servo;
 
@@ -59,6 +59,8 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 
 	public Shooter() {
 		motor = new VictorSP(RobotMap.Shooter.PWM_SHOOTER);
+		feeder = new VictorSP(RobotMap.Shooter.PWM_FEEDER);
+
 		servo = new Servo(RobotMap.Shooter.PWM_SERVO);
 		counter = new Counter(RobotMap.Shooter.DIO_COUNTER);
 
@@ -124,6 +126,14 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 	public Preset getPreset() {
 		return RobotMap.Shooter.PRESETS[presetNum];
 	}
+	
+	public void feed(double speed) {
+		feeder.set(speed);
+	}
+	
+	public void feed() {
+		feed(RobotMap.Shooter.DEFAULT_FEED_SPEED);
+	}
 
 	/**
 	 * Set the speed of the wheel directly
@@ -149,7 +159,9 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 	 * Stop the flywheel immediately
 	 */
 	public void stop() {
+		ticker.stop();
 		setSpeedRaw(0);
+		feed(0);
 	}
 
 	/**

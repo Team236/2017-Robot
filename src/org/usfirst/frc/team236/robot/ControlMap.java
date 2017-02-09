@@ -22,5 +22,8 @@ public class ControlMap {
 		// POV up: increment preset
 		// POV down: decrement preset
 
+		public static final int FEED = LogitechF310.RB;
+		public static final int SHOOT = LogitechF310.LB;
+		public static final int VARIABLE_FEED = LogitechF310.Axes.RT;
 	}
 }
