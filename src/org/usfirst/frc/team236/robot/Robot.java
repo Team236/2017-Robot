@@ -59,8 +59,12 @@ public class Robot extends IterativeRobot {
 		config.motorCount = 1;
 		config.leftStick = new Joystick(0);
 		config.rightStick = new Joystick(1);
-		config.hasGears = true;
 		config.hasGyro = true;
+		
+		// Gear config
+		config.hasGears = true;
+		config.solForward = RobotMap.Drive.SOL_FORWARD;
+		config.solReverse = RobotMap.Drive.SOL_REVERSE;
 
 		// Encoder ports
 		config.leftEncoderA = RobotMap.Drive.DIO_LEFT_ENC_A;
@@ -69,6 +73,7 @@ public class Robot extends IterativeRobot {
 		config.rightEncoderB = RobotMap.Drive.DIO_RIGHT_ENC_B;
 		config.rightInvEncoder = true;
 
+		// Driving parameters
 		config.rightInv = true;
 		config.dpp = RobotMap.Drive.DISTANCE_PER_PULSE;
 		config.leftParams = AutoMap.leftParams;

@@ -12,6 +12,10 @@ public class RobotMap {
 
 		public static final int DIO_RIGHT_ENC_A = 2;
 		public static final int DIO_RIGHT_ENC_B = 3;
+		
+		// Gearshift
+		public static final int SOL_FORWARD = 0;
+		public static final int SOL_REVERSE = 1;
 
 		// TODO determine distance per pulse
 		public static double DISTANCE_PER_PULSE;
@@ -75,10 +79,10 @@ public class RobotMap {
 		public static final int PWM_DOOR = 8;
 		public static final int PWM_GRASPER = 9;
 
-		public static final int CHNL_GRASPER_FORWARD = 0;
-		public static final int CHNL_GRASPER_REVERSE = 1;
+		public static final int CHNL_GRASPER_FORWARD = 2;
+		public static final int CHNL_GRASPER_REVERSE = 3;
 
-		public static final int CHNL_VERTICAL_FORWARD = 2;
-		public static final int CHNL_VERTICAL_REVERSE = 3;
+		public static final int CHNL_VERTICAL_FORWARD = 4;
+		public static final int CHNL_VERTICAL_REVERSE = 5;
 	}
 }
