@@ -25,10 +25,9 @@ public class OI {
 		JoystickButton climb = new JoystickButton(controller, ControlMap.Controller.CLIMB);
 		climb.whileHeld(new Climb());
 
-		// TODO pick a button for inverted drive
-		JoystickButton invert = new JoystickButton(left, 1);
+		JoystickButton invert = new JoystickButton(left, ControlMap.Left.INVERT);
 		invert.toggleWhenPressed(new ReversoDrive());
-		
+
 		JoystickButton shoot = new JoystickButton(controller, ControlMap.Controller.SHOOT);
 		shoot.whileHeld(new ShootWithVariableFeed());
 	}
