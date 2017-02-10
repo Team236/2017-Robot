@@ -8,6 +8,7 @@ public class ControlMap {
 	public static final int PORT_CONTROLLER = 2;
 
 	// TODO Find out what side align drive should go on
+	// TODO pick a button for inverted drive
 	public static class Left {
 
 	}
