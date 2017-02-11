@@ -1,6 +1,7 @@
 package org.usfirst.frc.team236.robot;
 
 import org.usfirst.frc.team236.robot.lib.LogitechF310;
+import org.usfirst.frc.team236.robot.lib.Thrustmaster;
 
 public class ControlMap {
 	public static final int PORT_LEFT = 0;
@@ -8,16 +9,16 @@ public class ControlMap {
 	public static final int PORT_CONTROLLER = 2;
 
 	public static class Left {
-		public static final int ALIGN_DRIVE = 2; // Lower button
+		public static final int ALIGN_DRIVE = Thrustmaster.BUTTON_MIDDLE; // Lower button
 
-		public static final int SHIFT_UP = 3;
-		public static final int SHIFT_DOWN = 4;
+		public static final int SHIFT_UP = Thrustmaster.BUTTON_LEFT;
+		public static final int SHIFT_DOWN = Thrustmaster.BUTTON_RIGHT;
 	}
 
 	public static class Right {
-		public static final int INTAKE = 2;
+		public static final int INTAKE = Thrustmaster.BUTTON_MIDDLE;
 
-		public static final int REVERSO = 1;
+		public static final int REVERSO = Thrustmaster.TRIGGER;
 	}
 
 	public static class Controller {
