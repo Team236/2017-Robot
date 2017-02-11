@@ -7,7 +7,7 @@ public class LogitechF310 {
 	public static final int Y = 4;
 	public static final int LB = 5;
 	public static final int RB = 6;
-	public static final int MODE = 7;
+	public static final int BACK = 7;
 	public static final int START = 8;
 	public static final int LEFT_PRESS = 9;
 	public static final int RIGHT_PRESS = 10;
