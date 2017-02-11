@@ -63,13 +63,14 @@ public class RobotMap {
 		public static final int PWM_DEPLOY = 6;
 
 		public static final int DIO_LIMIT_BOTTOM = 5;
+		public static final int DIO_LIMIT_TOP = 6;
 
 		// TODO determine intake speeds
 		public static final double INTAKE_SPEED = 1.00;
 		public static final double EJECT_SPEED = 1.00;
 
 		public static final double DEPLOY_SPEED = 0.60;
-		public static final double RETRACT_SPEED = 0.60;
+		public static final double RETRACT_SPEED = -0.60;
 	}
 
 	public static class Climber {
