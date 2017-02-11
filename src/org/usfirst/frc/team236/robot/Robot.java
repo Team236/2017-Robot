@@ -3,6 +3,8 @@ package org.usfirst.frc.team236.robot;
 
 import java.util.ArrayList;
 
+import org.usfirst.frc.team236.robot.commands.auto.LeftAuto;
+import org.usfirst.frc.team236.robot.commands.auto.RightAuto;
 import org.usfirst.frc.team236.robot.commands.auto.StraightAuto;
 import org.usfirst.frc.team236.robot.lib.AutoHandler;
 import org.usfirst.frc.team236.robot.subsystems.Climber;
@@ -103,8 +105,8 @@ public class Robot extends IterativeRobot {
 
 		// Select auto
 		chooser.addDefault("Straight Center", new StraightAuto(tank, straightGearDelivery));
-		//chooser.addObject("Left", new LeftAuto());
-		//chooser.addObject("Right", new RightAuto());
+		chooser.addObject("Left", new LeftAuto());
+		chooser.addObject("Right", new RightAuto());
 		SmartDashboard.putData("Auto mode", chooser);
 
 		cameraServo = new Servo(RobotMap.PWM_CAM_SERVO);
@@ -130,13 +132,6 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void autonomousInit() {
 		autonomousCommand = chooser.getSelected();
-
-		/*
-		 * String autoSelected = SmartDashboard.getString("Auto Selector",
-		 * "Default"); switch(autoSelected) { case "My Auto": autonomousCommand
-		 * = new MyAutoCommand(); break; case "Default Auto": default:
-		 * autonomousCommand = new ExampleCommand(); break; }
-		 */
 
 		ArrayList<CommandGroup> autoCommands = new ArrayList<CommandGroup>();
 		autoCommands.add(new StraightAuto(tank, straightGearDelivery));
