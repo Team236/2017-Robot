@@ -1,9 +1,10 @@
 
 package org.usfirst.frc.team236.robot;
 
-import org.usfirst.frc.team236.robot.commands.auto.LeftAuto;
-import org.usfirst.frc.team236.robot.commands.auto.RightAuto;
+import java.util.ArrayList;
+
 import org.usfirst.frc.team236.robot.commands.auto.StraightAuto;
+import org.usfirst.frc.team236.robot.lib.AutoHandler;
 import org.usfirst.frc.team236.robot.subsystems.Climber;
 import org.usfirst.frc.team236.robot.subsystems.Garage;
 import org.usfirst.frc.team236.robot.subsystems.Intake;
@@ -16,6 +17,7 @@ import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
@@ -96,8 +98,8 @@ public class Robot extends IterativeRobot {
 
 		// Select auto
 		chooser.addDefault("Straight Center", new StraightAuto(tank, straightGearDelivery));
-		chooser.addObject("Left", new LeftAuto());
-		chooser.addObject("Right", new RightAuto());
+		//chooser.addObject("Left", new LeftAuto());
+		//chooser.addObject("Right", new RightAuto());
 		SmartDashboard.putData("Auto mode", chooser);
 
 		try {
@@ -130,6 +132,12 @@ public class Robot extends IterativeRobot {
 		 * autonomousCommand = new ExampleCommand(); break; }
 		 */
 
+		ArrayList<CommandGroup> autoCommands = new ArrayList<CommandGroup>();
+		autoCommands.add(new StraightAuto(tank, straightGearDelivery));
+		// Use switches
+		AutoHandler autoHandler = new AutoHandler(RobotMap.DIO_SWITCHES);
+		autonomousCommand = autoCommands.get(autoHandler.getSelected());
+
 		// schedule the autonomous command (example)
 		if (autonomousCommand != null)
 			autonomousCommand.start();
@@ -150,9 +158,6 @@ public class Robot extends IterativeRobot {
 			autonomousCommand.cancel();
 	}
 
-	/*
-	 * TODO: Figure out how to use pov for shooter speed adjustment
-	 */
 	@Override
 	public void teleopPeriodic() {
 		// SmartDashboard code

@@ -5,6 +5,8 @@ import org.usfirst.frc.team236.robot.subsystems.Shooter.Preset;
 import pid.PIDParameters;
 
 public class RobotMap {
+	public static int[] DIO_SWITCHES = { 7, 8, 9 };
+
 	public static class Drive {
 		// Uses PWM 0 and 1: split to two motors
 		public static final int DIO_LEFT_ENC_A = 0;
