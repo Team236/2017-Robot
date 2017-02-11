@@ -16,6 +16,7 @@ import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -48,6 +49,10 @@ public class Robot extends IterativeRobot {
 
 	// Compressor
 	private Compressor compressor;
+
+	// Camera servo
+	public static Servo cameraServo;
+	public UsbCamera camera;
 
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
@@ -102,9 +107,10 @@ public class Robot extends IterativeRobot {
 		//chooser.addObject("Right", new RightAuto());
 		SmartDashboard.putData("Auto mode", chooser);
 
+		cameraServo = new Servo(RobotMap.PWM_CAM_SERVO);
 		try {
-			UsbCamera cam = CameraServer.getInstance().startAutomaticCapture();
-			cam.setResolution(640, 480); // TODO what resolution should we used?
+			camera = CameraServer.getInstance().startAutomaticCapture();
+			camera.setResolution(640, 480); // TODO what resolution should we used?
 		} catch (Exception e) { // TODO what exception do we use here?
 			System.out.println("Camera capture failed");
 			System.out.println(e.getStackTrace());
