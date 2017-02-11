@@ -1,11 +1,15 @@
 package org.usfirst.frc.team236.robot;
 
 import org.usfirst.frc.team236.robot.commands.climber.Climb;
+import org.usfirst.frc.team236.robot.commands.drive.AlignDrive;
 import org.usfirst.frc.team236.robot.commands.drive.ReversoDrive;
+import org.usfirst.frc.team236.robot.commands.intake.Intake;
 import org.usfirst.frc.team236.robot.commands.shooter.ShootWithVariableFeed;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import ticktank.commands.ShiftDown;
+import ticktank.commands.ShiftUp;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -22,11 +26,26 @@ public class OI {
 		controller = new Joystick(ControlMap.PORT_CONTROLLER);
 
 		// Add buttons below
+		// Left
+		JoystickButton align = new JoystickButton(left, ControlMap.Left.ALIGN_DRIVE);
+		align.whileHeld(new AlignDrive());
+
+		JoystickButton shiftUp = new JoystickButton(left, ControlMap.Left.SHIFT_UP);
+		shiftUp.whileHeld(new ShiftUp(Robot.tank));
+
+		JoystickButton shiftDown = new JoystickButton(left, ControlMap.Left.SHIFT_DOWN);
+		shiftDown.whileHeld(new ShiftDown(Robot.tank));
+
+		// Right
+		JoystickButton intake = new JoystickButton(right, ControlMap.Right.INTAKE);
+		intake.whileHeld(new Intake());
+
+		JoystickButton reverso = new JoystickButton(right, ControlMap.Right.REVERSO);
+		reverso.whileHeld(new ReversoDrive());
+
+		// Controller
 		JoystickButton climb = new JoystickButton(controller, ControlMap.Controller.CLIMB);
 		climb.whileHeld(new Climb());
-
-		JoystickButton invert = new JoystickButton(left, ControlMap.Left.INVERT);
-		invert.toggleWhenPressed(new ReversoDrive());
 
 		JoystickButton shoot = new JoystickButton(controller, ControlMap.Controller.SHOOT);
 		shoot.whileHeld(new ShootWithVariableFeed());

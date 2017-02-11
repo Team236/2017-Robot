@@ -7,15 +7,17 @@ public class ControlMap {
 	public static final int PORT_RIGHT = 1;
 	public static final int PORT_CONTROLLER = 2;
 
-	// TODO Find out what side align drive should go on
 	public static class Left {
-		// TODO pick a button for inverted drive
-		public static final int INVERT = 0;
+		public static final int ALIGN_DRIVE = 2; // Lower button
 
+		public static final int SHIFT_UP = 3;
+		public static final int SHIFT_DOWN = 4;
 	}
 
 	public static class Right {
+		public static final int INTAKE = 2;
 
+		public static final int REVERSO = 1;
 	}
 
 	public static class Controller {
