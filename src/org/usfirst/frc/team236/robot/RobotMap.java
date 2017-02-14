@@ -7,7 +7,7 @@ import pid.PIDParameters;
 public class RobotMap {
 	public static int[] DIO_SWITCHES = { 0, 1, 2 };
 
-	public static final int PWM_CAM_SERVO = 9;
+	public static final int PWM_CAM_SERVO = 8;
 	public static final double GEAR_POS = 0.0;
 	public static final double SHOOTER_POS = 0.7;
 
