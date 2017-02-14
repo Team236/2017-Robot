@@ -5,7 +5,7 @@ import org.usfirst.frc.team236.robot.subsystems.Shooter.Preset;
 import pid.PIDParameters;
 
 public class RobotMap {
-	public static int[] DIO_SWITCHES = { 7, 8, 9 };
+	public static int[] DIO_SWITCHES = { 0, 1, 2 };
 
 	public static final int PWM_CAM_SERVO = 9;
 	public static final double GEAR_POS = 0.0;
@@ -13,11 +13,11 @@ public class RobotMap {
 
 	public static class Drive {
 		// Uses PWM 0 and 1: split to two motors
-		public static final int DIO_LEFT_ENC_A = 0;
-		public static final int DIO_LEFT_ENC_B = 1;
+		public static final int DIO_LEFT_ENC_A = 3;
+		public static final int DIO_LEFT_ENC_B = 4;
 
-		public static final int DIO_RIGHT_ENC_A = 2;
-		public static final int DIO_RIGHT_ENC_B = 3;
+		public static final int DIO_RIGHT_ENC_A = 5;
+		public static final int DIO_RIGHT_ENC_B = 6;
 
 		// Gearshift
 		public static final int SOL_FORWARD = 0;
@@ -40,7 +40,7 @@ public class RobotMap {
 		public static final int PWM_FEEDER = 3;
 		public static final int PWM_SERVO = 4;
 
-		public static final int DIO_COUNTER = 4;
+		public static final int DIO_COUNTER = 7;
 
 		public static final double DEFAULT_FEED_SPEED = 1.0;
 
@@ -68,8 +68,8 @@ public class RobotMap {
 		public static final int PWM_INTAKE = 5; // Splits to two motors
 		public static final int PWM_DEPLOY = 6;
 
-		public static final int DIO_LIMIT_BOTTOM = 5;
-		public static final int DIO_LIMIT_TOP = 6;
+		public static final int DIO_LIMIT_BOTTOM = 8;
+		public static final int DIO_LIMIT_TOP = 9;
 
 		// TODO determine intake speeds
 		public static final double INTAKE_SPEED = 1.00;
