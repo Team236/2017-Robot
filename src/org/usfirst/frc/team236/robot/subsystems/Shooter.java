@@ -4,6 +4,8 @@ import org.usfirst.frc.team236.robot.Robot;
 import org.usfirst.frc.team236.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.Counter;
+import edu.wpi.first.wpilibj.Relay;
+import edu.wpi.first.wpilibj.Relay.Value;
 import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.VictorSP;
@@ -37,7 +39,8 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 			this.angle = _angle;
 			this.name = _name;
 		}
-		
+
+		@Override
 		public String toString() {
 			return name;
 		}
@@ -46,6 +49,7 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 	private SpeedController motor, feeder;
 	private Counter counter;
 	private Servo servo;
+	private Relay light;
 
 	// PID objects
 	public PID controller;
@@ -63,6 +67,7 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 
 		servo = new Servo(RobotMap.Shooter.PWM_SERVO);
 		counter = new Counter(RobotMap.Shooter.DIO_COUNTER);
+		light = new Relay(RobotMap.RELAY_SHOOTER);
 
 		gains = new PIDParameters(RobotMap.Shooter.PID.kP, RobotMap.Shooter.PID.kI, RobotMap.Shooter.PID.kD,
 				RobotMap.Shooter.PID.interval);
@@ -71,6 +76,14 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 		ticker = new Ticker(controller, gains.interval);
 
 		controller.setSetpoint(RobotMap.Shooter.RPM_INITIAL);
+	}
+
+	public void lightOn() {
+		light.set(Value.kOn);
+	}
+
+	public void lightOff() {
+		light.set(Value.kOff);
 	}
 
 	@Override
@@ -118,7 +131,7 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 	public void setAngle(double angle) {
 		servo.set(angle);
 	}
-	
+
 	public double getAngle() {
 		return servo.get();
 	}
@@ -126,11 +139,11 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 	public Preset getPreset() {
 		return RobotMap.Shooter.PRESETS[presetNum];
 	}
-	
+
 	public void feed(double speed) {
 		feeder.set(speed);
 	}
-	
+
 	public void feed() {
 		feed(RobotMap.Shooter.DEFAULT_FEED_SPEED);
 	}

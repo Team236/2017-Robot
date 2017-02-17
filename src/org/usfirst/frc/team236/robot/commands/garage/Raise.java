@@ -17,13 +17,14 @@ public class Raise extends Command {
 	@Override
 	protected void initialize() {
 		Robot.garage.raise();
+		Robot.garage.lightOff();
 	}
 
 	// Called repeatedly when this Command is scheduled to run
 	@Override
 	protected void execute() {
 	}
-	
+
 	@Override
 	protected boolean isFinished() {
 		return true;

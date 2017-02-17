@@ -11,6 +11,9 @@ public class RobotMap {
 	public static final double GEAR_POS = 0.0;
 	public static final double SHOOTER_POS = 0.7;
 
+	public static final int RELAY_GEAR = 0;
+	public static final int RELAY_SHOOTER = 1;
+
 	public static class Drive {
 		// Uses PWM 0 and 1: split to two motors
 		public static final int DIO_LEFT_ENC_A = 3;

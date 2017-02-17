@@ -110,6 +110,7 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putData("Auto mode", chooser);
 
 		cameraServo = new Servo(RobotMap.PWM_CAM_SERVO);
+
 		try {
 			camera = CameraServer.getInstance().startAutomaticCapture();
 			camera.setResolution(640, 480); // TODO what resolution should we used?
