@@ -15,6 +15,8 @@ public class Intake extends Subsystem {
 	public Intake() {
 		intakeMotor = new VictorSP(RobotMap.Intake.PWM_INTAKE);
 		deployMotor = new VictorSP(RobotMap.Intake.PWM_DEPLOY);
+		
+		deployMotor.setInverted(RobotMap.Intake.INV_DEPLOY);
 
 		topLimit = new DigitalInput(RobotMap.Intake.DIO_LIMIT_TOP);
 		bottomLimit = new DigitalInput(RobotMap.Intake.DIO_LIMIT_BOTTOM);
@@ -45,11 +47,11 @@ public class Intake extends Subsystem {
 	 */
 
 	public boolean isTop() {
-		return topLimit.get();
+		return !topLimit.get();
 	}
 
 	public boolean isBottom() {
-		return bottomLimit.get();
+		return !bottomLimit.get();
 	}
 
 	/**
