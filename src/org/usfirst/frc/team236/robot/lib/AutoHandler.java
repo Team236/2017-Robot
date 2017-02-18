@@ -9,6 +9,8 @@ public class AutoHandler {
 	private ArrayList<DigitalInput> switches;
 
 	public AutoHandler(int[] _ports) {
+		switches = new ArrayList<DigitalInput>();
+
 		for (int port : _ports) {
 			switches.add(new DigitalInput(port));
 		}
@@ -41,11 +43,11 @@ public class AutoHandler {
 	}
 
 	public int getSelected() {
-		int[] bin = {};
+		int[] bin = new int[switches.size()];
 		int i = 0;
 		// Parse switches
 		for (DigitalInput toggle : switches) {
-			if (toggle.get()) {
+			if (!toggle.get()) {
 				bin[i] = 1;
 			} else {
 				bin[i] = 0;
