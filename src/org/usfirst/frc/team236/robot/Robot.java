@@ -7,6 +7,7 @@ import org.usfirst.frc.team236.robot.commands.auto.LeftAuto;
 import org.usfirst.frc.team236.robot.commands.auto.RightAuto;
 import org.usfirst.frc.team236.robot.commands.auto.StraightAuto;
 import org.usfirst.frc.team236.robot.lib.AutoHandler;
+import org.usfirst.frc.team236.robot.lib.LogitechF310;
 import org.usfirst.frc.team236.robot.subsystems.Climber;
 import org.usfirst.frc.team236.robot.subsystems.Garage;
 import org.usfirst.frc.team236.robot.subsystems.Intake;
@@ -48,6 +49,8 @@ public class Robot extends IterativeRobot {
 
 	public static Profile leftGearLeg1;
 	public static Profile leftGearLeg2;
+	
+	AutoHandler autoHandler;
 
 	// Compressor
 	private Compressor compressor;
@@ -107,13 +110,17 @@ public class Robot extends IterativeRobot {
 		chooser.addDefault("Straight Center", new StraightAuto(tank, straightGearDelivery));
 		chooser.addObject("Left", new LeftAuto());
 		chooser.addObject("Right", new RightAuto());
-		SmartDashboard.putData("Auto mode", chooser);
+		//SmartDashboard.putData("Auto mode", chooser);
+		
+		// Use switches
+		autoHandler = new AutoHandler(RobotMap.DIO_SWITCHES);
 
 		cameraServo = new Servo(RobotMap.PWM_CAM_SERVO);
 
 		try {
 			camera = CameraServer.getInstance().startAutomaticCapture();
 			camera.setResolution(640, 480); // TODO what resolution should we used?
+			camera.setFPS(30);
 		} catch (Exception e) { // TODO what exception do we use here?
 			System.out.println("Camera capture failed");
 			System.out.println(e.getStackTrace());
@@ -128,6 +135,7 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void disabledPeriodic() {
 		Scheduler.getInstance().run();
+		SmartDashboard.putNumber("Switches", autoHandler.getSelected());
 	}
 
 	@Override
@@ -136,9 +144,8 @@ public class Robot extends IterativeRobot {
 
 		ArrayList<CommandGroup> autoCommands = new ArrayList<CommandGroup>();
 		autoCommands.add(new StraightAuto(tank, straightGearDelivery));
-		// Use switches
-		AutoHandler autoHandler = new AutoHandler(RobotMap.DIO_SWITCHES);
-		autonomousCommand = autoCommands.get(autoHandler.getSelected());
+
+		//autonomousCommand = autoCommands.get(autoHandler.getSelected());
 
 		// schedule the autonomous command (example)
 		if (autonomousCommand != null)
@@ -189,6 +196,5 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void testPeriodic() {
-		LiveWindow.run();
 	}
 }
