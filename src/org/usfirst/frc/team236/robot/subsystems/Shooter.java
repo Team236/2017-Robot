@@ -123,6 +123,8 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 		} else if (presetNum < 0) {
 			presetNum = 0;
 		}
+
+		servo.set(RobotMap.Shooter.PRESETS[presetNum].angle);
 	}
 
 	/**

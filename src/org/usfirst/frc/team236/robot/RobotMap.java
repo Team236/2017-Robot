@@ -66,8 +66,8 @@ public class RobotMap {
 		}
 
 		// TODO: find positions
-		public static final Preset POS_KEY = Robot.shooter.new Preset("Key", 3200, 24, 0.5);
-		public static final Preset POS_DS = Robot.shooter.new Preset("Driver Station", 3500, 80, 0.75);
+		public static final Preset POS_KEY = Robot.shooter.new Preset("Key", 3200, 24, 0.35);
+		public static final Preset POS_DS = Robot.shooter.new Preset("Driver Station", 3500, 80, 0.55);
 
 		public static final Preset[] PRESETS = { POS_KEY, POS_DS };
 	}
@@ -92,6 +92,10 @@ public class RobotMap {
 	public static class Climber {
 		public static final int PWM_CLIMBER = 7; // Splits to two motors 
 		public static final double CLIMB_SPEED = 1.0; // TODO: determine climb speed
+
+		public static final boolean INV_CLIMBER = true;
+
+		public static final int DIO_LIMIT = 10;
 	}
 
 	public static class Garage {
