@@ -27,21 +27,26 @@ public class RobotMap {
 		public static final int SOL_REVERSE = 1;
 
 		// TODO determine distance per pulse
-		public static double DISTANCE_PER_PULSE;
+		public static double DISTANCE_PER_PULSE = 1;
 
 		// TODO: tune auto mode
-		public static double kV_left, kV_right;
+		public static double kV_left = 0.001;
+		public static double kV_right = 0.001;
+		
 		public static double kA;
 		public static double kP;
 
 		// TODO: tune turning PID
-		public static PIDParameters turnParams;
+		public static PIDParameters turnParams = new PIDParameters(0.001, 0.000, 0.000, 1 / 100.0);
 	}
 
 	public static class Shooter {
 		public static final int PWM_SHOOTER = 2; // Splits to two motors
 		public static final int PWM_FEEDER = 3;
 		public static final int PWM_SERVO = 4;
+		
+		public static final boolean INV_SHOOTER = true;
+		public static final boolean INV_FEEDER = true;
 
 		public static final int DIO_COUNTER = 7;
 
@@ -70,6 +75,8 @@ public class RobotMap {
 	public static class Intake {
 		public static final int PWM_INTAKE = 5; // Splits to two motors
 		public static final int PWM_DEPLOY = 6;
+		
+		public static final boolean INV_DEPLOY = true;
 
 		public static final int DIO_LIMIT_BOTTOM = 8;
 		public static final int DIO_LIMIT_TOP = 9;
