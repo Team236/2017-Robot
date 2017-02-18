@@ -63,7 +63,10 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 
 	public Shooter() {
 		motor = new VictorSP(RobotMap.Shooter.PWM_SHOOTER);
+		motor.setInverted(RobotMap.Shooter.INV_SHOOTER);
+
 		feeder = new VictorSP(RobotMap.Shooter.PWM_FEEDER);
+		feeder.setInverted(RobotMap.Shooter.INV_FEEDER);
 
 		servo = new Servo(RobotMap.Shooter.PWM_SERVO);
 		counter = new Counter(RobotMap.Shooter.DIO_COUNTER);
