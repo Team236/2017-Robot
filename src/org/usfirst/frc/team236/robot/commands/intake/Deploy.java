@@ -25,12 +25,12 @@ public class Deploy extends Command {
 
 	@Override
 	protected boolean isFinished() {
-		return false;
+		return Robot.intake.isBottom();
 	}
 
 	@Override
 	protected void end() {
-		Robot.intake.stop();
+		Robot.intake.stopDeploy();
 	}
 
 	@Override
