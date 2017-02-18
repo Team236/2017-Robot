@@ -3,15 +3,14 @@ package org.usfirst.frc.team236.robot.commands.climber;
 import org.usfirst.frc.team236.robot.Robot;
 import org.usfirst.frc.team236.robot.RobotMap;
 
-import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class Climb extends Command {
+public class ClimbOverride extends Command {
 
-	public Climb() {
+	public ClimbOverride() {
 		requires(Robot.climber);
 	}
 
@@ -24,11 +23,7 @@ public class Climb extends Command {
 	// Called repeatedly when this Command is scheduled to run
 	@Override
 	protected void execute() {
-		if (DriverStation.getInstance().getMatchTime() < 35) {
-			Robot.climber.setSpeed(RobotMap.Climber.CLIMB_SPEED);
-		} else {
-			Robot.climber.stop();
-		}
+		Robot.climber.setSpeed(RobotMap.Climber.CLIMB_SPEED);
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
