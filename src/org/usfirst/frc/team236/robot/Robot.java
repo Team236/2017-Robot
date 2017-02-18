@@ -7,7 +7,6 @@ import org.usfirst.frc.team236.robot.commands.auto.LeftAuto;
 import org.usfirst.frc.team236.robot.commands.auto.RightAuto;
 import org.usfirst.frc.team236.robot.commands.auto.StraightAuto;
 import org.usfirst.frc.team236.robot.lib.AutoHandler;
-import org.usfirst.frc.team236.robot.lib.LogitechF310;
 import org.usfirst.frc.team236.robot.subsystems.Climber;
 import org.usfirst.frc.team236.robot.subsystems.Garage;
 import org.usfirst.frc.team236.robot.subsystems.Intake;
@@ -23,7 +22,6 @@ import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import ticktank.ControllerType;
@@ -49,7 +47,7 @@ public class Robot extends IterativeRobot {
 
 	public static Profile leftGearLeg1;
 	public static Profile leftGearLeg2;
-	
+
 	AutoHandler autoHandler;
 
 	// Compressor
@@ -111,7 +109,7 @@ public class Robot extends IterativeRobot {
 		chooser.addObject("Left", new LeftAuto());
 		chooser.addObject("Right", new RightAuto());
 		//SmartDashboard.putData("Auto mode", chooser);
-		
+
 		// Use switches
 		autoHandler = new AutoHandler(RobotMap.DIO_SWITCHES);
 
