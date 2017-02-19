@@ -77,8 +77,6 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 
 		controller = new PID(this, this, gains);
 		ticker = new Ticker(controller, gains.interval);
-
-		controller.setSetpoint(RobotMap.Shooter.RPM_INITIAL);
 	}
 
 	public void lightOn() {
