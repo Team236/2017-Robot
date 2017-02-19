@@ -29,7 +29,6 @@ public class Climber extends Subsystem {
 	}
 	
 	public boolean isTop() {
-		System.out.println(!limit.get());
 		return !limit.get();
 	}
 
