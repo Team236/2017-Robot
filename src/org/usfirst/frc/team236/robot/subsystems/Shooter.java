@@ -121,7 +121,7 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 			presetNum = 0;
 		}
 
-		servo.set(RobotMap.Shooter.PRESETS[presetNum].angle);
+		setAngle(RobotMap.Shooter.PRESETS[presetNum].angle);
 	}
 
 	/**
