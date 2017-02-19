@@ -2,13 +2,13 @@ package org.usfirst.frc.team236.robot.subsystems;
 
 import org.usfirst.frc.team236.robot.Robot;
 import org.usfirst.frc.team236.robot.RobotMap;
-import org.usfirst.frc.team236.robot.commands.garage.Lower;
 import org.usfirst.frc.team236.robot.commands.garage.Raise;
+import org.usfirst.frc.team236.robot.commands.garage.SafeLower;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
-import edu.wpi.first.wpilibj.Relay.Direction;
 import edu.wpi.first.wpilibj.Relay;
+import edu.wpi.first.wpilibj.Relay.Direction;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -43,24 +43,24 @@ public class Garage extends Subsystem {
 		if (ang == 0) {
 			new Raise().start();
 		} else if (ang == 180) {
-			new Lower().start();
+			new SafeLower().start();
 		}
 	}
 
 	public void grasp() {
-		grasper.set(Value.kReverse);
-	}
-
-	public void release() {
 		grasper.set(Value.kForward);
 	}
 
+	public void release() {
+		grasper.set(Value.kReverse);
+	}
+
 	public void raise() {
-		vertical.set(Value.kReverse);
+		vertical.set(Value.kForward);
 	}
 
 	public void lower() {
-		vertical.set(Value.kForward);
+		vertical.set(Value.kReverse);
 	}
 
 	@Override
