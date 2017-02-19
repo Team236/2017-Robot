@@ -56,7 +56,7 @@ public class RobotMap {
 		public static final double DEFAULT_FEED_SPEED = 1.0;
 
 		// TODO improve kV tuning
-		public static final double kV = 1 / 4400.0;
+		public static final double kV = 1 / 4600.0;
 
 		@Deprecated
 		public static final int RPM_INITIAL = 3200;
@@ -64,7 +64,7 @@ public class RobotMap {
 		public static final int RPM_INCREMENT = 100;
 
 		public static class PID {
-			public static final double kP = 0.005;
+			public static final double kP = 0.001;
 			public static final double kI = 0.000;
 			public static final double kD = 0.000;
 			public static final double interval = 1 / 200.0;
