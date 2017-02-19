@@ -11,9 +11,6 @@ public class RobotMap {
 	public static final double GEAR_POS = 0.0;
 	public static final double SHOOTER_POS = 0.7;
 
-	public static final int RELAY_GEAR = 0;
-	public static final int RELAY_SHOOTER = 1;
-
 	public static class Drive {
 		// Uses PWM 0 and 1: split to two motors
 		public static final int DIO_LEFT_ENC_A = 3;
@@ -47,6 +44,9 @@ public class RobotMap {
 		public static final int PWM_SHOOTER = 2; // Splits to two motors
 		public static final int PWM_FEEDER = 3;
 		public static final int PWM_SERVO = 4;
+
+		public static final int RELAY_LIGHT = 1;
+		public static final int PDP_LIGHT = 4;
 		
 		public static final boolean INV_SHOOTER = true;
 		public static final boolean INV_FEEDER = true;
@@ -109,5 +109,8 @@ public class RobotMap {
 
 		public static final int SOL_VERTICAL_FORWARD = 4;
 		public static final int SOL_VERTICAL_REVERSE = 5;
+		
+		public static final int RELAY_LIGHT = 0;
+		public static final int PDP_LIGHT = 10;
 	}
 }

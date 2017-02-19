@@ -25,7 +25,7 @@ public class Garage extends Subsystem {
 		grasper = new DoubleSolenoid(RobotMap.Garage.SOL_GRASPER_FORWARD, RobotMap.Garage.SOL_GRASPER_REVERSE);
 		vertical = new DoubleSolenoid(RobotMap.Garage.SOL_VERTICAL_FORWARD, RobotMap.Garage.SOL_VERTICAL_REVERSE);
 
-		light = new Relay(RobotMap.RELAY_GEAR);
+		light = new Relay(org.usfirst.frc.team236.robot.RobotMap.Garage.RELAY_LIGHT);
 		light.setDirection(Direction.kForward);
 	}
 

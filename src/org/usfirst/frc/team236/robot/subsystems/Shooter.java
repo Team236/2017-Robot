@@ -71,7 +71,7 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 		servo = new Servo(RobotMap.Shooter.PWM_SERVO);
 		counter = new Counter(RobotMap.Shooter.DIO_COUNTER);
 
-		light = new Relay(RobotMap.RELAY_SHOOTER);
+		light = new Relay(org.usfirst.frc.team236.robot.RobotMap.Shooter.RELAY_LIGHT);
 		light.setDirection(Direction.kForward);
 
 		gains = new PIDParameters(RobotMap.Shooter.PID.kP, RobotMap.Shooter.PID.kI, RobotMap.Shooter.PID.kD,
