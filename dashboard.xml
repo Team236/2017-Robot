@@ -1,0 +1,67 @@
+<xml version="1.0">
+<dashboard>
+	<widget field="Climber" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
+		<location x="1186" y="299"/>
+		<width>201</width>
+		<height>79</height>
+	</widget>
+	<widget field="Top" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
+		<location x="918" y="304"/>
+		<width>232</width>
+		<height>36</height>
+	</widget>
+	<widget field="Bottom" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
+		<location x="919" y="342"/>
+		<width>248</width>
+		<height>32</height>
+	</widget>
+	<widget field="Voltage" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.LinePlot">
+		<location x="919" y="441"/>
+		<width>445</width>
+		<height>241</height>
+		<property name="Buffer Size (samples)" value="500"/>
+	</widget>
+	<widget field="Preset" type="String" class="edu.wpi.first.smartdashboard.gui.elements.FormattedField">
+		<location x="920" y="152"/>
+		<width>181</width>
+		<height>79</height>
+		<property name="Background" value="255.255.102.255"/>
+		<property name="Font Size" value="60"/>
+	</widget>
+	<widget field="Goal RPM" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.FormattedField">
+		<location x="1149" y="160"/>
+		<width>209</width>
+		<property name="Background" value="255.255.102.255"/>
+		<property name="Font Size" value="50"/>
+	</widget>
+	<widget field="Angle" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.FormattedField">
+		<location x="944" y="231"/>
+		<width>144</width>
+		<height>67</height>
+		<property name="Background" value="255.255.102.255"/>
+		<property name="Font Size" value="50"/>
+	</widget>
+	<widget field="RPM" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.FormattedField">
+		<location x="1173" y="231"/>
+		<width>187</width>
+		<height>67</height>
+		<property name="Background" value="255.255.102.255"/>
+		<property name="Font Size" value="50"/>
+	</widget>
+	<widget field="Match time" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.FormattedField">
+		<location x="916" y="3"/>
+		<width>441</width>
+		<height>152</height>
+		<property name="Font Size" value="120"/>
+	</widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.CameraServerViewer">
+		<location x="2" y="-1"/>
+		<width>916</width>
+		<height>683</height>
+		<property name="Camera Choice" value=""/>
+	</static-widget>
+</dashboard>
+<live-window>
+</live-window>
+	<hidden field="Switches"/>
+</xml>
