@@ -12,8 +12,6 @@ import org.usfirst.frc.team236.robot.lib.LogitechF310;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import ticktank.commands.ShiftDown;
-import ticktank.commands.ShiftUp;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -33,12 +31,6 @@ public class OI {
 		// Left
 		JoystickButton align = new JoystickButton(left, ControlMap.Left.ALIGN_DRIVE);
 		align.whileHeld(new AlignDrive());
-
-		JoystickButton shiftUp = new JoystickButton(left, ControlMap.Left.SHIFT_UP);
-		shiftUp.whileHeld(new ShiftUp(Robot.tank));
-
-		JoystickButton shiftDown = new JoystickButton(left, ControlMap.Left.SHIFT_DOWN);
-		shiftDown.whileHeld(new ShiftDown(Robot.tank));
 
 		// Right
 		JoystickButton intake = new JoystickButton(right, ControlMap.Right.INTAKE);
