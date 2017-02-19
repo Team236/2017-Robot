@@ -61,7 +61,7 @@ public class Robot extends IterativeRobot {
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
 
-	public PowerDistributionPanel panel;
+	public static PowerDistributionPanel panel;
 
 	@Override
 	public void robotInit() {
@@ -162,10 +162,8 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void teleopInit() {
-		// This makes sure that the autonomous stops running when
-		// teleop starts running. If you want the autonomous to
-		// continue until interrupted by another command, remove
-		// this line or comment it out.
+		garage.lightOn();
+
 		if (autonomousCommand != null)
 			autonomousCommand.cancel();
 	}
@@ -189,6 +187,9 @@ public class Robot extends IterativeRobot {
 
 		// Climber
 		SmartDashboard.putBoolean("Climber", climber.isTop());
+
+		SmartDashboard.putNumber("Shooter draw", panel.getCurrent(RobotMap.Shooter.PDP_LIGHT));
+		SmartDashboard.putNumber("Garage draw", panel.getCurrent(RobotMap.Garage.PDP_LIGHT));
 
 		// Subsystem control handlers
 		shooter.handlePresets();
