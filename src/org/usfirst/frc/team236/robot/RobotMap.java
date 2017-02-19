@@ -26,20 +26,20 @@ public class RobotMap {
 		public static final int SOL_FORWARD = 0;
 		public static final int SOL_REVERSE = 1;
 
-		// TODO determine distance per pulse
+		// TODO test distance per pulse 
 	    public static final double DIAMETER = 3.96; 
 	    public static final double CIRCUMFERENCE = DIAMETER * Math.PI; 
 	    public static final double PULSE_PER_ROTATION = 512; 
 	    public static final double DISTANCE_PER_PULSE = CIRCUMFERENCE / PULSE_PER_ROTATION; 
 
-		// TODO: tune auto mode
+		// TODO tune auto mode
 		public static double kV_left = 0.001;
 		public static double kV_right = 0.001;
 		
 		public static double kA;
 		public static double kP;
 
-		// TODO: tune turning PID
+		// TODO tune turning PID
 		public static PIDParameters turnParams = new PIDParameters(0.001, 0.000, 0.000, 1 / 100.0);
 	}
 
@@ -70,7 +70,7 @@ public class RobotMap {
 			public static final double interval = 1 / 200.0;
 		}
 
-		// TODO: find positions
+		// TODO find positions
 		public static final Preset POS_KEY = Robot.shooter.new Preset("Key", 3200, 24, 0.35);
 		public static final Preset POS_DS = Robot.shooter.new Preset("Driver Station", 3500, 80, 0.55);
 
@@ -96,7 +96,7 @@ public class RobotMap {
 
 	public static class Climber {
 		public static final int PWM_CLIMBER = 7; // Splits to two motors 
-		public static final double CLIMB_SPEED = 1.0; // TODO: determine climb speed
+		public static final double CLIMB_SPEED = 1.0; // TODO determine climb speed
 
 		public static final boolean INV_CLIMBER = true;
 
