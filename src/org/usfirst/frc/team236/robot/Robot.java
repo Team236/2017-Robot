@@ -18,6 +18,7 @@ import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.CommandGroup;
@@ -59,6 +60,8 @@ public class Robot extends IterativeRobot {
 
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
+
+	public PowerDistributionPanel panel;
 
 	@Override
 	public void robotInit() {
@@ -103,6 +106,9 @@ public class Robot extends IterativeRobot {
 		// Start compressor
 		compressor = new Compressor();
 		compressor.start();
+
+		// PDP
+		panel = new PowerDistributionPanel();
 
 		// Select auto
 		chooser.addDefault("Straight Center", new StraightAuto(tank, straightGearDelivery));
