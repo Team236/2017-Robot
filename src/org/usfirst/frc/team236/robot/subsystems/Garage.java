@@ -2,6 +2,8 @@ package org.usfirst.frc.team236.robot.subsystems;
 
 import org.usfirst.frc.team236.robot.Robot;
 import org.usfirst.frc.team236.robot.RobotMap;
+import org.usfirst.frc.team236.robot.commands.garage.Lower;
+import org.usfirst.frc.team236.robot.commands.garage.Raise;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
@@ -37,9 +39,9 @@ public class Garage extends Subsystem {
 		int ang = Robot.oi.controller.getPOV(0);
 
 		if (ang == 0) {
-			raise();
+			new Raise().start();
 		} else if (ang == 180) {
-			lower();
+			new Lower().start();
 		}
 	}
 
