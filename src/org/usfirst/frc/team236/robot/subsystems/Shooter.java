@@ -5,12 +5,12 @@ import org.usfirst.frc.team236.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.Counter;
 import edu.wpi.first.wpilibj.Relay;
+import edu.wpi.first.wpilibj.Relay.Direction;
 import edu.wpi.first.wpilibj.Relay.Value;
 import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import pid.PID;
 import pid.PIDOutput;
 import pid.PIDParameters;
@@ -70,7 +70,9 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 
 		servo = new Servo(RobotMap.Shooter.PWM_SERVO);
 		counter = new Counter(RobotMap.Shooter.DIO_COUNTER);
+
 		light = new Relay(RobotMap.RELAY_SHOOTER);
+		light.setDirection(Direction.kForward);
 
 		gains = new PIDParameters(RobotMap.Shooter.PID.kP, RobotMap.Shooter.PID.kI, RobotMap.Shooter.PID.kD,
 				RobotMap.Shooter.PID.interval);
@@ -80,7 +82,7 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 	}
 
 	public void lightOn() {
-		light.set(Value.kOn);
+		light.set(Value.kForward);
 	}
 
 	public void lightOff() {
@@ -232,6 +234,5 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 		// base speed is the motorspeed that we start with
 		double baseSpeed = RPMtoMotorSpeed(controller.getSetpoint());
 		setSpeedRaw(baseSpeed + speed);
-		SmartDashboard.putNumber("Motor output", baseSpeed + speed);
 	}
 }
