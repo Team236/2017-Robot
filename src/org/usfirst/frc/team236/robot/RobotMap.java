@@ -71,7 +71,7 @@ public class RobotMap {
 		}
 
 		// TODO find positions
-		public static final Preset POS_KEY = Robot.shooter.new Preset("Key", 3200, 24, 0.35);
+		public static final Preset POS_KEY = Robot.shooter.new Preset("Key", 3300, 24, 0.30);
 		public static final Preset POS_DS = Robot.shooter.new Preset("Driver Station", 3500, 80, 0.55);
 
 		public static final Preset[] PRESETS = { POS_KEY, POS_DS };
@@ -90,8 +90,8 @@ public class RobotMap {
 		public static final double INTAKE_SPEED = 1.00;
 		public static final double EJECT_SPEED = -1.00;
 
-		public static final double DEPLOY_SPEED = 0.60;
-		public static final double RETRACT_SPEED = -0.60;
+		public static final double DEPLOY_SPEED = 1.00;
+		public static final double RETRACT_SPEED = -1.00;
 	}
 
 	public static class Climber {
