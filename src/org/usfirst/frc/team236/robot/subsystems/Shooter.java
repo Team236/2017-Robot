@@ -100,10 +100,10 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 
 		// If the button is still pressed, don't register
 		if (rollover == false) {
-			if (ang == 0) {
+			if (ang == 90) {
 				presetNum++;
 				rollover = true;
-			} else if (ang == 180) {
+			} else if (ang == 270) {
 				presetNum--;
 				rollover = true;
 			}
