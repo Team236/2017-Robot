@@ -53,7 +53,7 @@ public class RobotMap {
 		public static final double DEFAULT_FEED_SPEED = 1.0;
 
 		// TODO improve kV tuning
-		public static final double kV = 1 / 4600;
+		public static final double kV = 1 / 4400;
 
 		public static final int RPM_INITIAL = 3200;
 		public static final int RPM_INCREMENT = 100;
