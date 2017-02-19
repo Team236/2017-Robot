@@ -55,7 +55,9 @@ public class RobotMap {
 		// TODO improve kV tuning
 		public static final double kV = 1 / 4400;
 
+		@Deprecated
 		public static final int RPM_INITIAL = 3200;
+		@Deprecated
 		public static final int RPM_INCREMENT = 100;
 
 		public static class PID {
