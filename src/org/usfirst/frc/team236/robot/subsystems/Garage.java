@@ -7,6 +7,7 @@ import org.usfirst.frc.team236.robot.commands.garage.Raise;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
+import edu.wpi.first.wpilibj.Relay.Direction;
 import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -25,10 +26,11 @@ public class Garage extends Subsystem {
 		vertical = new DoubleSolenoid(RobotMap.Garage.SOL_VERTICAL_FORWARD, RobotMap.Garage.SOL_VERTICAL_REVERSE);
 
 		light = new Relay(RobotMap.RELAY_GEAR);
+		light.setDirection(Direction.kForward);
 	}
 
 	public void lightOn() {
-		light.set(edu.wpi.first.wpilibj.Relay.Value.kOn);
+		light.set(edu.wpi.first.wpilibj.Relay.Value.kForward);
 	}
 
 	public void lightOff() {
