@@ -60,12 +60,12 @@ public class RobotMap {
 		@Deprecated
 		public static final int RPM_INCREMENT = 100;
 
-		public static class PID {
-			public static final double kP = 0.001;
-			public static final double kI = 0.000;
-			public static final double kD = 0.000;
-			public static final double interval = 1 / 200.0;
-		}
+		public static PIDParameters pidParams = new PIDParameters(
+				0.001,
+				0.000,
+				0.000,
+				1 / 200.0
+		);
 
 		// TODO: find positions
 		public static final Preset POS_KEY = Robot.shooter.new Preset("Key", 3200, 24, 0.35);

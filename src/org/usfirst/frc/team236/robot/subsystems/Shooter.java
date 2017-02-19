@@ -72,13 +72,10 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 		counter = new Counter(RobotMap.Shooter.DIO_COUNTER);
 		light = new Relay(RobotMap.RELAY_SHOOTER);
 
-		gains = new PIDParameters(RobotMap.Shooter.PID.kP, RobotMap.Shooter.PID.kI, RobotMap.Shooter.PID.kD,
-				RobotMap.Shooter.PID.interval);
+		gains = RobotMap.Shooter.pidParams;
 
 		controller = new PID(this, this, gains);
 		ticker = new Ticker(controller, gains.interval);
-
-		controller.setSetpoint(RobotMap.Shooter.RPM_INITIAL);
 	}
 
 	public void lightOn() {
