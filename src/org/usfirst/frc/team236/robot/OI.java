@@ -1,6 +1,5 @@
 package org.usfirst.frc.team236.robot;
 
-import org.usfirst.frc.team236.robot.commands.CameraAdjust;
 import org.usfirst.frc.team236.robot.commands.CameraToggle;
 import org.usfirst.frc.team236.robot.commands.climber.Climb;
 import org.usfirst.frc.team236.robot.commands.drive.AlignDrive;
@@ -11,7 +10,6 @@ import org.usfirst.frc.team236.robot.commands.intake.Deploy;
 import org.usfirst.frc.team236.robot.commands.intake.Intake;
 import org.usfirst.frc.team236.robot.commands.intake.Retract;
 import org.usfirst.frc.team236.robot.commands.shooter.ShootWithVariableFeed;
-import org.usfirst.frc.team236.robot.lib.LogitechF310;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -55,7 +53,7 @@ public class OI {
 		JoystickButton deploy = new JoystickButton(controller, ControlMap.Controller.DEPLOY_INTAKE);
 		deploy.whileHeld(new Deploy());
 
-		JoystickButton cameraToggle = new JoystickButton(controller, LogitechF310.BACK);
+		JoystickButton cameraToggle = new JoystickButton(controller, ControlMap.Controller.TOGGLE_CAMERA);
 		cameraToggle.toggleWhenPressed(new CameraToggle());
 
 		JoystickButton grasp = new JoystickButton(controller, ControlMap.Controller.GRASP);
