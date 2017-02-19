@@ -189,7 +189,7 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 		double RPM = 60 / counter.getPeriod();
 
 		// Apply a filter to eliminate false positives
-		if (RPM > 5000) {
+		if (RPM > 4500) {
 			return controller.getSetpoint();
 		}
 		return RPM;
