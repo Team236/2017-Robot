@@ -56,7 +56,7 @@ public class OI {
 		deploy.whileHeld(new Deploy());
 
 		JoystickButton cameraToggle = new JoystickButton(controller, LogitechF310.BACK);
-		//cameraToggle.toggleWhenPressed(new CameraToggle());
+		cameraToggle.toggleWhenPressed(new CameraToggle());
 
 		JoystickButton grasp = new JoystickButton(controller, ControlMap.Controller.GRASP);
 		grasp.whenPressed(new Grasp());
@@ -65,6 +65,6 @@ public class OI {
 		release.whenPressed(new Release());
 
 		JoystickButton adjustCamera = new JoystickButton(controller, ControlMap.Controller.ADJUST_CAMERA);
-		adjustCamera.whileHeld(new CameraAdjust());
+		//adjustCamera.whileHeld(new CameraAdjust());
 	}
 }

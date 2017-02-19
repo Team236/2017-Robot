@@ -6,11 +6,11 @@ import org.usfirst.frc.team236.robot.lib.LogitechF310;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- *
+ * TODO Fix
  */
 public class AlignDrive extends Command {
-	public static double speedFactor = -0.25;
-	public static double turnFactor = 0.1;
+	public static double speedFactor = -0.5;
+	public static double turnFactor = 0.5;
 
 	public AlignDrive() {
 		requires(Robot.tank);
