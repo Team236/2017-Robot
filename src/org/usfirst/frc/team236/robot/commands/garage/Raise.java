@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class Raise extends Command {
 
-	public Raise(double timeout) {
+	public Raise() {
 		requires(Robot.garage);
 	}
 
