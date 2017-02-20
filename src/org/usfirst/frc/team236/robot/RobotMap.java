@@ -90,7 +90,7 @@ public class RobotMap {
 		public static final double INTAKE_SPEED = 1.00;
 		public static final double EJECT_SPEED = -1.00;
 
-		public static final double DEPLOY_SPEED = 0.40;
+		public static final double DEPLOY_SPEED = 0.70;
 		public static final double RETRACT_SPEED = -1.00;
 	}
 
