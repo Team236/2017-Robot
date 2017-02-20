@@ -1,7 +1,7 @@
 package org.usfirst.frc.team236.robot.commands.drive;
 
 import org.usfirst.frc.team236.robot.Robot;
-import org.usfirst.frc.team236.robot.lib.LogitechF310;
+import org.usfirst.frc.team236.robot.lib.Thrustmaster;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -25,11 +25,11 @@ public class AlignDrive extends Command {
 	// Called repeatedly when this Command is scheduled to run
 	@Override
 	protected void execute() {
-		double leftSpeed = speedFactor * Robot.oi.controller.getRawAxis(LogitechF310.Axes.LEFT_Y);
-		double rightSpeed = speedFactor * Robot.oi.controller.getRawAxis(LogitechF310.Axes.LEFT_Y);
+		double leftSpeed = speedFactor * Robot.oi.left.getRawAxis(Thrustmaster.Axes.Y);
+		double rightSpeed = speedFactor * Robot.oi.right.getRawAxis(Thrustmaster.Axes.Y);
 
-		leftSpeed += turnFactor * Robot.oi.controller.getRawAxis(LogitechF310.Axes.LEFT_X);
-		rightSpeed -= turnFactor * Robot.oi.controller.getRawAxis(LogitechF310.Axes.LEFT_X);
+		leftSpeed += turnFactor * Robot.oi.left.getRawAxis(Thrustmaster.Axes.Y);
+		rightSpeed -= turnFactor * Robot.oi.left.getRawAxis(Thrustmaster.Axes.Y);
 
 		Robot.tank.setLeftSpeed(leftSpeed);
 		Robot.tank.setRightSpeed(rightSpeed);
