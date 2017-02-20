@@ -25,11 +25,14 @@ public class AlignDrive extends Command {
 	// Called repeatedly when this Command is scheduled to run
 	@Override
 	protected void execute() {
-		double leftSpeed = speedFactor * Robot.oi.left.getRawAxis(Thrustmaster.Axes.Y);
-		double rightSpeed = speedFactor * Robot.oi.right.getRawAxis(Thrustmaster.Axes.Y);
+		double y = Robot.oi.left.getRawAxis(Thrustmaster.Axes.Y);
+		double z = Robot.oi.left.getRawAxis(Thrustmaster.Axes.Z);
 
-		leftSpeed += turnFactor * Robot.oi.left.getRawAxis(Thrustmaster.Axes.Y);
-		rightSpeed -= turnFactor * Robot.oi.left.getRawAxis(Thrustmaster.Axes.Y);
+		double rightSpeed = speedFactor * y;
+		double leftSpeed = speedFactor * y;
+
+		leftSpeed += turnFactor * z;
+		rightSpeed -= turnFactor * z;
 
 		Robot.tank.setLeftSpeed(leftSpeed);
 		Robot.tank.setRightSpeed(rightSpeed);
