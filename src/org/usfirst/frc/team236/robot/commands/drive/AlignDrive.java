@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class AlignDrive extends Command {
 	public static double speedFactor = -0.5;
-	public static double turnFactor = 0.5;
+	public static double turnFactor = 0.2;
 
 	public AlignDrive() {
 		requires(Robot.tank);
