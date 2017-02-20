@@ -28,11 +28,11 @@ public class AlignDrive extends Command {
 		double y = Robot.oi.left.getRawAxis(Thrustmaster.Axes.Y);
 		double z = Robot.oi.left.getRawAxis(Thrustmaster.Axes.Z);
 
-		double rightSpeed = speedFactor * y;
 		double leftSpeed = speedFactor * y;
+		double rightSpeed = speedFactor * y;
 
-		leftSpeed += turnFactor * z;
-		rightSpeed -= turnFactor * z;
+		leftSpeed -= turnFactor * z;
+		rightSpeed += turnFactor * z;
 
 		Robot.tank.setLeftSpeed(leftSpeed);
 		Robot.tank.setRightSpeed(rightSpeed);
