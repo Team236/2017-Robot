@@ -1,6 +1,7 @@
 package org.usfirst.frc.team236.robot.commands.drive;
 
 import org.usfirst.frc.team236.robot.Robot;
+import org.usfirst.frc.team236.robot.lib.Thrustmaster;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -24,8 +25,8 @@ public class ReversoDrive extends Command {
 	// Called repeatedly when this Command is scheduled to run
 	@Override
 	protected void execute() {
-		Robot.tank.setRightSpeed(Robot.oi.left.getRawAxis(0));
-		Robot.tank.setLeftSpeed(Robot.oi.right.getRawAxis(0));
+		Robot.tank.setRightSpeed(Robot.oi.left.getRawAxis(Thrustmaster.Axes.Y));
+		Robot.tank.setLeftSpeed(Robot.oi.right.getRawAxis(Thrustmaster.Axes.Y));
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
