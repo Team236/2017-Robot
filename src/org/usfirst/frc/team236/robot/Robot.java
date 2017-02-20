@@ -146,9 +146,17 @@ public class Robot extends IterativeRobot {
 		autonomousCommand = chooser.getSelected();
 
 		ArrayList<CommandGroup> autoCommands = new ArrayList<CommandGroup>();
+		autoCommands.add(new DoNothing());
+		autoCommands.add(new LeftAuto());
 		autoCommands.add(new StraightAuto(tank, straightGearDelivery));
+		autoCommands.add(new DoNothing());
+		autoCommands.add(new RightAuto());
+		autoCommands.add(new DoNothing());
+		autoCommands.add(new DoNothing());
+		autoCommands.add(new DoNothing());
+		autoCommands.add(new DoNothing());
 
-		//autonomousCommand = autoCommands.get(autoHandler.getSelected());
+		autonomousCommand = autoCommands.get(autoHandler.getSelected());
 
 		// schedule the autonomous command (example)
 		if (autonomousCommand != null)
