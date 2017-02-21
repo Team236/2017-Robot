@@ -33,7 +33,7 @@ public class Garage extends Subsystem {
 		if (ang == 0) {
 			new Raise().start();
 		} else if (ang == 180) {
-			new SafeLower().start();
+			new StoppedLower().start();
 		}
 	}
 
