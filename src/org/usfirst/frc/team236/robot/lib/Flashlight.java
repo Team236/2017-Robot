@@ -38,7 +38,7 @@ public class Flashlight extends Relay {
 
 	public void safeOn() {
 		cycle(2);
-		off();
+		on();
 	}
 
 	/**
