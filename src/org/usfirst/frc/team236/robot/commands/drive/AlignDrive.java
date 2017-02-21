@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  */
 public class AlignDrive extends Command {
-	public static double speedFactor = -0.5;
+	public static double speedFactor = 0.5;
 	public static double turnFactor = 0.2;
 
 	public AlignDrive() {
@@ -31,8 +31,8 @@ public class AlignDrive extends Command {
 		double leftSpeed = speedFactor * y;
 		double rightSpeed = speedFactor * y;
 
-		leftSpeed -= turnFactor * z;
-		rightSpeed += turnFactor * z;
+		leftSpeed += turnFactor * z;
+		rightSpeed -= turnFactor * z;
 
 		Robot.tank.setLeftSpeed(leftSpeed);
 		Robot.tank.setRightSpeed(rightSpeed);
