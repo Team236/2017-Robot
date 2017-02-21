@@ -2,11 +2,9 @@ package org.usfirst.frc.team236.robot.subsystems;
 
 import org.usfirst.frc.team236.robot.Robot;
 import org.usfirst.frc.team236.robot.RobotMap;
+import org.usfirst.frc.team236.robot.lib.Flashlight;
 
 import edu.wpi.first.wpilibj.Counter;
-import edu.wpi.first.wpilibj.Relay;
-import edu.wpi.first.wpilibj.Relay.Direction;
-import edu.wpi.first.wpilibj.Relay.Value;
 import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.VictorSP;
@@ -49,7 +47,7 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 	private SpeedController motor, feeder;
 	private Counter counter;
 	private Servo servo;
-	private Relay light;
+	public Flashlight light;
 
 	// PID objects
 	public PID controller;
@@ -71,22 +69,13 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 		servo = new Servo(RobotMap.Shooter.PWM_SERVO);
 		counter = new Counter(RobotMap.Shooter.DIO_COUNTER);
 
-		light = new Relay(org.usfirst.frc.team236.robot.RobotMap.Shooter.RELAY_LIGHT);
-		light.setDirection(Direction.kForward);
+		light = new Flashlight(RobotMap.Shooter.RELAY_LIGHT, 0);
 
 		gains = new PIDParameters(RobotMap.Shooter.PID.kP, RobotMap.Shooter.PID.kI, RobotMap.Shooter.PID.kD,
 				RobotMap.Shooter.PID.interval);
 
 		controller = new PID(this, this, gains);
 		ticker = new Ticker(controller, gains.interval);
-	}
-
-	public void lightOn() {
-		light.set(Value.kForward);
-	}
-
-	public void lightOff() {
-		light.set(Value.kOff);
 	}
 
 	@Override

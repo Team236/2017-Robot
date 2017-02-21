@@ -20,7 +20,7 @@ public class StoppedLower extends Command {
 	@Override
 	protected void initialize() {
 		Robot.garage.grasp();
-		Robot.garage.lightOn();
+		Robot.garage.light.safeOn();
 		Robot.tank.stop();
 	}
 
