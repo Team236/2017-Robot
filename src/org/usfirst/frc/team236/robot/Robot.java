@@ -64,6 +64,8 @@ public class Robot extends IterativeRobot {
 
 	public static PowerDistributionPanel panel;
 
+	boolean autoDebug = true;
+
 	@Override
 	public void robotInit() {
 		// Configure drive
@@ -117,6 +119,8 @@ public class Robot extends IterativeRobot {
 		chooser.addObject("Right", new RightAuto());
 		//SmartDashboard.putData("Auto mode", chooser);
 
+		// Auto modes
+		straightGearDelivery = new Profile(AutoMap.straightGear);
 		// Use switches
 		autoHandler = new AutoHandler(RobotMap.DIO_SWITCHES);
 
@@ -144,7 +148,7 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void autonomousInit() {
-		autonomousCommand = chooser.getSelected();
+		//autonomousCommand = chooser.getSelected();
 
 		ArrayList<CommandGroup> autoCommands = new ArrayList<CommandGroup>();
 		autoCommands.add(new DoNothing());
@@ -166,6 +170,8 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void autonomousPeriodic() {
+		SmartDashboard.putNumber("Left Distance", tank.left.getDistance());
+		SmartDashboard.putNumber("Right Distance", tank.right.getDistance());
 		Scheduler.getInstance().run();
 	}
 
@@ -179,6 +185,12 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void teleopPeriodic() {
+		if (autoDebug) {
+			SmartDashboard.putNumber("Left Distance", tank.getLeftEncoder().getDistance());
+			SmartDashboard.putNumber("Right Distance", tank.getRightEncoder().getDistance());
+
+			SmartDashboard.putNumber("kV", tank.left.getEncoder().getRate() / tank.left.getSpeed());
+		}
 		// SmartDashboard code
 		// General
 		SmartDashboard.putNumber("Match time", DriverStation.getInstance().getMatchTime());
