@@ -139,7 +139,6 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void disabledInit() {
-		Robot.garage.light.safeOn();
 	}
 
 	@Override
@@ -179,7 +178,7 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void teleopInit() {
-		garage.light.safeOn();
+		garage.lightOn();
 
 		if (autonomousCommand != null)
 			autonomousCommand.cancel();

@@ -4,10 +4,11 @@ import org.usfirst.frc.team236.robot.Robot;
 import org.usfirst.frc.team236.robot.RobotMap;
 import org.usfirst.frc.team236.robot.commands.garage.Raise;
 import org.usfirst.frc.team236.robot.commands.garage.StoppedLower;
-import org.usfirst.frc.team236.robot.lib.Flashlight;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
+import edu.wpi.first.wpilibj.Relay;
+import edu.wpi.first.wpilibj.Relay.Direction;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -18,13 +19,22 @@ public class Garage extends Subsystem {
 
 	// TODO come up with a better name for the vertical piston
 	public DoubleSolenoid grasper, vertical;
-	public Flashlight light;
+	private Relay light;
 
 	public Garage() {
 		grasper = new DoubleSolenoid(RobotMap.Garage.SOL_GRASPER_FORWARD, RobotMap.Garage.SOL_GRASPER_REVERSE);
 		vertical = new DoubleSolenoid(RobotMap.Garage.SOL_VERTICAL_FORWARD, RobotMap.Garage.SOL_VERTICAL_REVERSE);
 
-		light = new Flashlight(RobotMap.Garage.RELAY_LIGHT, 0);
+		light = new Relay(org.usfirst.frc.team236.robot.RobotMap.Garage.RELAY_LIGHT);
+		light.setDirection(Direction.kForward);
+	}
+
+	public void lightOn() {
+		light.set(edu.wpi.first.wpilibj.Relay.Value.kForward);
+	}
+
+	public void lightOff() {
+		light.set(edu.wpi.first.wpilibj.Relay.Value.kOff);
 	}
 
 	/**

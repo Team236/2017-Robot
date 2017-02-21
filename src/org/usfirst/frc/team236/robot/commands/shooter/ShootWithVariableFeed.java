@@ -19,8 +19,8 @@ public class ShootWithVariableFeed extends Command {
 
 	@Override
 	protected void initialize() {
-		Robot.shooter.light.safeOn();
-		Robot.garage.light.off();
+		Robot.shooter.lightOn();
+		Robot.garage.lightOff();
 		Robot.shooter.controller.setSetpoint(Robot.shooter.getPreset().RPM);
 		Robot.shooter.setAngle(Robot.shooter.getPreset().angle);
 
@@ -39,8 +39,8 @@ public class ShootWithVariableFeed extends Command {
 
 	@Override
 	protected void end() {
-		Robot.shooter.light.off();
-		Robot.garage.light.safeOn();
+		Robot.shooter.lightOff();
+		Robot.garage.lightOn();
 		Robot.shooter.stop();
 	}
 
