@@ -192,6 +192,7 @@ public class Robot extends IterativeRobot {
 			SmartDashboard.putNumber("Right Distance", tank.getRightEncoder().getDistance());
 
 			SmartDashboard.putNumber("kV", tank.left.getEncoder().getRate() / tank.left.getSpeed());
+			SmartDashboard.putNumber("Speed", tank.getLeftEncoder().getRate());
 		}
 		// SmartDashboard code
 		// General
@@ -210,9 +211,6 @@ public class Robot extends IterativeRobot {
 
 		// Climber
 		SmartDashboard.putBoolean("Climber", climber.isTop());
-
-		SmartDashboard.putNumber("Shooter draw", panel.getCurrent(RobotMap.Shooter.PDP_LIGHT));
-		SmartDashboard.putNumber("Garage draw", panel.getCurrent(RobotMap.Garage.PDP_LIGHT));
 
 		// Subsystem control handlers
 		shooter.handlePresets();
