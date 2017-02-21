@@ -119,8 +119,9 @@ public class Robot extends IterativeRobot {
 		chooser.addObject("Right", new RightAuto());
 		//SmartDashboard.putData("Auto mode", chooser);
 
-		// Auto modes
+		// Generate auto modes
 		straightGearDelivery = new Profile(AutoMap.straightGear);
+
 		// Use switches
 		autoHandler = new AutoHandler(RobotMap.DIO_SWITCHES);
 
