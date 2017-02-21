@@ -6,7 +6,7 @@ import org.usfirst.frc.team236.robot.lib.Thrustmaster;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- * TODO Fix
+ *
  */
 public class AlignDrive extends Command {
 	public static double speedFactor = -0.5;

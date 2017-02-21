@@ -23,7 +23,6 @@ public class RobotMap {
 		public static final int SOL_FORWARD = 0;
 		public static final int SOL_REVERSE = 1;
 
-		// TODO test distance per pulse 
 		public static final double DIAMETER = 3.92;
 		public static final double CIRCUMFERENCE = DIAMETER * Math.PI;
 		public static final double PULSE_PER_ROTATION = 128;
@@ -55,7 +54,6 @@ public class RobotMap {
 
 		public static final double DEFAULT_FEED_SPEED = 1.0;
 
-		// TODO improve kV tuning
 		public static final double kV = 1 / 4600.0;
 
 		@Deprecated
@@ -70,8 +68,7 @@ public class RobotMap {
 			public static final double interval = 1 / 200.0;
 		}
 
-		// TODO find positions
-		public static final Preset POS_KEY = Robot.shooter.new Preset("Key", 3300, 24, 0.30);
+		public static final Preset POS_KEY = Robot.shooter.new Preset("Key", 3200, 24, 0.30);
 		public static final Preset POS_DS = Robot.shooter.new Preset("Driver Station", 3500, 80, 0.55);
 
 		public static final Preset[] PRESETS = { POS_KEY, POS_DS };
@@ -86,7 +83,6 @@ public class RobotMap {
 		public static final int DIO_LIMIT_BOTTOM = 8;
 		public static final int DIO_LIMIT_TOP = 9;
 
-		// TODO determine intake speeds
 		public static final double INTAKE_SPEED = 1.00;
 		public static final double EJECT_SPEED = -1.00;
 
@@ -96,7 +92,7 @@ public class RobotMap {
 
 	public static class Climber {
 		public static final int PWM_CLIMBER = 7; // Splits to two motors 
-		public static final double CLIMB_SPEED = 1.0; // TODO determine climb speed
+		public static final double CLIMB_SPEED = 1.0;
 
 		public static final boolean INV_CLIMBER = true;
 

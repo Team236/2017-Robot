@@ -128,9 +128,9 @@ public class Robot extends IterativeRobot {
 
 		try {
 			camera = CameraServer.getInstance().startAutomaticCapture();
-			camera.setResolution(640, 480); // TODO what resolution should we used?
+			camera.setResolution(640, 480);
 			camera.setFPS(30);
-		} catch (Exception e) { // TODO what exception do we use here?
+		} catch (Exception e) {
 			System.out.println("Camera capture failed");
 			System.out.println(e.getStackTrace());
 		}

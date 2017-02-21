@@ -3,7 +3,7 @@ package org.usfirst.frc.team236.robot.subsystems;
 import org.usfirst.frc.team236.robot.Robot;
 import org.usfirst.frc.team236.robot.RobotMap;
 import org.usfirst.frc.team236.robot.commands.garage.Raise;
-import org.usfirst.frc.team236.robot.commands.garage.SafeLower;
+import org.usfirst.frc.team236.robot.commands.garage.StoppedLower;
 import org.usfirst.frc.team236.robot.lib.Flashlight;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
@@ -27,6 +27,10 @@ public class Garage extends Subsystem {
 		light = new Flashlight(RobotMap.Garage.RELAY_LIGHT, 0);
 	}
 
+	/**
+	 * Checks controller d-pad to automatically move the garage door when the
+	 * appropriate button is pressed
+	 */
 	public void handleHeight() {
 		int ang = Robot.oi.controller.getPOV(0);
 
