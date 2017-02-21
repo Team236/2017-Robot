@@ -24,17 +24,17 @@ public class RobotMap {
 		public static final int SOL_REVERSE = 1;
 
 		// TODO test distance per pulse 
-	    public static final double DIAMETER = 3.96; 
-	    public static final double CIRCUMFERENCE = DIAMETER * Math.PI; 
-	    public static final double PULSE_PER_ROTATION = 512; 
-	    public static final double DISTANCE_PER_PULSE = CIRCUMFERENCE / PULSE_PER_ROTATION; 
+		public static final double DIAMETER = 3.92;
+		public static final double CIRCUMFERENCE = DIAMETER * Math.PI;
+		public static final double PULSE_PER_ROTATION = 128;
+		public static final double DISTANCE_PER_PULSE = CIRCUMFERENCE / PULSE_PER_ROTATION;
 
 		// TODO tune auto mode
-		public static double kV_left = 0.001;
-		public static double kV_right = 0.001;
-		
-		public static double kA;
-		public static double kP;
+		public static double kV_left = 0.019;
+		public static double kV_right = 0.019;
+
+		public static double kA = .000;
+		public static double kP = .001;
 
 		// TODO tune turning PID
 		public static PIDParameters turnParams = new PIDParameters(0.001, 0.000, 0.000, 1 / 100.0);
@@ -47,7 +47,7 @@ public class RobotMap {
 
 		public static final int RELAY_LIGHT = 1;
 		public static final int PDP_LIGHT = 4;
-		
+
 		public static final boolean INV_SHOOTER = true;
 		public static final boolean INV_FEEDER = true;
 
@@ -80,7 +80,7 @@ public class RobotMap {
 	public static class Intake {
 		public static final int PWM_INTAKE = 5; // Splits to two motors
 		public static final int PWM_DEPLOY = 6;
-		
+
 		public static final boolean INV_DEPLOY = true;
 
 		public static final int DIO_LIMIT_BOTTOM = 8;
@@ -109,7 +109,7 @@ public class RobotMap {
 
 		public static final int SOL_VERTICAL_FORWARD = 4;
 		public static final int SOL_VERTICAL_REVERSE = 5;
-		
+
 		public static final int RELAY_LIGHT = 0;
 		public static final int PDP_LIGHT = 10;
 	}
