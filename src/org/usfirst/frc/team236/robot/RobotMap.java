@@ -68,10 +68,12 @@ public class RobotMap {
 			public static final double interval = 1 / 200.0;
 		}
 
-		public static final Preset POS_KEY = Robot.shooter.new Preset("Key", 3200, 24, 0.30);
-		public static final Preset POS_DS = Robot.shooter.new Preset("Driver Station", 3500, 80, 0.55);
-
-		public static final Preset[] PRESETS = { POS_KEY, POS_DS };
+		//@formatter:off
+		public static final Preset[] PRESETS = {
+			Robot.shooter.new Preset("Key", 3200, 24, 0.30),
+			Robot.shooter.new Preset("DS", 3500, 80, 0.55),
+		};
+		//@formatter:on
 	}
 
 	public static class Intake {
