@@ -27,15 +27,13 @@ public class StoppedLower extends Command {
 	// Called repeatedly when this Command is scheduled to run
 	@Override
 	protected void execute() {
-		if (i / 50 > 0.5) {
-			Robot.garage.lower();
-		}
+		Robot.garage.lower();
 		i++;
 	}
 
 	@Override
 	protected boolean isFinished() {
-		return (i / 50 > 1);
+		return (i / 50 > .5);
 	}
 
 	// Called once after timeout
