@@ -1,5 +1,23 @@
 <xml version="1.0">
 <dashboard>
+	<widget field="Shooter draw" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="7" y="9"/>
+	</widget>
+	<widget field="Switches" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="10" y="8"/>
+	</widget>
+	<widget field="kV" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="2" y="5"/>
+	</widget>
+	<widget field="Right Distance" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="919" y="417"/>
+	</widget>
+	<widget field="Left Distance" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="919" y="396"/>
+	</widget>
+	<widget field="Garage draw" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="919" y="375"/>
+	</widget>
 	<widget field="Climber" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
 		<location x="1186" y="299"/>
 		<width>201</width>
@@ -63,5 +81,4 @@
 </dashboard>
 <live-window>
 </live-window>
-	<hidden field="Switches"/>
 </xml>
