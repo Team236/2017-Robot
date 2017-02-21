@@ -14,6 +14,6 @@ public class StraightAuto extends CommandGroup {
 
 	public StraightAuto(TickTank _tank, Profile p) {
 		addSequential(new Lower());
-		addSequential(new FollowProfile(_tank, p, false));
+		addSequential(new FollowProfile(_tank, p, true));
 	}
 }
