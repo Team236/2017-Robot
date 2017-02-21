@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public class Intake extends Command {
 
 	public Intake() {
-		requires(Robot.intake);
+		//requires(Robot.intake);
 	}
 
 	@Override
