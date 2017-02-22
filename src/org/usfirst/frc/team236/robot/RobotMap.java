@@ -12,6 +12,7 @@ public class RobotMap {
 	public static final double[] CAMERA_POS = {
 		0.000, // Gear alignment
 		0.250, // Gear loading
+		0.750, // TODO High shooting
 		1.000, // Shooting
 	};
 	//@formatter:on
