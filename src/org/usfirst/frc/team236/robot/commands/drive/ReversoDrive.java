@@ -7,8 +7,6 @@ import edu.wpi.first.wpilibj.command.Command;
 
 /**
  * Drives the robot backwards
- * 
- * TODO Do we need to stop the PID controller?
  */
 public class ReversoDrive extends Command {
 

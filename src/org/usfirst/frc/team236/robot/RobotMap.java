@@ -34,7 +34,6 @@ public class RobotMap {
 		public static final double PULSE_PER_ROTATION = 128;
 		public static final double DISTANCE_PER_PULSE = CIRCUMFERENCE / PULSE_PER_ROTATION;
 
-		// TODO tune auto mode
 		public static double kV_left = 0.018;
 		public static double kV_right = 0.018;
 
