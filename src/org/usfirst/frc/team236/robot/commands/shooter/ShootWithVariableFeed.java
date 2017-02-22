@@ -21,8 +21,8 @@ public class ShootWithVariableFeed extends Command {
 	protected void initialize() {
 		Robot.shooter.lightOn();
 		Robot.garage.lightOff();
+		Robot.garage.lower();
 		Robot.shooter.controller.setSetpoint(Robot.shooter.getPreset().RPM);
-		Robot.shooter.setAngle(Robot.shooter.getPreset().angle);
 
 		Robot.shooter.ticker.start();
 	}
