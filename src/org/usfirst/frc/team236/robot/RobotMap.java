@@ -10,9 +10,9 @@ public class RobotMap {
 	public static final int PWM_CAM_SERVO = 8;
 	//@formatter:off
 	public static final double[] CAMERA_POS = {
-		0, // Gear alignment
-		.25, // Gear loading
-		1, // Shooting
+		0.000, // Gear alignment
+		0.250, // Gear loading
+		1.000, // Shooting
 	};
 	//@formatter:on
 
