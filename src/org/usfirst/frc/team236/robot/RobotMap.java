@@ -8,8 +8,13 @@ public class RobotMap {
 	public static int[] DIO_SWITCHES = { 0, 1, 2 };
 
 	public static final int PWM_CAM_SERVO = 8;
-	public static final double GEAR_POS = .25;
-	public static final double SHOOTER_POS = 0;
+	//@formatter:off
+	public static final double[] CAMERA_POS = {
+		0, // Gear alignment
+		.25, // Gear loading
+		1, // Shooting
+	};
+	//@formatter:on
 
 	public static class Drive {
 		// Uses PWM 0 and 1: split to two motors

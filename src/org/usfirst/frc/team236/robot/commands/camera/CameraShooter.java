@@ -1,4 +1,4 @@
-package org.usfirst.frc.team236.robot.commands;
+package org.usfirst.frc.team236.robot.commands.camera;
 
 import org.usfirst.frc.team236.robot.Robot;
 import org.usfirst.frc.team236.robot.RobotMap;
@@ -12,7 +12,7 @@ public class CameraShooter extends Command {
 
 	@Override
 	protected void initialize() {
-		Robot.cameraServo.set(RobotMap.SHOOTER_POS);
+		Robot.cameraServo.set(RobotMap.CAMERA_POS[2]);
 	}
 
 	@Override

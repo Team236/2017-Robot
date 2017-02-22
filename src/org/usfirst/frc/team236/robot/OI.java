@@ -1,6 +1,6 @@
 package org.usfirst.frc.team236.robot;
 
-import org.usfirst.frc.team236.robot.commands.CameraToggle;
+import org.usfirst.frc.team236.robot.commands.camera.CameraToggle;
 import org.usfirst.frc.team236.robot.commands.climber.Climb;
 import org.usfirst.frc.team236.robot.commands.drive.AlignDrive;
 import org.usfirst.frc.team236.robot.commands.drive.ReversoDrive;
