@@ -29,14 +29,14 @@ public class RobotMap {
 		public static final double DISTANCE_PER_PULSE = CIRCUMFERENCE / PULSE_PER_ROTATION;
 
 		// TODO tune auto mode
-		public static double kV_left = 0.020;
-		public static double kV_right = 0.020;
+		public static double kV_left = 0.018;
+		public static double kV_right = 0.018;
 
 		public static double kA = .000;
-		public static double kP = .001;
+		public static double kP = .1;
 
 		// TODO tune turning PID
-		public static PIDParameters turnParams = new PIDParameters(0.001, 0.000, 0.000, 1 / 100.0);
+		public static PIDParameters turnParams = new PIDParameters(0.01, 0.05, 0.000, 1 / 100.0);
 	}
 
 	public static class Shooter {
@@ -72,6 +72,7 @@ public class RobotMap {
 		public static final Preset[] PRESETS = {
 			Robot.shooter.new Preset("Key", 3200, 24, 0.30),
 			Robot.shooter.new Preset("DS", 3500, 80, 0.55),
+			Robot.shooter.new Preset("Uber", 4000, 120, .65)
 		};
 		//@formatter:on
 	}
