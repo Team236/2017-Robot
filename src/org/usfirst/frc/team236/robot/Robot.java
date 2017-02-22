@@ -113,14 +113,10 @@ public class Robot extends IterativeRobot {
 		// PDP
 		panel = new PowerDistributionPanel();
 
-		// Select auto
-		chooser.addDefault("Straight Center", new StraightAuto(tank, straightGearDelivery));
-		chooser.addObject("Left", new LeftAuto());
-		chooser.addObject("Right", new RightAuto());
-		//SmartDashboard.putData("Auto mode", chooser);
-
 		// Generate auto modes
 		straightGearDelivery = new Profile(AutoMap.straightGear);
+		rightGearLeg1 = new Profile(AutoMap.rightGearLeg1);
+		rightGearLeg2 = new Profile(AutoMap.rightGearLeg2);
 
 		// Use switches
 		autoHandler = new AutoHandler(RobotMap.DIO_SWITCHES);
@@ -173,6 +169,7 @@ public class Robot extends IterativeRobot {
 	public void autonomousPeriodic() {
 		SmartDashboard.putNumber("Left Distance", tank.left.getDistance());
 		SmartDashboard.putNumber("Right Distance", tank.right.getDistance());
+		SmartDashboard.putNumber("Angle", tank.navx.getAngle());
 		Scheduler.getInstance().run();
 	}
 
@@ -189,9 +186,8 @@ public class Robot extends IterativeRobot {
 		if (autoDebug) {
 			SmartDashboard.putNumber("Left Distance", tank.getLeftEncoder().getDistance());
 			SmartDashboard.putNumber("Right Distance", tank.getRightEncoder().getDistance());
-
-			SmartDashboard.putNumber("kV", tank.left.getEncoder().getRate() / tank.left.getSpeed());
 			SmartDashboard.putNumber("Speed", tank.getLeftEncoder().getRate());
+			SmartDashboard.putNumber("Angle", tank.navx.getAngle());
 		}
 		// SmartDashboard code
 		// General
