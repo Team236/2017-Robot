@@ -5,12 +5,12 @@ import ticktank.motionProfile.ProfileParameters;
 
 public final class AutoMap {
 	// Straight gear delivery
-	public static final ProfileParameters straightGear = new ProfileParameters(78.9, 50, 8, 10);
+	public static final ProfileParameters straightGear = new ProfileParameters(78.9, 80, 50, 10);
 
 	// Right gear delivery
-	public static final ProfileParameters rightGearLeg1 = new ProfileParameters(72, 20, 2, 10);
-	public static final double rightGearDegrees = 61.5;
-	public static final ProfileParameters rightGearLeg2 = new ProfileParameters(70, 20, 2, 10);
+	public static final ProfileParameters rightGearLeg1 = new ProfileParameters(94.5, 20, 2, 10);
+	public static final double rightGearDegrees = 60;
+	public static final ProfileParameters rightGearLeg2 = new ProfileParameters(34.5, 20, 2, 10);
 
 	// Left gear delivery
 	public static final ProfileParameters leftGearLeg1 = new ProfileParameters(70.9, 30, 2, 10);
