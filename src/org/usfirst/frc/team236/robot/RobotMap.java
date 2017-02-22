@@ -8,8 +8,8 @@ public class RobotMap {
 	public static int[] DIO_SWITCHES = { 0, 1, 2 };
 
 	public static final int PWM_CAM_SERVO = 8;
-	public static final double GEAR_POS = 0;
-	public static final double SHOOTER_POS = 1.0;
+	public static final double GEAR_POS = .25;
+	public static final double SHOOTER_POS = 0;
 
 	public static class Drive {
 		// Uses PWM 0 and 1: split to two motors
@@ -62,7 +62,7 @@ public class RobotMap {
 		public static final int RPM_INCREMENT = 100;
 
 		public static class PID {
-			public static final double kP = 0.002;
+			public static final double kP = 0.001;
 			public static final double kI = 0.000;
 			public static final double kD = 0.000;
 			public static final double interval = 1 / 200.0;

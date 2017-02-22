@@ -3,6 +3,7 @@ package org.usfirst.frc.team236.robot;
 
 import java.util.ArrayList;
 
+import org.usfirst.frc.team236.robot.commands.auto.AltRight;
 import org.usfirst.frc.team236.robot.commands.auto.DoNothing;
 import org.usfirst.frc.team236.robot.commands.auto.LeftAuto;
 import org.usfirst.frc.team236.robot.commands.auto.RightAuto;
@@ -49,6 +50,8 @@ public class Robot extends IterativeRobot {
 
 	public static Profile leftGearLeg1;
 	public static Profile leftGearLeg2;
+
+	public static Profile altRight;
 
 	AutoHandler autoHandler;
 
@@ -118,6 +121,8 @@ public class Robot extends IterativeRobot {
 		rightGearLeg1 = new Profile(AutoMap.rightGearLeg1);
 		rightGearLeg2 = new Profile(AutoMap.rightGearLeg2);
 
+		altRight = new Profile(AutoMap.altRightGear);
+
 		// Use switches
 		autoHandler = new AutoHandler(RobotMap.DIO_SWITCHES);
 
@@ -154,7 +159,7 @@ public class Robot extends IterativeRobot {
 		autoCommands.add(new DoNothing());
 		autoCommands.add(new RightAuto());
 		autoCommands.add(new DoNothing());
-		autoCommands.add(new DoNothing());
+		autoCommands.add(new AltRight());
 		autoCommands.add(new DoNothing());
 		autoCommands.add(new DoNothing());
 
