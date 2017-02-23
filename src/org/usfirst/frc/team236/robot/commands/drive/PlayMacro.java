@@ -42,12 +42,16 @@ public class PlayMacro extends Command {
 	protected void initialize() {
 		Robot.tank.stop();
 
+		System.out.println("Playing macro from " + filename);
 	}
 
 	@Override
 	protected void execute() {
 		Robot.tank.setLeftSpeed(speedList.get(i)[0]);
 		Robot.tank.setRightSpeed(speedList.get(i)[1]);
+
+		System.out.println(speedList.get(i)[0] + "\t" + speedList.get(i)[1]);
+
 		i++;
 		if (i >= speedList.size()) {
 			isFinished = true;
@@ -63,6 +67,7 @@ public class PlayMacro extends Command {
 	protected void end() {
 		Robot.tank.stop();
 		scanner.close();
+		System.out.println("Finished macro " + filename);
 	}
 
 	@Override
