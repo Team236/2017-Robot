@@ -34,8 +34,7 @@ public class PlayMacro extends Command {
 
 		// Extract speeds
 		while (scanner.hasNextDouble()) {
-			double[] pair = { scanner.nextDouble(), scanner.nextDouble() };
-			speedList.add(pair);
+			speedList.add(new double[] { scanner.nextDouble(), scanner.nextDouble() });
 		}
 	}
 
