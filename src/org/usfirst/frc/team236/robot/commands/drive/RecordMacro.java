@@ -43,7 +43,7 @@ public class RecordMacro extends Command {
 		Robot.tank.setRightSpeed(rightSpeed);
 
 		try {
-			writer.append(leftSpeed + "," + rightSpeed + "\n");
+			writer.append(leftSpeed + " " + rightSpeed + "\n");
 		} catch (IOException e) {
 			System.out.println("File writing failed");
 		}
