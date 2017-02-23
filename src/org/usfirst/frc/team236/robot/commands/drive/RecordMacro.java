@@ -27,7 +27,7 @@ public class RecordMacro extends Command {
 
 		// Get ready to write file
 		try {
-			writer = new FileWriter(filename);
+			writer = new FileWriter(filename, false);
 			System.out.println("File created: recording macro to " + filename);
 		} catch (IOException e) {
 			System.out.println("File creation failed");
