@@ -58,8 +58,8 @@ public class RecordMacro extends Command {
 	protected void end() {
 		Robot.tank.stop();
 		try {
-			writer.close();
 			writer.flush();
+			writer.close();
 		} catch (IOException e) {
 			System.out.println("Writer cleaning failed");
 		}
