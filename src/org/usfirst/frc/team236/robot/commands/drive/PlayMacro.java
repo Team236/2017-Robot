@@ -13,7 +13,7 @@ public class PlayMacro extends Command {
 
 	String filename;
 	Scanner scanner;
-	ArrayList<double[]> speedList;
+	ArrayList<double[]> speedList = new ArrayList<double[]>();
 	int i = 0;
 	boolean isFinished = false;
 
@@ -26,6 +26,12 @@ public class PlayMacro extends Command {
 	public PlayMacro(String _filename) {
 		this.filename = "/home/lvuser/macros/" + _filename + ".csv";
 
+	}
+
+	@Override
+	protected void initialize() {
+		Robot.tank.stop();
+
 		try {
 			this.scanner = new Scanner(new File(filename));
 		} catch (FileNotFoundException e) {
@@ -36,12 +42,8 @@ public class PlayMacro extends Command {
 		while (scanner.hasNextDouble()) {
 			speedList.add(new double[] { scanner.nextDouble(), scanner.nextDouble() });
 		}
-	}
 
-	@Override
-	protected void initialize() {
-		Robot.tank.stop();
-
+		i = 0;
 		System.out.println("Playing macro from " + filename);
 	}
 
