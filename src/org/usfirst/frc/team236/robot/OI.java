@@ -1,6 +1,6 @@
 package org.usfirst.frc.team236.robot;
 
-import org.usfirst.frc.team236.robot.commands.camera.CameraToggle;
+import org.usfirst.frc.team236.robot.commands.camera.CameraCycle;
 import org.usfirst.frc.team236.robot.commands.climber.Climb;
 import org.usfirst.frc.team236.robot.commands.drive.AlignDrive;
 import org.usfirst.frc.team236.robot.commands.drive.ReversoDrive;
@@ -53,8 +53,8 @@ public class OI {
 		JoystickButton deploy = new JoystickButton(controller, ControlMap.Controller.DEPLOY_INTAKE);
 		deploy.whileHeld(new Deploy());
 
-		JoystickButton cameraToggle = new JoystickButton(controller, ControlMap.Controller.TOGGLE_CAMERA);
-		cameraToggle.toggleWhenPressed(new CameraToggle());
+		JoystickButton cameraCycle = new JoystickButton(controller, ControlMap.Controller.CYCLE_CAMERA);
+		cameraCycle.toggleWhenPressed(new CameraCycle());
 
 		JoystickButton grasp = new JoystickButton(controller, ControlMap.Controller.GRASP);
 		grasp.whenPressed(new Grasp());
