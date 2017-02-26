@@ -36,7 +36,7 @@ public class RobotMap {
 
 		// TODO tune auto mode
 		public static double kV_left = 0.018;
-		public static double kV_right = 0.018;
+		public static double kV_right = 0.021;
 
 		public static double kA = .000;
 		public static double kP = .1;
