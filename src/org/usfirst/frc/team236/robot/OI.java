@@ -61,8 +61,5 @@ public class OI {
 
 		JoystickButton release = new JoystickButton(controller, ControlMap.Controller.RELEASE);
 		release.whenPressed(new Release());
-
-		JoystickButton adjustCamera = new JoystickButton(controller, ControlMap.Controller.ADJUST_CAMERA);
-		//adjustCamera.whileHeld(new CameraAdjust());
 	}
 }
