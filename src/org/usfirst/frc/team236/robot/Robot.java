@@ -3,10 +3,9 @@ package org.usfirst.frc.team236.robot;
 
 import java.util.ArrayList;
 
-import org.usfirst.frc.team236.robot.commands.auto.AltRight;
 import org.usfirst.frc.team236.robot.commands.auto.DoNothing;
-import org.usfirst.frc.team236.robot.commands.auto.LeftAuto;
-import org.usfirst.frc.team236.robot.commands.auto.RightAuto;
+import org.usfirst.frc.team236.robot.commands.auto.LeftGearMacro;
+import org.usfirst.frc.team236.robot.commands.auto.RightGearMacro;
 import org.usfirst.frc.team236.robot.commands.auto.StraightAuto;
 import org.usfirst.frc.team236.robot.lib.AutoHandler;
 import org.usfirst.frc.team236.robot.subsystems.Climber;
@@ -154,16 +153,18 @@ public class Robot extends IterativeRobot {
 
 		ArrayList<CommandGroup> autoCommands = new ArrayList<CommandGroup>();
 		autoCommands.add(new DoNothing());
-		autoCommands.add(new LeftAuto());
+		autoCommands.add(new LeftGearMacro());
 		autoCommands.add(new StraightAuto(tank, straightGearDelivery));
 		autoCommands.add(new DoNothing());
-		autoCommands.add(new RightAuto());
+		autoCommands.add(new RightGearMacro());
 		autoCommands.add(new DoNothing());
-		autoCommands.add(new AltRight());
+		autoCommands.add(new DoNothing());
 		autoCommands.add(new DoNothing());
 		autoCommands.add(new DoNothing());
 
 		autonomousCommand = autoCommands.get(autoHandler.getSelected());
+
+		tank.zeroEncoders();
 
 		// schedule the autonomous command (example)
 		if (autonomousCommand != null)
@@ -181,6 +182,7 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void teleopInit() {
 		garage.lightOn();
+		tank.zeroEncoders();
 
 		if (autonomousCommand != null)
 			autonomousCommand.cancel();
