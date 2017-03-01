@@ -30,9 +30,15 @@ public class Flashlight extends Relay {
 	}
 
 	public void cycle(int n) {
-		for (int i = 0; i < n; i++) {
-			on();
-			off();
+		try {
+			for (int i = 0; i < n; i++) {
+				on();
+				Thread.sleep(10);
+				off();
+				Thread.sleep(10);
+			}
+		} catch (InterruptedException e) {
+			System.out.println(e.getStackTrace());
 		}
 	}
 

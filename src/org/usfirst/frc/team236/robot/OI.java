@@ -1,6 +1,6 @@
 package org.usfirst.frc.team236.robot;
 
-import org.usfirst.frc.team236.robot.commands.camera.CameraToggle;
+import org.usfirst.frc.team236.robot.commands.camera.CameraCycle;
 import org.usfirst.frc.team236.robot.commands.climber.Climb;
 import org.usfirst.frc.team236.robot.commands.drive.AlignDrive;
 import org.usfirst.frc.team236.robot.commands.drive.ReversoDrive;
@@ -10,9 +10,12 @@ import org.usfirst.frc.team236.robot.commands.intake.Deploy;
 import org.usfirst.frc.team236.robot.commands.intake.Intake;
 import org.usfirst.frc.team236.robot.commands.intake.Retract;
 import org.usfirst.frc.team236.robot.commands.shooter.ShootWithVariableFeed;
+import org.usfirst.frc.team236.robot.lib.LogitechF310;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import ticktank.Direction;
+import ticktank.commands.Turn;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -53,8 +56,8 @@ public class OI {
 		JoystickButton deploy = new JoystickButton(controller, ControlMap.Controller.DEPLOY_INTAKE);
 		deploy.whileHeld(new Deploy());
 
-		JoystickButton cameraToggle = new JoystickButton(controller, ControlMap.Controller.TOGGLE_CAMERA);
-		cameraToggle.toggleWhenPressed(new CameraToggle());
+		JoystickButton cameraCycle = new JoystickButton(controller, ControlMap.Controller.CYCLE_CAMERA);
+		cameraCycle.toggleWhenPressed(new CameraCycle());
 
 		JoystickButton grasp = new JoystickButton(controller, ControlMap.Controller.GRASP);
 		grasp.whenPressed(new Grasp());
@@ -62,7 +65,7 @@ public class OI {
 		JoystickButton release = new JoystickButton(controller, ControlMap.Controller.RELEASE);
 		release.whenPressed(new Release());
 
-		JoystickButton adjustCamera = new JoystickButton(controller, ControlMap.Controller.ADJUST_CAMERA);
-		//adjustCamera.whileHeld(new CameraAdjust());
+		JoystickButton turnTest = new JoystickButton(controller, LogitechF310.LEFT_PRESS);
+		turnTest.whenPressed(new Turn(Robot.tank, 60, Direction.CCW));
 	}
 }

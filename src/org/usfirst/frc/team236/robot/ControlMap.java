@@ -36,7 +36,7 @@ public class ControlMap {
 		public static final int RETRACT_INTAKE = LogitechF310.Y;
 		public static final int DEPLOY_INTAKE = LogitechF310.A;
 
-		public static final int TOGGLE_CAMERA = LogitechF310.BACK;
+		public static final int CYCLE_CAMERA = LogitechF310.BACK;
 		public static final int ADJUST_CAMERA = LogitechF310.LEFT_PRESS;
 
 		public static final int GRASP = LogitechF310.B;
