@@ -153,10 +153,10 @@ public class Robot extends IterativeRobot {
 		ArrayList<Command> autoCommands = new ArrayList<Command>();
 		//@formatter:off
 		autoCommands.add(new DoNothing());									// 000
-		autoCommands.add(new LeftGearMacro());								// 001
+		autoCommands.add(new AltRight());									// 001
 		autoCommands.add(new StraightAuto(tank, straightGearDelivery));		// 010
 		autoCommands.add(new DoNothing());									// 011
-		autoCommands.add(new AltRight());									// 100
+		autoCommands.add(new LeftGearMacro());								// 100
 		autoCommands.add(new DoNothing());									// 101
 		autoCommands.add(new DoNothing());									// 110
 		autoCommands.add(new DoNothing());									// 111
