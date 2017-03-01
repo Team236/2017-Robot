@@ -35,5 +35,4 @@ public class PixyObject {
 	public boolean equals(PixyObject obj) {
 		return (obj.getCenter().equals(this.getCenter())) && (obj.h == this.h && obj.w == this.w);
 	}
-
 }
