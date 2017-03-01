@@ -59,7 +59,6 @@ public class Flashlight extends Relay {
 
 	@Deprecated
 	public boolean isStrobe() {
-		double draw = getDraw();
 		return false;
 	}
 }
