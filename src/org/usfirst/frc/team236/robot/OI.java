@@ -10,9 +10,12 @@ import org.usfirst.frc.team236.robot.commands.intake.Deploy;
 import org.usfirst.frc.team236.robot.commands.intake.Intake;
 import org.usfirst.frc.team236.robot.commands.intake.Retract;
 import org.usfirst.frc.team236.robot.commands.shooter.ShootWithVariableFeed;
+import org.usfirst.frc.team236.robot.lib.LogitechF310;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import ticktank.Direction;
+import ticktank.commands.Turn;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -61,5 +64,8 @@ public class OI {
 
 		JoystickButton release = new JoystickButton(controller, ControlMap.Controller.RELEASE);
 		release.whenPressed(new Release());
+
+		JoystickButton turnTest = new JoystickButton(controller, LogitechF310.LEFT_PRESS);
+		turnTest.whenPressed(new Turn(Robot.tank, 60, Direction.CCW));
 	}
 }

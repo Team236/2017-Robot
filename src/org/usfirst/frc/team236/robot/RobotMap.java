@@ -35,7 +35,7 @@ public class RobotMap {
 		public static final double DISTANCE_PER_PULSE = CIRCUMFERENCE / PULSE_PER_ROTATION;
 
 		public static double kV_left = 0.018;
-		public static double kV_right = 0.018;
+		public static double kV_right = 0.021;
 
 		public static double kA = .000;
 		public static double kP = .1;
