@@ -1,6 +1,6 @@
 package org.usfirst.frc.team236.robot.lib.pixy;
 
-import java.awt.Point;
+import org.opencv.core.Point;
 
 public class Object {
 
