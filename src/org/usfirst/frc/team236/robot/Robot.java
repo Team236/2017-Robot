@@ -22,7 +22,6 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -151,7 +150,7 @@ public class Robot extends IterativeRobot {
 	public void autonomousInit() {
 		//autonomousCommand = chooser.getSelected();
 
-		ArrayList<CommandGroup> autoCommands = new ArrayList<CommandGroup>();
+		ArrayList<Command> autoCommands = new ArrayList<Command>();
 		autoCommands.add(new DoNothing());
 		autoCommands.add(new LeftGearMacro());
 		autoCommands.add(new StraightAuto(tank, straightGearDelivery));
