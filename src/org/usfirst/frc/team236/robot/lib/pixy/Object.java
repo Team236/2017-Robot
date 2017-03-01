@@ -8,6 +8,10 @@ public class Object {
 	public double h, w;
 
 	public Object(double x, double y, double h, double w) {
+		if (x < -1 || x > 1 || y < -1 || y > 1) {
+			throw new IllegalArgumentException("x and y must be between -1 and 1");
+		}
+
 		this.x = x;
 		this.y = y;
 		this.h = h;
