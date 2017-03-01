@@ -151,15 +151,16 @@ public class Robot extends IterativeRobot {
 		//autonomousCommand = chooser.getSelected();
 
 		ArrayList<Command> autoCommands = new ArrayList<Command>();
-		autoCommands.add(new DoNothing());
-		autoCommands.add(new LeftGearMacro());
-		autoCommands.add(new StraightAuto(tank, straightGearDelivery));
-		autoCommands.add(new DoNothing());
-		autoCommands.add(new AltRight());
-		autoCommands.add(new DoNothing());
-		autoCommands.add(new DoNothing());
-		autoCommands.add(new DoNothing());
-		autoCommands.add(new DoNothing());
+		//@formatter:off
+		autoCommands.add(new DoNothing());									// 000
+		autoCommands.add(new LeftGearMacro());								// 001
+		autoCommands.add(new StraightAuto(tank, straightGearDelivery));		// 010
+		autoCommands.add(new DoNothing());									// 011
+		autoCommands.add(new AltRight());									// 100
+		autoCommands.add(new DoNothing());									// 101
+		autoCommands.add(new DoNothing());									// 110
+		autoCommands.add(new DoNothing());									// 111
+		//@formatter:on
 
 		autonomousCommand = autoCommands.get(autoHandler.getSelected());
 
