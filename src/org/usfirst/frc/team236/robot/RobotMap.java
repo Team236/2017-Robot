@@ -41,7 +41,7 @@ public class RobotMap {
 		public static double kP = .1;
 
 		// TODO tune turning PID
-		public static PIDParameters turnParams = new PIDParameters(0.01, 0.05, 0.000, 1 / 100.0);
+		public static PIDParameters turnParams = new PIDParameters(0.015, 0.007, 0.000, 1 / 100.0);
 	}
 
 	public static class Shooter {
