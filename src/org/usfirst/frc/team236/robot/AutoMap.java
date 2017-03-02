@@ -22,7 +22,7 @@ public final class AutoMap {
 
 	// Left gear delivery
 	public static final ProfileParameters leftGearLeg1 = new ProfileParameters(94.4, 30, 2, 10);
-	public static final double leftTurnDegreees = 60;
+	public static final double leftTurnDegrees = 60;
 	public static final ProfileParameters leftGearLeg2 = new ProfileParameters(23.6, 30, 2, 10);
 
 	// General Parameters
