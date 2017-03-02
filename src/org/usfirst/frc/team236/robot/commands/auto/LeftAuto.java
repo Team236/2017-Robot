@@ -18,7 +18,7 @@ public class LeftAuto extends CommandGroup {
 	public LeftAuto() {
 		addSequential(new Lower());
 		addSequential(new FollowProfile(Robot.tank, Robot.leftGearLeg1, true));
-		addSequential(new Turn(Robot.tank, AutoMap.leftTurnDegrees, Direction.CW));
+		addSequential(new Turn(Robot.tank, AutoMap.leftTurnDegrees, Direction.CW, AutoMap.turnMargin));
 		addSequential(new Wait(0));
 		addSequential(new FollowProfile(Robot.tank, Robot.leftGearLeg2, true));
 	}
