@@ -5,7 +5,8 @@ import java.util.ArrayList;
 
 import org.usfirst.frc.team236.robot.commands.auto.AltRight;
 import org.usfirst.frc.team236.robot.commands.auto.DoNothing;
-import org.usfirst.frc.team236.robot.commands.auto.LeftGearMacro;
+import org.usfirst.frc.team236.robot.commands.auto.LeftAuto;
+import org.usfirst.frc.team236.robot.commands.auto.RightAuto;
 import org.usfirst.frc.team236.robot.commands.auto.StraightAuto;
 import org.usfirst.frc.team236.robot.lib.AutoHandler;
 import org.usfirst.frc.team236.robot.subsystems.Climber;
@@ -116,8 +117,12 @@ public class Robot extends IterativeRobot {
 
 		// Generate auto modes
 		straightGearDelivery = new Profile(AutoMap.straightGear);
+
 		rightGearLeg1 = new Profile(AutoMap.rightGearLeg1);
 		rightGearLeg2 = new Profile(AutoMap.rightGearLeg2);
+
+		leftGearLeg1 = new Profile(AutoMap.leftGearLeg1);
+		leftGearLeg2 = new Profile(AutoMap.leftGearLeg2);
 
 		altRight = new Profile(AutoMap.altRightGear);
 
@@ -143,7 +148,6 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void disabledPeriodic() {
 		Scheduler.getInstance().run();
-		SmartDashboard.putNumber("Switches", autoHandler.getSelected());
 	}
 
 	@Override
@@ -153,10 +157,10 @@ public class Robot extends IterativeRobot {
 		ArrayList<Command> autoCommands = new ArrayList<Command>();
 		//@formatter:off
 		autoCommands.add(new DoNothing());									// 000
-		autoCommands.add(new AltRight());									// 001
+		autoCommands.add(new RightAuto());									// 001
 		autoCommands.add(new StraightAuto(tank, straightGearDelivery));		// 010
 		autoCommands.add(new DoNothing());									// 011
-		autoCommands.add(new LeftGearMacro());								// 100
+		autoCommands.add(new LeftAuto());									// 100
 		autoCommands.add(new DoNothing());									// 101
 		autoCommands.add(new DoNothing());									// 110
 		autoCommands.add(new DoNothing());									// 111
@@ -191,8 +195,6 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void teleopPeriodic() {
 		if (autoDebug) {
-			SmartDashboard.putNumber("Left Distance", tank.getLeftEncoder().getDistance());
-			SmartDashboard.putNumber("Right Distance", tank.getRightEncoder().getDistance());
 			SmartDashboard.putNumber("Speed", tank.getLeftEncoder().getRate());
 			SmartDashboard.putNumber("Angle", tank.navx.getAngle());
 		}
