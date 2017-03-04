@@ -25,6 +25,8 @@ public class RobotMap {
 		public static final int DIO_RIGHT_ENC_A = 5;
 		public static final int DIO_RIGHT_ENC_B = 6;
 
+		public static final int ANALOG_PIXY = 0;
+
 		// Gearshift
 		public static final int SOL_FORWARD = 0;
 		public static final int SOL_REVERSE = 1;
