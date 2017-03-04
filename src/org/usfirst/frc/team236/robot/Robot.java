@@ -222,9 +222,9 @@ public class Robot extends IterativeRobot {
 
 		// Handle shifting
 		if (oi.left.getPOV(0) == 0) {
-			tank.shiftUp();
-		} else if (oi.left.getPOV(0) == 180) {
 			tank.shiftDown();
+		} else if (oi.left.getPOV(0) == 180) {
+			tank.shiftUp();
 		}
 
 		Scheduler.getInstance().run();
