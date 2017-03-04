@@ -12,8 +12,8 @@ public class RobotMap {
 	public static final double[] CAMERA_POS = {
 		0.000, // Gear alignment
 		0.250, // Gear loading
-		0.750, // TODO High shooting
-		1.000, // Shooting
+		//0.750, // TODO High shooting
+		//1.000, // Shooting
 	};
 	//@formatter:on
 
@@ -34,11 +34,11 @@ public class RobotMap {
 		public static final double PULSE_PER_ROTATION = 128;
 		public static final double DISTANCE_PER_PULSE = CIRCUMFERENCE / PULSE_PER_ROTATION;
 
-		public static double kV_left = 0.018;
-		public static double kV_right = 0.021;
+		public static double kV_left = 0.022;
+		public static double kV_right = 0.022;
 
 		public static double kA = .000;
-		public static double kP = .1;
+		public static double kP = .010;
 
 		// TODO tune turning PID
 		public static PIDParameters turnParams = new PIDParameters(0.015, 0.007, 0.000, 1 / 100.0);
