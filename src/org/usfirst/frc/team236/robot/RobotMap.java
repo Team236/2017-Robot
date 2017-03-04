@@ -38,7 +38,7 @@ public class RobotMap {
 		public static double kV_right = 0.022;
 
 		public static double kA = .000;
-		public static double kP = .010;
+		public static double kP = .100;
 
 		// TODO tune turning PID
 		public static PIDParameters turnParams = new PIDParameters(0.015, 0.007, 0.000, 1 / 100.0);
