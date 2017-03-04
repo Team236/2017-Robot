@@ -15,10 +15,23 @@ public class ControlMap {
 		public static final int SHIFT_DOWN = Thrustmaster.BUTTON_RIGHT;
 	}
 
+	public static class LeftAttack3 {
+		public static final int ALIGN_DRIVE = 4; // Lower button
+
+		public static final int SHIFT_UP = 3;
+		public static final int SHIFT_DOWN = 2;
+	}
+
 	public static class Right {
 		public static final int INTAKE = Thrustmaster.BUTTON_MIDDLE;
 
 		public static final int REVERSO = Thrustmaster.TRIGGER;
+	}
+
+	public static class RightAttack3 {
+		public static final int INTAKE = 2;
+
+		public static final int REVERSO = 1;
 	}
 
 	public static class Controller {
