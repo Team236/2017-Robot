@@ -3,7 +3,6 @@ package org.usfirst.frc.team236.robot;
 
 import java.util.ArrayList;
 
-import org.usfirst.frc.team236.robot.commands.auto.AltRight;
 import org.usfirst.frc.team236.robot.commands.auto.DoNothing;
 import org.usfirst.frc.team236.robot.commands.auto.LeftAuto;
 import org.usfirst.frc.team236.robot.commands.auto.RightAuto;
