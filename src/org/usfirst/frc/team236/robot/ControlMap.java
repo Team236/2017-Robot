@@ -44,7 +44,7 @@ public class ControlMap {
 
 		public static final int FEED = LogitechF310.RB;
 		public static final int SHOOT = LogitechF310.LB;
-		public static final int VARIABLE_FEED = LogitechF310.Axes.RT;
+		public static final int VARIABLE_FEED = LogitechF310.Axes.LT;
 
 		public static final int RETRACT_INTAKE = LogitechF310.Y;
 		public static final int DEPLOY_INTAKE = LogitechF310.A;
