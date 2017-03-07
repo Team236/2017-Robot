@@ -65,7 +65,7 @@ public class OI {
 		JoystickButton release = new JoystickButton(controller, ControlMap.Controller.RELEASE);
 		release.whenPressed(new Release());
 
-		JoystickButton turnTest = new JoystickButton(controller, LogitechF310.LEFT_PRESS);
-		turnTest.whenPressed(new Turn(Robot.tank, 60, Direction.CCW));
+		//JoystickButton turnTest = new JoystickButton(controller, LogitechF310.LEFT_PRESS);
+		//turnTest.whenPressed(new Turn(Robot.tank, 60, Direction.CCW));
 	}
 }
