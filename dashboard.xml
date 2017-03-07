@@ -6,7 +6,7 @@
 	<widget field="Left Distance" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="919" y="396"/>
 	</widget>
-	<widget field="Garage draw" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+	<widget field="Speed" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="919" y="375"/>
 	</widget>
 	<widget field="Climber" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
@@ -72,9 +72,4 @@
 </dashboard>
 <live-window>
 </live-window>
-	<hidden field="Speed"/>
-	<hidden field="Shooter draw"/>
-	<hidden field="Switches"/>
-	<hidden field="Auto Mode"/>
-	<hidden field="kV"/>
 </xml>
