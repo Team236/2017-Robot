@@ -17,7 +17,7 @@ public class Raise extends Command {
 	@Override
 	protected void initialize() {
 		Robot.garage.raise();
-		//Robot.garage.lightOff();
+		Robot.garage.lightOff();
 	}
 
 	// Called repeatedly when this Command is scheduled to run
