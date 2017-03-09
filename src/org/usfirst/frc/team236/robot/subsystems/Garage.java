@@ -18,7 +18,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Garage extends Subsystem {
 
 	// TODO come up with a better name for the vertical piston
-	public DoubleSolenoid grasper, vertical;
+	private DoubleSolenoid grasper, vertical;
 	private Relay light;
 
 	public Garage() {
