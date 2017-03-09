@@ -1,50 +1,17 @@
 package org.usfirst.frc.team236.robot.commands.garage;
 
-import org.usfirst.frc.team236.robot.Robot;
+import org.usfirst.frc.team236.robot.commands.drive.Stop;
 
-import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
  *
  */
-public class StoppedLower extends Command {
-
-	private int i = 0;
+public class StoppedLower extends CommandGroup {
 
 	public StoppedLower() {
-		requires(Robot.garage);
-		requires(Robot.tank);
-	}
-
-	// Called just before this Command runs the first time
-	@Override
-	protected void initialize() {
-		Robot.garage.grasp();
-		Robot.garage.lightOn();
-		Robot.tank.stop();
-	}
-
-	// Called repeatedly when this Command is scheduled to run
-	@Override
-	protected void execute() {
-		Robot.garage.lower();
-		i++;
-	}
-
-	@Override
-	protected boolean isFinished() {
-		return (i / 50 > .5);
-	}
-
-	// Called once after timeout
-	@Override
-	protected void end() {
-	}
-
-	// Called when another command which requires one or more of the same
-	// subsystems is scheduled to run
-	@Override
-	protected void interrupted() {
-		end();
+		addParallel(new Stop(), 0.5);
+		addParallel(new Grasp());
+		addParallel(new Lower());
 	}
 }
