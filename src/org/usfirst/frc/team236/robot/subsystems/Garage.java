@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.Relay.Direction;
+import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -20,6 +21,7 @@ public class Garage extends Subsystem {
 	// TODO come up with a better name for the vertical piston
 	public DoubleSolenoid grasper, vertical;
 	private Relay light;
+	private Servo safety;
 
 	public Garage() {
 		grasper = new DoubleSolenoid(RobotMap.Garage.SOL_GRASPER_FORWARD, RobotMap.Garage.SOL_GRASPER_REVERSE);
@@ -27,6 +29,8 @@ public class Garage extends Subsystem {
 
 		light = new Relay(org.usfirst.frc.team236.robot.RobotMap.Garage.RELAY_LIGHT);
 		light.setDirection(Direction.kForward);
+
+		safety = new Servo(RobotMap.Garage.PWM_SAFETY);
 	}
 
 	public void lightOn() {
@@ -65,6 +69,22 @@ public class Garage extends Subsystem {
 
 	public void lower() {
 		vertical.set(Value.kReverse);
+	}
+
+	public void setSafety(boolean pos) {
+		if (pos) {
+			safetyOn();
+		} else {
+			safetyOff();
+		}
+	}
+
+	public void safetyOn() {
+		safety.set(1);
+	}
+
+	public void safetyOff() {
+		safety.set(0);
 	}
 
 	@Override
