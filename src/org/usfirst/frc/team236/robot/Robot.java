@@ -217,7 +217,6 @@ public class Robot extends IterativeRobot {
 
 		// Subsystem control handlers
 		shooter.handlePresets();
-		garage.handleHeight();
 
 		// Handle shifting
 		if (oi.left.getPOV(0) == 0) {

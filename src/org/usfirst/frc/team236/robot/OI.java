@@ -5,11 +5,15 @@ import org.usfirst.frc.team236.robot.commands.climber.Climb;
 import org.usfirst.frc.team236.robot.commands.drive.AlignDrive;
 import org.usfirst.frc.team236.robot.commands.drive.ReversoDrive;
 import org.usfirst.frc.team236.robot.commands.garage.Grasp;
+import org.usfirst.frc.team236.robot.commands.garage.Lower;
+import org.usfirst.frc.team236.robot.commands.garage.Raise;
 import org.usfirst.frc.team236.robot.commands.garage.Release;
 import org.usfirst.frc.team236.robot.commands.intake.Deploy;
 import org.usfirst.frc.team236.robot.commands.intake.Intake;
 import org.usfirst.frc.team236.robot.commands.intake.Retract;
 import org.usfirst.frc.team236.robot.commands.shooter.ShootWithVariableFeed;
+import org.usfirst.frc.team236.robot.triggers.JoystickPOV;
+import org.usfirst.frc.team236.robot.triggers.JoystickPOV.Direction;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -62,5 +66,10 @@ public class OI {
 		JoystickButton release = new JoystickButton(controller, ControlMap.Controller.RELEASE);
 		release.whenPressed(new Release());
 
+		JoystickPOV doorUp = new JoystickPOV(controller, Direction.UP);
+		doorUp.whenPressed(new Raise());
+
+		JoystickPOV doorDown = new JoystickPOV(controller, Direction.DOWN);
+		doorDown.whenPressed(new Lower());
 	}
 }
