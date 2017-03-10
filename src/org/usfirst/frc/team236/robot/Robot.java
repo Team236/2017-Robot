@@ -218,13 +218,6 @@ public class Robot extends IterativeRobot {
 		// Subsystem control handlers
 		shooter.handlePresets();
 
-		// Handle shifting
-		if (oi.left.getPOV(0) == 0) {
-			tank.shiftDown();
-		} else if (oi.left.getPOV(0) == 180) {
-			tank.shiftUp();
-		}
-
 		Scheduler.getInstance().run();
 	}
 

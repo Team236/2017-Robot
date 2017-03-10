@@ -17,6 +17,8 @@ import org.usfirst.frc.team236.robot.triggers.JoystickPOV.Direction;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import ticktank.commands.ShiftDown;
+import ticktank.commands.ShiftUp;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -36,6 +38,12 @@ public class OI {
 		// Left
 		JoystickButton align = new JoystickButton(left, ControlMap.Left.ALIGN_DRIVE);
 		align.whileHeld(new AlignDrive());
+
+		JoystickPOV shiftUp = new JoystickPOV(left, Direction.DOWN);
+		shiftUp.whenPressed(new ShiftUp(Robot.tank));
+
+		JoystickPOV shiftDown = new JoystickPOV(left, Direction.UP);
+		shiftDown.whenPressed(new ShiftDown(Robot.tank));
 
 		// Right
 		JoystickButton intake = new JoystickButton(right, ControlMap.Right.INTAKE);
