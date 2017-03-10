@@ -55,21 +55,32 @@ public class OI {
 		reverso.whileHeld(new ReversoDrive());
 
 		// Controller
+
+		JoystickButton cameraCycle = new JoystickButton(controller, ControlMap.Controller.CYCLE_CAMERA);
+		cameraCycle.toggleWhenPressed(new CameraCycle());
+
+		// Climber
 		JoystickButton climb = new JoystickButton(controller, ControlMap.Controller.CLIMB);
 		climb.whileHeld(new Climb());
 
+		//Shooter
 		JoystickButton shoot = new JoystickButton(controller, ControlMap.Controller.SHOOT);
 		shoot.whileHeld(new ShootWithVariableFeed());
 
+		JoystickPOV presetUp = new JoystickPOV(controller, Direction.RIGHT);
+		presetUp.whenPressed(new PresetUp());
+
+		JoystickPOV presetDown = new JoystickPOV(controller, Direction.LEFT);
+		presetDown.whenPressed(new PresetDown());
+
+		// Intake
 		JoystickButton retract = new JoystickButton(controller, ControlMap.Controller.RETRACT_INTAKE);
 		retract.whileHeld(new Retract());
 
 		JoystickButton deploy = new JoystickButton(controller, ControlMap.Controller.DEPLOY_INTAKE);
 		deploy.whileHeld(new Deploy());
 
-		JoystickButton cameraCycle = new JoystickButton(controller, ControlMap.Controller.CYCLE_CAMERA);
-		cameraCycle.toggleWhenPressed(new CameraCycle());
-
+		// Garage Door
 		JoystickButton grasp = new JoystickButton(controller, ControlMap.Controller.GRASP);
 		grasp.whenPressed(new Grasp());
 
@@ -81,12 +92,5 @@ public class OI {
 
 		JoystickPOV doorDown = new JoystickPOV(controller, Direction.DOWN);
 		doorDown.whenPressed(new Lower());
-
-		JoystickPOV presetUp = new JoystickPOV(controller, Direction.RIGHT);
-		presetUp.whenPressed(new PresetUp());
-
-		JoystickPOV presetDown = new JoystickPOV(controller, Direction.LEFT);
-		presetDown.whenPressed(new PresetDown());
-
 	}
 }
