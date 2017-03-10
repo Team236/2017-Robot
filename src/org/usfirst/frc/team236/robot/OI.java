@@ -11,6 +11,8 @@ import org.usfirst.frc.team236.robot.commands.garage.Release;
 import org.usfirst.frc.team236.robot.commands.intake.Deploy;
 import org.usfirst.frc.team236.robot.commands.intake.Intake;
 import org.usfirst.frc.team236.robot.commands.intake.Retract;
+import org.usfirst.frc.team236.robot.commands.shooter.PresetDown;
+import org.usfirst.frc.team236.robot.commands.shooter.PresetUp;
 import org.usfirst.frc.team236.robot.commands.shooter.ShootWithVariableFeed;
 import org.usfirst.frc.team236.robot.triggers.JoystickPOV;
 import org.usfirst.frc.team236.robot.triggers.JoystickPOV.Direction;
@@ -79,5 +81,12 @@ public class OI {
 
 		JoystickPOV doorDown = new JoystickPOV(controller, Direction.DOWN);
 		doorDown.whenPressed(new Lower());
+
+		JoystickPOV presetUp = new JoystickPOV(controller, Direction.RIGHT);
+		presetUp.whenPressed(new PresetUp());
+
+		JoystickPOV presetDown = new JoystickPOV(controller, Direction.LEFT);
+		presetDown.whenPressed(new PresetDown());
+
 	}
 }

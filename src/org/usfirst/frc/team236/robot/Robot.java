@@ -215,9 +215,6 @@ public class Robot extends IterativeRobot {
 		// Climber
 		SmartDashboard.putBoolean("Climber", climber.isTop());
 
-		// Subsystem control handlers
-		shooter.handlePresets();
-
 		Scheduler.getInstance().run();
 	}
 

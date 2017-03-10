@@ -97,6 +97,7 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 	/**
 	 * Analyzes the POV to change presets if necessary.
 	 */
+	@Deprecated
 	public void handlePresets() {
 		int ang = Robot.oi.controller.getPOV(0);
 
@@ -120,6 +121,26 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 		if (presetNum >= RobotMap.Shooter.PRESETS.length - 1) {
 			presetNum = RobotMap.Shooter.PRESETS.length - 1;
 		} else if (presetNum < 0) {
+			presetNum = 0;
+		}
+
+		setAngle(RobotMap.Shooter.PRESETS[presetNum].angle);
+	}
+
+	public void presetUp() {
+		presetNum++;
+
+		if (presetNum > RobotMap.Shooter.PRESETS.length - 1) {
+			presetNum = RobotMap.Shooter.PRESETS.length - 1;
+		}
+
+		setAngle(RobotMap.Shooter.PRESETS[presetNum].angle);
+	}
+
+	public void presetDown() {
+		presetNum--;
+
+		if (presetNum < 0) {
 			presetNum = 0;
 		}
 
