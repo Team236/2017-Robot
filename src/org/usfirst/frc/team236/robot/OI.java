@@ -37,7 +37,7 @@ public class OI {
 		controller = new Joystick(ControlMap.PORT_CONTROLLER);
 
 		// Add buttons below
-		// Left
+		// ---------- LEFT ----------
 		JoystickButton align = new JoystickButton(left, ControlMap.Left.ALIGN_DRIVE);
 		align.whileHeld(new AlignDrive());
 
@@ -47,15 +47,14 @@ public class OI {
 		JoystickPOV shiftDown = new JoystickPOV(left, Direction.UP);
 		shiftDown.whenPressed(new ShiftDown(Robot.tank));
 
-		// Right
+		// ---------- RIGHT ----------
 		JoystickButton intake = new JoystickButton(right, ControlMap.Right.INTAKE);
 		intake.whileHeld(new Intake());
 
 		JoystickButton reverso = new JoystickButton(right, ControlMap.Right.REVERSO);
 		reverso.whileHeld(new ReversoDrive());
 
-		// Controller
-
+		// ---------- Controller ----------
 		JoystickButton cameraCycle = new JoystickButton(controller, ControlMap.Controller.CYCLE_CAMERA);
 		cameraCycle.toggleWhenPressed(new CameraCycle());
 
