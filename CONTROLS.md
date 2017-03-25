@@ -3,7 +3,7 @@
 ## Left Joystick
 | Button | Function |
 |--------|----------|
-| Middle | Align Drive |
+| Middle | Climb |
 | POV up/down | Shift up/down |
 
 ## Right Joystick
@@ -16,7 +16,7 @@
 | Button | Function |
 |--------|----------|
 | LB | Spin up shooter |
-| START | Climb |
+| START | Climb (Override limit switches) |
 | RT | Feed shooter | 
 | Back | Cycle camera position |
 | POV up/down | Garage Door up/down |

@@ -2,6 +2,7 @@ package org.usfirst.frc.team236.robot;
 
 import org.usfirst.frc.team236.robot.commands.camera.CameraCycle;
 import org.usfirst.frc.team236.robot.commands.climber.Climb;
+import org.usfirst.frc.team236.robot.commands.climber.ClimbOverride;
 import org.usfirst.frc.team236.robot.commands.drive.AlignDrive;
 import org.usfirst.frc.team236.robot.commands.drive.ReversoDrive;
 import org.usfirst.frc.team236.robot.commands.garage.Grasp;
@@ -47,6 +48,9 @@ public class OI {
 		JoystickPOV shiftDown = new JoystickPOV(left, Direction.UP);
 		shiftDown.whenPressed(new ShiftDown(Robot.tank));
 
+		JoystickButton climb = new JoystickButton(left, ControlMap.Left.CLIMB);
+		climb.whileHeld(new Climb());
+
 		// ---------- RIGHT ----------
 		JoystickButton intake = new JoystickButton(right, ControlMap.Right.INTAKE);
 		intake.whileHeld(new Intake());
@@ -59,8 +63,8 @@ public class OI {
 		cameraCycle.toggleWhenPressed(new CameraCycle());
 
 		// Climber
-		JoystickButton climb = new JoystickButton(controller, ControlMap.Controller.CLIMB);
-		climb.whileHeld(new Climb());
+		JoystickButton climbOverride = new JoystickButton(controller, ControlMap.Controller.CLIMB);
+		climbOverride.whileHeld(new ClimbOverride());
 
 		//Shooter
 		JoystickButton shoot = new JoystickButton(controller, ControlMap.Controller.SHOOT);

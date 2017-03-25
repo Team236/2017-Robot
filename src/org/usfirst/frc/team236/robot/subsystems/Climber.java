@@ -28,6 +28,10 @@ public class Climber extends Subsystem {
 		}
 	}
 
+	public void setSpeedOverride(double speed) {
+		motor.set(speed);
+	}
+
 	public boolean isTop() {
 		return !limit.get();
 	}
