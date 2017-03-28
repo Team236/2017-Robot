@@ -9,6 +9,7 @@ public class ControlMap {
 	public static final int PORT_CONTROLLER = 2;
 
 	public static class Left {
+		@Deprecated
 		public static final int ALIGN_DRIVE = Thrustmaster.BUTTON_MIDDLE; // Lower button
 		public static final int CLIMB = Thrustmaster.BUTTON_MIDDLE; // Lower button
 
@@ -17,6 +18,7 @@ public class ControlMap {
 	}
 
 	public static class LeftAttack3 {
+		@Deprecated
 		public static final int ALIGN_DRIVE = 4; // Lower button
 
 		public static final int SHIFT_UP = 3;
@@ -26,12 +28,14 @@ public class ControlMap {
 	public static class Right {
 		public static final int INTAKE = Thrustmaster.BUTTON_MIDDLE;
 
+		@Deprecated
 		public static final int REVERSO = Thrustmaster.TRIGGER;
 	}
 
 	public static class RightAttack3 {
 		public static final int INTAKE = 2;
 
+		@Deprecated
 		public static final int REVERSO = 1;
 	}
 

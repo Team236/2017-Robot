@@ -7,6 +7,14 @@ import org.usfirst.frc.team236.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
+/**
+ * Reads the joystick inputs and writes to a csv file to be played back by the
+ * {@link PlayMacro} class. Deprecated because it is horribly inconsistent.
+ * 
+ * @author samcf
+ * @deprecated
+ */
+@Deprecated
 public class RecordMacro extends Command {
 
 	FileWriter writer;

@@ -6,8 +6,12 @@ import org.usfirst.frc.team236.robot.lib.Thrustmaster;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- * Drives the robot backwards
+ * Drives the robot backwards.
+ * 
+ * @author samcf
+ * @deprecated
  */
+@Deprecated
 public class ReversoDrive extends Command {
 
 	public ReversoDrive() {

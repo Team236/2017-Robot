@@ -3,8 +3,6 @@ package org.usfirst.frc.team236.robot;
 import org.usfirst.frc.team236.robot.commands.camera.CameraCycle;
 import org.usfirst.frc.team236.robot.commands.climber.Climb;
 import org.usfirst.frc.team236.robot.commands.climber.ClimbOverride;
-import org.usfirst.frc.team236.robot.commands.drive.AlignDrive;
-import org.usfirst.frc.team236.robot.commands.drive.ReversoDrive;
 import org.usfirst.frc.team236.robot.commands.garage.Grasp;
 import org.usfirst.frc.team236.robot.commands.garage.Lower;
 import org.usfirst.frc.team236.robot.commands.garage.Raise;
@@ -39,8 +37,8 @@ public class OI {
 
 		// Add buttons below
 		// ---------- LEFT ----------
-		JoystickButton align = new JoystickButton(left, ControlMap.Left.ALIGN_DRIVE);
-		align.whileHeld(new AlignDrive());
+		//JoystickButton align = new JoystickButton(left, ControlMap.Left.ALIGN_DRIVE);
+		//align.whileHeld(new AlignDrive());
 
 		JoystickPOV shiftUp = new JoystickPOV(left, Direction.DOWN);
 		shiftUp.whenPressed(new ShiftUp(Robot.tank));
@@ -55,8 +53,8 @@ public class OI {
 		JoystickButton intake = new JoystickButton(right, ControlMap.Right.INTAKE);
 		intake.whileHeld(new Intake());
 
-		JoystickButton reverso = new JoystickButton(right, ControlMap.Right.REVERSO);
-		reverso.whileHeld(new ReversoDrive());
+		//JoystickButton reverso = new JoystickButton(right, ControlMap.Right.REVERSO);
+		//reverso.whileHeld(new ReversoDrive());
 
 		// ---------- Controller ----------
 		JoystickButton cameraCycle = new JoystickButton(controller, ControlMap.Controller.CYCLE_CAMERA);

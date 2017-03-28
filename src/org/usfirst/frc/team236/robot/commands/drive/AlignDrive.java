@@ -6,8 +6,15 @@ import org.usfirst.frc.team236.robot.lib.Thrustmaster;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- *
+ * Runs the drive in arcade mode with the speed scaled down significantly to
+ * aid precise alignment with field elements. Change speedfactor and turnFactor
+ * to adjust the speed of forward and rotational movement, respectively. Derry
+ * doesn't like this and Hayden doesn't use it so it is deprecated.
+ * 
+ * @author samcf
+ * @deprecated
  */
+@Deprecated
 public class AlignDrive extends Command {
 	public static double speedFactor = 0.5;
 	public static double turnFactor = 0.5;

@@ -9,6 +9,14 @@ import org.usfirst.frc.team236.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
+/**
+ * Reads a macro from a csv file (written by the {@link RecordMacro} class) and
+ * runs it back. Deprecated because it is horribly inconsistent.
+ * 
+ * @author samcf
+ * @deprecated
+ */
+@Deprecated
 public class PlayMacro extends Command {
 
 	String filename;

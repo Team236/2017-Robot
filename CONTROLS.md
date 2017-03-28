@@ -9,7 +9,6 @@
 ## Right Joystick
 | Button | Function |
 |--------|----------|
-| Trigger | Reverso Drive |
 | Middle | Intake |
 
 ## Controller
