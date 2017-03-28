@@ -10,6 +10,7 @@ public class ControlMap {
 
 	public static class Left {
 		public static final int ALIGN_DRIVE = Thrustmaster.BUTTON_MIDDLE; // Lower button
+		public static final int CLIMB = Thrustmaster.BUTTON_MIDDLE; // Lower button
 
 		public static final int SHIFT_UP = Thrustmaster.BUTTON_LEFT;
 		public static final int SHIFT_DOWN = Thrustmaster.BUTTON_RIGHT;

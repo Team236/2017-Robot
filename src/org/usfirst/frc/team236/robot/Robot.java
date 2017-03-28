@@ -215,17 +215,6 @@ public class Robot extends IterativeRobot {
 		// Climber
 		SmartDashboard.putBoolean("Climber", climber.isTop());
 
-		// Subsystem control handlers
-		shooter.handlePresets();
-		garage.handleHeight();
-
-		// Handle shifting
-		if (oi.left.getPOV(0) == 0) {
-			tank.shiftDown();
-		} else if (oi.left.getPOV(0) == 180) {
-			tank.shiftUp();
-		}
-
 		Scheduler.getInstance().run();
 	}
 

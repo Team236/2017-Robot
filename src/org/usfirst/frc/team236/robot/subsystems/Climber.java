@@ -12,11 +12,11 @@ public class Climber extends Subsystem {
 	private SpeedController motor;
 
 	private DigitalInput limit;
-	
+
 	public Climber() {
 		motor = new Spark(RobotMap.Climber.PWM_CLIMBER);
 		motor.setInverted(RobotMap.Climber.INV_CLIMBER);
-		
+
 		limit = new DigitalInput(RobotMap.Climber.DIO_LIMIT);
 	}
 
@@ -27,7 +27,11 @@ public class Climber extends Subsystem {
 			stop();
 		}
 	}
-	
+
+	public void setSpeedOverride(double speed) {
+		motor.set(speed);
+	}
+
 	public boolean isTop() {
 		return !limit.get();
 	}
