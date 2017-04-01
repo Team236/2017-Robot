@@ -3,11 +3,12 @@ package org.usfirst.frc.team236.robot;
 
 import java.util.ArrayList;
 
+import org.usfirst.frc.team236.robot.commands.auto.CenterWithGyro;
 import org.usfirst.frc.team236.robot.commands.auto.DoNothing;
-import org.usfirst.frc.team236.robot.commands.auto.DriveStraight;
 import org.usfirst.frc.team236.robot.commands.auto.LeftAuto;
 import org.usfirst.frc.team236.robot.commands.auto.RightAuto;
 import org.usfirst.frc.team236.robot.commands.auto.StraightAuto;
+import org.usfirst.frc.team236.robot.commands.drive.DriveStraight;
 import org.usfirst.frc.team236.robot.lib.AutoHandler;
 import org.usfirst.frc.team236.robot.subsystems.Climber;
 import org.usfirst.frc.team236.robot.subsystems.Garage;
@@ -163,7 +164,7 @@ public class Robot extends IterativeRobot {
 		autoCommands.add(new LeftAuto());									// 100
 		autoCommands.add(new DoNothing());									// 101
 		autoCommands.add(new DoNothing());									// 110
-		autoCommands.add(new DriveStraight(AutoMap.straightGear.distance));	// 111
+		autoCommands.add(new CenterWithGyro());								// 111
 		//@formatter:on
 
 		autonomousCommand = autoCommands.get(autoHandler.getSelected());

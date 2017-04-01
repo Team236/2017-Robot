@@ -1,4 +1,4 @@
-package org.usfirst.frc.team236.robot.commands.auto;
+package org.usfirst.frc.team236.robot.commands.drive;
 
 import org.usfirst.frc.team236.robot.Robot;
 
@@ -74,7 +74,7 @@ public class DriveStraight extends Command {
 			return true;
 		}
 
-		return (i / 50 > 1.5);
+		return (i / 50 > 5);
 	}
 
 	@Override
