@@ -1,6 +1,5 @@
 package org.usfirst.frc.team236.robot.commands.auto;
 
-import org.usfirst.frc.team236.robot.AutoMap;
 import org.usfirst.frc.team236.robot.Robot;
 import org.usfirst.frc.team236.robot.commands.Wait;
 import org.usfirst.frc.team236.robot.commands.drive.DriveStraight;
@@ -20,6 +19,6 @@ public class CenterWithGyro extends CommandGroup {
     	addSequential(new Grasp());
     	addSequential(new Lower());
     	addSequential(new Wait(1));
-		addSequential(new DriveStraight(AutoMap.straightGear.distance));
+		addSequential(new DriveStraight(80));
     }
 }
