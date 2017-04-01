@@ -4,9 +4,9 @@ import org.usfirst.frc.team236.robot.commands.camera.CameraCycle;
 import org.usfirst.frc.team236.robot.commands.climber.Climb;
 import org.usfirst.frc.team236.robot.commands.climber.ClimbOverride;
 import org.usfirst.frc.team236.robot.commands.garage.Grasp;
-import org.usfirst.frc.team236.robot.commands.garage.Lower;
 import org.usfirst.frc.team236.robot.commands.garage.Raise;
 import org.usfirst.frc.team236.robot.commands.garage.Release;
+import org.usfirst.frc.team236.robot.commands.garage.SafeLower;
 import org.usfirst.frc.team236.robot.commands.intake.Deploy;
 import org.usfirst.frc.team236.robot.commands.intake.Intake;
 import org.usfirst.frc.team236.robot.commands.intake.Retract;
@@ -92,6 +92,6 @@ public class OI {
 		doorUp.whenPressed(new Raise());
 
 		JoystickPOV doorDown = new JoystickPOV(controller, Direction.DOWN);
-		doorDown.whenPressed(new Lower());
+		doorDown.whenPressed(new SafeLower());
 	}
 }

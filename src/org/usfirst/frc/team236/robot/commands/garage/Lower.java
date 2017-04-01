@@ -1,6 +1,7 @@
 package org.usfirst.frc.team236.robot.commands.garage;
 
 import org.usfirst.frc.team236.robot.Robot;
+import org.usfirst.frc.team236.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -18,6 +19,7 @@ public class Lower extends Command {
 	protected void initialize() {
 		Robot.garage.lower();
 		Robot.garage.lightOn();
+		Robot.cameraServo.set(RobotMap.CAMERA_POS[0]);
 	}
 
 	// Called repeatedly when this Command is scheduled to run
