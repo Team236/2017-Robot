@@ -15,5 +15,4 @@ public class PresetUp extends Command {
 	protected boolean isFinished() {
 		return true;
 	}
-
 }
