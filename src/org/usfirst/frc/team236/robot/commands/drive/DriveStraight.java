@@ -9,8 +9,8 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class DriveStraight extends Command {
 
-	private double kP = 0.5;
-	private double speed = -0.5;
+	private double kP = -0.05;
+	private double speed = -0.6;
 	private double dist;
 
 	// Collision detection
@@ -47,7 +47,7 @@ public class DriveStraight extends Command {
 	protected void execute() {
 		i++;
 
-		double ang = Robot.tank.navx.getAngleAdjustment();
+		double ang = Robot.tank.navx.getAngle();
 
 		double leftSpeed = speed;
 		double rightSpeed = speed;
