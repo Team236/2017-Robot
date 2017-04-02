@@ -1,8 +1,9 @@
 package org.usfirst.frc.team236.robot;
 
+import org.usfirst.frc.team236.robot.commands.FlashlightOn;
 import org.usfirst.frc.team236.robot.commands.camera.CameraCycle;
-import org.usfirst.frc.team236.robot.commands.climber.Climb;
 import org.usfirst.frc.team236.robot.commands.climber.ClimbOverride;
+import org.usfirst.frc.team236.robot.commands.drive.Stop;
 import org.usfirst.frc.team236.robot.commands.garage.Grasp;
 import org.usfirst.frc.team236.robot.commands.garage.Raise;
 import org.usfirst.frc.team236.robot.commands.garage.Release;
@@ -13,6 +14,7 @@ import org.usfirst.frc.team236.robot.commands.intake.Retract;
 import org.usfirst.frc.team236.robot.commands.shooter.PresetDown;
 import org.usfirst.frc.team236.robot.commands.shooter.PresetUp;
 import org.usfirst.frc.team236.robot.commands.shooter.ShootWithVariableFeed;
+import org.usfirst.frc.team236.robot.lib.LogitechF310;
 import org.usfirst.frc.team236.robot.triggers.JoystickPOV;
 import org.usfirst.frc.team236.robot.triggers.JoystickPOV.Direction;
 
@@ -47,7 +49,7 @@ public class OI {
 		shiftDown.whenPressed(new ShiftDown(Robot.tank));
 
 		JoystickButton climb = new JoystickButton(left, ControlMap.Left.CLIMB);
-		climb.whileHeld(new Climb());
+		climb.whileHeld(new ClimbOverride());
 
 		// ---------- RIGHT ----------
 		JoystickButton intake = new JoystickButton(right, ControlMap.Right.INTAKE);
@@ -62,7 +64,7 @@ public class OI {
 
 		// Climber
 		JoystickButton climbOverride = new JoystickButton(controller, ControlMap.Controller.CLIMB);
-		climbOverride.whileHeld(new ClimbOverride());
+		//climbOverride.whileHeld(new ClimbOverride());
 
 		//Shooter
 		JoystickButton shoot = new JoystickButton(controller, ControlMap.Controller.SHOOT);
@@ -93,5 +95,8 @@ public class OI {
 
 		JoystickPOV doorDown = new JoystickPOV(controller, Direction.DOWN);
 		doorDown.whenPressed(new SafeLower());
+
+		JoystickButton stop = new JoystickButton(controller, LogitechF310.RB);
+		stop.whileHeld(new Stop());
 	}
 }
