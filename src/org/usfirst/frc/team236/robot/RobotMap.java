@@ -77,6 +77,7 @@ public class RobotMap {
 		public static final Preset[] PRESETS = {
 			Robot.shooter.new Preset("Key", 3200, 24, 0.30),
 			Robot.shooter.new Preset("DS", 3500, 80, 0.55),
+			Robot.shooter.new Preset("Hopper", 3800, 80, 0.65),
 			Robot.shooter.new Preset("Uber", 4000, 120, .65)
 		};
 		//@formatter:on
