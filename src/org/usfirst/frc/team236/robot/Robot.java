@@ -8,7 +8,6 @@ import org.usfirst.frc.team236.robot.commands.auto.DoNothing;
 import org.usfirst.frc.team236.robot.commands.auto.LeftAuto;
 import org.usfirst.frc.team236.robot.commands.auto.RightAuto;
 import org.usfirst.frc.team236.robot.commands.auto.StraightAuto;
-import org.usfirst.frc.team236.robot.commands.drive.DriveStraight;
 import org.usfirst.frc.team236.robot.lib.AutoHandler;
 import org.usfirst.frc.team236.robot.subsystems.Climber;
 import org.usfirst.frc.team236.robot.subsystems.Garage;
@@ -135,7 +134,7 @@ public class Robot extends IterativeRobot {
 		try {
 			camera = CameraServer.getInstance().startAutomaticCapture();
 			camera.setResolution(640, 480);
-			camera.setFPS(30);
+			camera.setFPS(20);
 		} catch (Exception e) {
 			System.out.println("Camera capture failed");
 			System.out.println(e.getStackTrace());
