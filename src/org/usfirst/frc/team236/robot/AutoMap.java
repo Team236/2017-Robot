@@ -20,7 +20,7 @@ public final class AutoMap {
 	// Right gear delivery
 	public static final ProfileParameters rightGearLeg1 = new ProfileParameters(91, 60, 60, 60, profileMargin);
 	public static final double rightGearDegrees = 60;
-	public static final ProfileParameters rightGearLeg2 = new ProfileParameters(30, 50, 10, 10, profileMargin);
+	public static final ProfileParameters rightGearLeg2 = new ProfileParameters(30, 50, 50, 50, profileMargin);
 
 	// Alt Right
 	public static final ProfileParameters altRightGear = new ProfileParameters(128, 80, 50, 10, profileMargin);
@@ -33,5 +33,5 @@ public final class AutoMap {
 	// Left gear delivery
 	public static final ProfileParameters leftGearLeg1 = new ProfileParameters(91, 60, 60, 60, profileMargin);
 	public static final double leftTurnDegrees = 60;
-	public static final ProfileParameters leftGearLeg2 = new ProfileParameters(30, 50, 10, 10, profileMargin);
+	public static final ProfileParameters leftGearLeg2 = new ProfileParameters(30, 50, 50, 50, profileMargin);
 }
