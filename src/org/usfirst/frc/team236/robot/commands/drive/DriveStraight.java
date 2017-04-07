@@ -9,8 +9,8 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class DriveStraight extends Command {
 
-	private double kP = -0.02;
-	private double speed = -0.6;
+	private double kP;
+	private double speed;
 	private double dist;
 
 	// Collision detection
@@ -28,10 +28,11 @@ public class DriveStraight extends Command {
 		this.kP = _kP;
 		this.dist = _dist;
 		this.speed = _speed;
+		requires(Robot.tank);
 	}
 
 	public DriveStraight(double _dist) {
-		this.dist = _dist;
+		this(-0.02, _dist, -0.6); // Construct with default values
 	}
 
 	// Called just before this Command runs the first time
