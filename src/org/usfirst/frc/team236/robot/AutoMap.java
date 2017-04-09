@@ -22,10 +22,6 @@ public final class AutoMap {
 	public static final double rightGearDegrees = 60;
 	public static final ProfileParameters rightGearLeg2 = new ProfileParameters(30, 50, 50, 50, profileMargin);
 
-	// Bend Right
-	public static final ProfileParameters rightBendLeftSide = new ProfileParameters(172, 64, 64, 128);
-	public static final ProfileParameters leftBendLeftSide = new ProfileParameters(168, 60, 60, 120);
-
 	// Left gear delivery
 	public static final ProfileParameters leftGearLeg1 = new ProfileParameters(91, 60, 60, 60, profileMargin);
 	public static final double leftTurnDegrees = 60;
