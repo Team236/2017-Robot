@@ -18,7 +18,7 @@ public class RightAuto extends CommandGroup {
 	public RightAuto() {
 		addSequential(new Lower());
 		addSequential(new FollowProfile(Robot.tank, Robot.rightGearLeg1, true));
-		addSequential(new Turn(Robot.tank, AutoMap.rightGearDegrees, Direction.CCW, AutoMap.turnMargin));
+		addSequential(new Turn(Robot.tank, AutoMap.rightGearTurnDegrees, Direction.CCW, AutoMap.turnMargin));
 		addSequential(new Wait(0));
 		addSequential(new FollowProfile(Robot.tank, Robot.rightGearLeg2, true));
 	}
