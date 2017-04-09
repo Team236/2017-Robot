@@ -18,12 +18,12 @@ public final class AutoMap {
 	public static final ProfileParameters straightGear = new ProfileParameters(82, 60, 100, 300, profileMargin);
 
 	// Right gear delivery
-	public static final ProfileParameters rightGearLeg1 = new ProfileParameters(91, 60, 60, 60, profileMargin);
-	public static final ProfileParameters rightGearLeg2 = new ProfileParameters(30, 50, 50, 50, profileMargin);
+	public static final ProfileParameters rightGearLeg1 = new ProfileParameters(91, 60, 100, 200, profileMargin);
 	public static final double rightGearTurnDegrees = 60;
+	public static final ProfileParameters rightGearLeg2 = new ProfileParameters(30, 40, 200, 400, profileMargin);
 
 	// Left gear delivery
-	public static final ProfileParameters leftGearLeg1 = new ProfileParameters(91, 60, 60, 60, profileMargin);
-	public static final ProfileParameters leftGearLeg2 = new ProfileParameters(30, 50, 50, 50, profileMargin);
+	public static final ProfileParameters leftGearLeg1 = new ProfileParameters(91, 60, 100, 200, profileMargin);
 	public static final double leftGearTurnDegrees = 60;
+	public static final ProfileParameters leftGearLeg2 = new ProfileParameters(30, 40, 200, 400, profileMargin);
 }
