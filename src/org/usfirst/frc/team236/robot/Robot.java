@@ -201,12 +201,6 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putNumber("Match time", DriverStation.getInstance().getMatchTime());
 		SmartDashboard.putNumber("Voltage", DriverStation.getInstance().getBatteryVoltage());
 
-		// Shooter
-		SmartDashboard.putNumber("RPM", Robot.shooter.getRPM());
-		SmartDashboard.putNumber("Angle", Robot.shooter.getAngle());
-		SmartDashboard.putNumber("Goal RPM", Robot.shooter.controller.getSetpoint());
-		SmartDashboard.putString("Preset", Robot.shooter.getPreset().toString());
-
 		// Intake
 		SmartDashboard.putBoolean("Bottom", intake.isBottom());
 		SmartDashboard.putBoolean("Top", intake.isTop());

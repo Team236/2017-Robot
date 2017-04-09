@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import pid.PID;
 import pid.PIDOutput;
 import pid.PIDParameters;
@@ -135,6 +136,7 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 		}
 
 		setAngle(RobotMap.Shooter.PRESETS[presetNum].angle);
+		putPresetData();
 	}
 
 	public void presetDown() {
@@ -145,6 +147,13 @@ public class Shooter extends Subsystem implements PIDOutput, PIDSource {
 		}
 
 		setAngle(RobotMap.Shooter.PRESETS[presetNum].angle);
+		putPresetData();
+	}
+
+	public void putPresetData() {
+		SmartDashboard.putNumber("Angle", getAngle());
+		SmartDashboard.putNumber("Goal RPM", controller.getSetpoint());
+		SmartDashboard.putString("Preset", getPreset().toString());
 	}
 
 	/**

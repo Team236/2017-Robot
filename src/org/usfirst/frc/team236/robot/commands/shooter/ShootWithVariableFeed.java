@@ -4,6 +4,7 @@ import org.usfirst.frc.team236.robot.ControlMap;
 import org.usfirst.frc.team236.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * Runs the shooter with whatever setpoint is given
@@ -29,6 +30,7 @@ public class ShootWithVariableFeed extends Command {
 	@Override
 	protected void execute() {
 		Robot.shooter.feed(Robot.oi.controller.getRawAxis(ControlMap.Controller.VARIABLE_FEED) * 0.4);
+		SmartDashboard.putNumber("RPM", Robot.shooter.getRPM());
 	}
 
 	@Override
