@@ -124,8 +124,6 @@ public class Robot extends IterativeRobot {
 		leftGearLeg1 = new Profile(AutoMap.leftGearLeg1);
 		leftGearLeg2 = new Profile(AutoMap.leftGearLeg2);
 
-		altRight = new Profile(AutoMap.altRightGear);
-
 		// Use switches
 		autoHandler = new AutoHandler(RobotMap.DIO_SWITCHES);
 
