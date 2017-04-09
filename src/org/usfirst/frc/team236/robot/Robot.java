@@ -66,8 +66,6 @@ public class Robot extends IterativeRobot {
 
 	public static PowerDistributionPanel panel;
 
-	boolean autoDebug = true;
-
 	@Override
 	public void robotInit() {
 		// Configure drive
@@ -192,14 +190,10 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void teleopPeriodic() {
-		if (autoDebug) {
-			SmartDashboard.putNumber("Speed", tank.getLeftEncoder().getRate());
-			SmartDashboard.putNumber("Angle", tank.navx.getAngle());
-		}
 		// SmartDashboard code
 		// General
 		SmartDashboard.putNumber("Match time", DriverStation.getInstance().getMatchTime());
-		SmartDashboard.putNumber("Voltage", DriverStation.getInstance().getBatteryVoltage());
+		//SmartDashboard.putNumber("Voltage", DriverStation.getInstance().getBatteryVoltage());
 
 		// Intake
 		SmartDashboard.putBoolean("Bottom", intake.isBottom());
