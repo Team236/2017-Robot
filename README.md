@@ -73,7 +73,7 @@ lowered by a linear servo.
 
 Because the flywheel is compliant and can expand, there is a lot of pressure
 between the ball and flywheel at high speeds. The increased friction increases
-the load on the flywheel significantly, lowereing its speed when the next ball
+the load on the flywheel significantly, lowering its speed when the next ball
 enters the hood. To prevent this, we run a PI loop at 200 hz which uses a banner
 light sensor to count the speed of the wheel and to vary the motor speed to
 maintain a consistent RPM. Using this system, we are able to return to full
