@@ -32,7 +32,7 @@ public class DriveStraight extends Command {
 	}
 
 	public DriveStraight(double _dist) {
-		this(-0.02, _dist, -0.6); // Construct with default values
+		this(-0.02, _dist, -0.4); // Construct with default values
 	}
 
 	// Called just before this Command runs the first time
