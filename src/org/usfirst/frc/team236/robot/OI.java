@@ -1,6 +1,5 @@
 package org.usfirst.frc.team236.robot;
 
-import org.usfirst.frc.team236.robot.commands.FlashlightOn;
 import org.usfirst.frc.team236.robot.commands.camera.CameraCycle;
 import org.usfirst.frc.team236.robot.commands.climber.ClimbOverride;
 import org.usfirst.frc.team236.robot.commands.drive.Stop;
