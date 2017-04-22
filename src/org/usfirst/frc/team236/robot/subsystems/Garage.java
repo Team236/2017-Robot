@@ -16,10 +16,16 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  * @author samcf
  */
 public class Garage extends Subsystem {
+	public static enum Position {
+		UP, DOWN, OPEN, CLOSED
+	}
 
 	// TODO come up with a better name for the vertical piston
 	private DoubleSolenoid grasper, vertical;
 	private Relay light;
+
+	private Position doorState;
+	private Position flapState;
 
 	public Garage() {
 		grasper = new DoubleSolenoid(RobotMap.Garage.SOL_GRASPER_FORWARD, RobotMap.Garage.SOL_GRASPER_REVERSE);
@@ -35,6 +41,14 @@ public class Garage extends Subsystem {
 
 	public void lightOff() {
 		light.set(edu.wpi.first.wpilibj.Relay.Value.kOff);
+	}
+
+	public Position getDoorState() {
+		return doorState;
+	}
+
+	public Position getFlapState() {
+		return flapState;
 	}
 
 	/**
@@ -53,18 +67,22 @@ public class Garage extends Subsystem {
 
 	public void grasp() {
 		grasper.set(Value.kForward);
+		this.flapState = Position.CLOSED;
 	}
 
 	public void release() {
 		grasper.set(Value.kReverse);
+		this.flapState = Position.OPEN;
 	}
 
 	public void raise() {
 		vertical.set(Value.kForward);
+		this.doorState = Position.UP;
 	}
 
 	public void lower() {
 		vertical.set(Value.kReverse);
+		this.doorState = Position.DOWN;
 	}
 
 	@Override
