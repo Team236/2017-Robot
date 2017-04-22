@@ -55,6 +55,7 @@ public class Garage extends Subsystem {
 	 * Checks controller d-pad to automatically move the garage door when the
 	 * appropriate button is pressed
 	 */
+	@Deprecated
 	public void handleHeight() {
 		int ang = Robot.oi.controller.getPOV(0);
 
