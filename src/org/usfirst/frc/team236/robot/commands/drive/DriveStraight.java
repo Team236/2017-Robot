@@ -63,15 +63,7 @@ public class DriveStraight extends Command {
 	@Override
 	protected boolean isFinished() {
 		// Stop command if both encoders have gone the distance
-		if (Robot.tank.getLeftEncoder().getDistance() > dist && Robot.tank.getRightEncoder().getDistance() > dist) {
-			return true;
-		}
-
-		currAccel = Robot.tank.navx.getWorldLinearAccelY(); // TODO figure out which axis is forward
-		jerk = currAccel - lastAccel;
-		lastAccel = currAccel;
-
-		if (Math.abs(jerk) > collisionThreshold) {
+		if (Math.abs(Robot.tank.getLeftEncoder().getDistance() - dist) < 1 && Math.abs(Robot.tank.getRightEncoder().getDistance() - dist) < 1) {
 			return true;
 		}
 
