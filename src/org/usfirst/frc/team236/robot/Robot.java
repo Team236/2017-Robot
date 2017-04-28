@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import org.usfirst.frc.team236.robot.commands.auto.CenterWithGyro;
 import org.usfirst.frc.team236.robot.commands.auto.DoNothing;
 import org.usfirst.frc.team236.robot.commands.auto.LeftAuto;
+import org.usfirst.frc.team236.robot.commands.auto.LeftAutoDeposit;
 import org.usfirst.frc.team236.robot.commands.auto.RightAuto;
+import org.usfirst.frc.team236.robot.commands.auto.RightAutoDeposit;
 import org.usfirst.frc.team236.robot.commands.auto.StraightAuto;
 import org.usfirst.frc.team236.robot.lib.AutoHandler;
 import org.usfirst.frc.team236.robot.subsystems.Climber;
@@ -15,7 +17,6 @@ import org.usfirst.frc.team236.robot.subsystems.Intake;
 import org.usfirst.frc.team236.robot.subsystems.Shooter;
 
 import edu.wpi.cscore.UsbCamera;
-import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -128,9 +129,8 @@ public class Robot extends IterativeRobot {
 		cameraServo = new Servo(RobotMap.PWM_CAM_SERVO);
 
 		try {
-			camera = CameraServer.getInstance().startAutomaticCapture();
-			camera.setResolution(640, 480);
-			camera.setFPS(20);
+			//camera = CameraServer.getInstance().startAutomaticCapture();
+			//camera.setVideoMode(new VideoMode(VideoMode.PixelFormat.kYUYV, 320, 240, 30));
 		} catch (Exception e) {
 			System.out.println("Camera capture failed");
 			System.out.println(e.getStackTrace());
@@ -155,10 +155,10 @@ public class Robot extends IterativeRobot {
 		autoCommands.add(new DoNothing());									// 000
 		autoCommands.add(new RightAuto());									// 001
 		autoCommands.add(new StraightAuto(tank, straightGearDelivery));		// 010
-		autoCommands.add(new DoNothing());									// 011
+		autoCommands.add(new RightAutoDeposit());							// 011
 		autoCommands.add(new LeftAuto());									// 100
 		autoCommands.add(new DoNothing());									// 101
-		autoCommands.add(new DoNothing());									// 110
+		autoCommands.add(new LeftAutoDeposit());							// 110
 		autoCommands.add(new CenterWithGyro());								// 111
 		//@formatter:on
 
@@ -201,6 +201,8 @@ public class Robot extends IterativeRobot {
 
 		// Climber
 		SmartDashboard.putBoolean("Climber", climber.isTop());
+
+		SmartDashboard.putNumber("Speed", tank.getLeftEncoder().getRate());
 
 		Scheduler.getInstance().run();
 	}
