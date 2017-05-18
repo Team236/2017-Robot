@@ -1,6 +1,10 @@
 package org.usfirst.frc.team236.robot.lib;
 
-public class LogitechF310 {
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+
+public class LogitechF310 extends Joystick {
+
 	public static final int A = 1;
 	public static final int B = 2;
 	public static final int X = 3;
@@ -19,5 +23,26 @@ public class LogitechF310 {
 		public static final int RT = 3;
 		public static final int RIGHT_X = 4;
 		public static final int RIGHT_Y = 5;
+	}
+
+	public final JoystickButton a, b, x, y, lb, rb, back, start, leftPress, rightPress;
+
+	public LogitechF310(int port) {
+		super(port);
+
+		// Create buttons
+		a = new JoystickButton(this, A);
+		b = new JoystickButton(this, B);
+		x = new JoystickButton(this, X);
+		y = new JoystickButton(this, Y);
+
+		lb = new JoystickButton(this, LB);
+		rb = new JoystickButton(this, RB);
+
+		back = new JoystickButton(this, BACK);
+		start = new JoystickButton(this, START);
+
+		leftPress = new JoystickButton(this, LEFT_PRESS);
+		rightPress = new JoystickButton(this, RIGHT_PRESS);
 	}
 }
