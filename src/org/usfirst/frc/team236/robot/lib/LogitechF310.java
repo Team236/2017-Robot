@@ -45,4 +45,28 @@ public class LogitechF310 extends Joystick {
 		leftPress = new JoystickButton(this, LEFT_PRESS);
 		rightPress = new JoystickButton(this, RIGHT_PRESS);
 	}
+
+	public double getLeftX() {
+		return super.getRawAxis(Axes.LEFT_X);
+	}
+
+	public double getLeftY() {
+		return super.getRawAxis(Axes.LEFT_Y);
+	}
+
+	public double getRightX() {
+		return super.getRawAxis(Axes.RIGHT_X);
+	}
+
+	public double getRightY() {
+		return super.getRawAxis(Axes.RIGHT_Y);
+	}
+
+	public double getLeftTrigger() {
+		return super.getRawAxis(Axes.LT);
+	}
+
+	public double getRightTrigger() {
+		return super.getRawAxis(Axes.RT);
+	}
 }

@@ -27,4 +27,17 @@ public class Thrustmaster extends Joystick {
 		left = new JoystickButton(this, BUTTON_LEFT);
 		right = new JoystickButton(this, BUTTON_RIGHT);
 	}
+
+	public double getXAxis() {
+		return super.getRawAxis(Axes.X);
+	}
+
+	public double getYAxis() {
+		return -super.getRawAxis(Axes.Y);
+	}
+
+	@Override
+	public double getZ() {
+		return super.getRawAxis(Axes.Z);
+	}
 }
