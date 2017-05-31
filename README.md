@@ -86,3 +86,30 @@ defend. In order to align the robot with the boiler, the robot has a flashlight
 which the drivers can see on the boiler stack, as well as a camera which can be
 rotated to see the boiler. Later in the season, we may add a coprocessor to run
 vision on the robot to aid in alignment.
+
+## Installation
+### GitKraken
+1. Clone with URL (`https://github.com/Team236/2017-Robot.git`)
+2. Click yes to initialize submodules
+3. Open eclipse
+4. File > New > WPILib Robot Java Development > Robot Java Project
+5. Use 2017-Robot for project name
+
+### Git Bash
+Use the following commands:
+
+    git clone https://github.com/Team236/2017-Robot.git
+    cd 2017-Robot
+    git submodule init
+    git submodule update --init
+
+### EGit
+1. File > import > Git > Projects from Git
+2. Clone URI
+3. enter `https://github.com/team236/2017-Robot` for URI and use https
+4. leave all branches selected
+5. Check clone submodules (in Local Destination)
+6. Import using New Project wizard
+7. Select WPILib > Robot Java Project
+8. Enter same name for project as before
+9. Finish
